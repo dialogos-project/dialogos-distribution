@@ -1,0 +1,27 @@
+{"dialogos.plugin.pocketsphinx":
+ {
+   "pocketsphinx_en":
+    {"name": "Default English",
+     "description": "Default English model for PocketSphinx from models/en-us in https://github.com/cmusphinx/pocketsphinx. Downloaded in December 2017.",
+     "version": 1,
+     "url": "http://www.coli.uni-saarland.de/~koller/dialogos/models/pocketsphinx_en.zip",
+     "size": 28657155,
+     "language": "en-US",
+     "acoustic": "en-us/en-us",
+     "dictionary": "en-us/cmudict-en-us.dict",
+     "lm": "en-us/en-us.lm.bin"
+    },
+  
+    "pocketsphinx_de":
+     {"name": "German Voxforge 2017",
+      "description": "Downloaded from https://sourceforge.net/projects/cmusphinx/files/Acoustic%20and%20Language%20Models/German/ in December 2017. Models were produced by Guenter Bartsch <guenter@zamia.org> and licensed under LGPLv3.",
+      "version": 1,
+      "url": "http://www.coli.uni-saarland.de/~koller/dialogos/models/pocketsphinx_de.zip",
+      "size": 54761742,
+      "language": "de-DE",
+      "acoustic": "de/cmusphinx-de-voxforge-5.2",
+      "dictionary": "de/cmusphinx-voxforge-de.dic",
+      "lm": "de/cmusphinx-voxforge-de.lm"
+     }
+  }
+}

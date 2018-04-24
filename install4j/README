@@ -1,0 +1,2 @@
+ * run ```gradlew installDist``` to prepare all the files that the installer wants to include
+ * run install4j
