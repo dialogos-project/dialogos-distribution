@@ -6,17 +6,16 @@ plugins {
 
 repositories {
   jcenter()
-  maven { url "https://oss.sonatype.org/content/repositories/snapshots" } // Sphinx-4
   maven { url "https://jitpack.io" }
 }
 
 // In this section you declare the dependencies for your production and test code
 dependencies {
-  runtime group:'com.github.coli-saar', name:'dialogos', version:'master-SNAPSHOT'
+  runtime group:'com.github.coli-saar', name:'dialogos', version:'cf5a2cd771748e19b356361dda261648852b3545'
 
-  runtime group:'com.github.dialogos-project', name:'dialogos-plugin-sqlite', version:'master-SNAPSHOT'
-  runtime group:'com.github.dialogos-project', name:'dialogos-plugin-nxt', version:'master-SNAPSHOT'
-  runtime group:'com.github.dialogos-project', name:'dialogos-plugin-pocketsphinx', version:'master-SNAPSHOT'  
+  runtime group:'com.github.dialogos-project', name:'dialogos-plugin-sqlite', version:'88937caeef7f81fa20c6b5d7173c4d330d335d2c'
+  runtime group:'com.github.dialogos-project', name:'dialogos-plugin-nxt', version:'1a9a572f48d69a80331d292b19f4580007e01290'
+  runtime group:'com.github.dialogos-project', name:'dialogos-plugin-pocketsphinx', version:'e2efc65518d2f9e36f5ee90b50bf5a3cca016490'
   runtime files('lib/pocketsphinx.jar') // for pocketsphinx plugin
   runtime files('install4j/models/sphinx4-de-de-uhh.jar') // German model file
 
