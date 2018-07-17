@@ -11,18 +11,18 @@ repositories {
 
 // In this section you declare the dependencies for your production and test code
 dependencies {
-  runtime group:'com.github.coli-saar', name:'dialogos', version:'cf5a2cd771748e19b356361dda261648852b3545'
+  runtime group:'com.github.dialogos-project', name:'dialogos', version:'52b3a3f8aa7e54cf732d3d438fd8baa9b5965384'
 
-  runtime group:'com.github.dialogos-project', name:'dialogos-plugin-sqlite', version:'88937caeef7f81fa20c6b5d7173c4d330d335d2c'
-  runtime group:'com.github.dialogos-project', name:'dialogos-plugin-nxt', version:'1a9a572f48d69a80331d292b19f4580007e01290'
-  runtime group:'com.github.dialogos-project', name:'dialogos-plugin-pocketsphinx', version:'e2efc65518d2f9e36f5ee90b50bf5a3cca016490'
+  runtime group:'com.github.dialogos-project', name:'dialogos-plugin-sqlite', version:'adc3737153ab96844a685120733b02a108dcf7f3'
+  runtime group:'com.github.dialogos-project', name:'dialogos-plugin-nxt', version:'ef541d610f35a78550e8db4cdd11e240f771845c'
+  runtime group:'com.github.dialogos-project', name:'dialogos-plugin-pocketsphinx', version:'76bb33ace8f1861b72dcc4db2b0780127248e4a6'
   runtime files('lib/pocketsphinx.jar') // for pocketsphinx plugin
-  runtime files('install4j/models/sphinx4-de-de-uhh.jar') // German model file
+  runtime files('install4j/models/sphinx4-de-de-uhh.jar') // German model file for Sphinx-4
 
 //  runtime group:'com.github.dialogos-project', name:'dialogos-plugin-minimalio', version:'master-SNAPSHOT'
 
-  compile 'org.slf4j:slf4j-api:1.7.25'
+  implementation 'org.slf4j:slf4j-api:1.7.25'
   testCompile 'junit:junit:4.12'
 }
 mainClassName = 'com.clt.dialogos.DialogOS'
-def version = 1.0
+def version = 2.0

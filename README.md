@@ -13,4 +13,5 @@ It serves two purposes:
  2. It can be used to quickly run an installation of DialogOS with all plugins available by calling
     `./gradlew installDist` followed by `build/install/bin/dialogos-distribution`.
 
-For the actual source distribution and documentation please refer to <http://github.com/coli-saar/dialogos>.
+For the actual source distribution and documentation please refer to 
+<http://github.com/dialogos-project/dialogos>.
