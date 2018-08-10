@@ -36,7 +36,7 @@ For new major/minor versions:
  * refer to the updated tags/commit ids in `build.gradle` in dialogos-distribution
  * Test dialogos-distribution, consider updating the CHANGELOG
  * tag the release commit in dialogos-distribution with the exact same tag as you did for dialogos.
- * re-build again, and create installers as per instructions in [`install4j/README`](../blob/master/install4j/README)
+ * re-build again, and create installers as per instructions in [`install4j/README`](install4j/README)
  * in dialogos's github.com page, [create a release](https://github.com/dialogos-project/dialogos/releases), associate it with the tag and upload the release.
 
 For bugfix releases:
