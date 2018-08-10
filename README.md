@@ -1,5 +1,8 @@
 # DialogOS distribution.
 
+**Please report problems with the dialogos-distribution project on the [DialogOS issue tracker](https://github.com/dialogos-project/dialogos/issues)**
+
+
 This repository ties together the core of DialogOS with various plugins that should be distributed
 by containing all the relevant dependencies in its `build.gradle`, as well as all required data files
 (e.g. models for speech recognition). 
