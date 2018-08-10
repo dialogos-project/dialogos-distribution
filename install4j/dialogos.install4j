@@ -13,9 +13,9 @@
     </searchSequence>
     <variables>
       <variable name="dialogos.core.mavenversion" value="SET_EXTERNALLY" description="" category="" />
-	  <variable name="dialogos.sqlite.mavenversion" value="SET_EXTERNALLY" description="" category="" />
-	  <variable name="dialogos.pocketsphinx.mavenversion" value="SET_EXTERNALLY" description="" category="" />
-	  <variable name="dialogos.nxt.mavenversion" value="SET_EXTERNALLY" description="" category="" />
+      <variable name="dialogos.sqlite.mavenversion" value="SET_EXTERNALLY" description="" category="" />
+      <variable name="dialogos.pocketsphinx.mavenversion" value="SET_EXTERNALLY" description="" category="" />
+      <variable name="dialogos.nxt.mavenversion" value="SET_EXTERNALLY" description="" category="" />
       <variable name="installer.download.base" value="http://tmp.chark.eu/dialogos" description="" category="" />
     </variables>
     <mergedProjects />
@@ -30,11 +30,9 @@
       <mountPoint id="558" root="" location="plugins" mode="755" />
       <mountPoint id="560" root="" location="plugins/Sphinx" mode="755" />
       <mountPoint id="561" root="" location="plugins/MaryTTS" mode="755" />
-      <mountPoint id="563" root="" location="plugins/Pocketsphinx" mode="755" />
       <mountPoint id="568" root="" location="plugins/NXT" mode="755" />
       <mountPoint id="573" root="" location="plugins/Sqlite" mode="755" />
       <mountPoint id="559" root="" location="pluginData" mode="755" />
-      <mountPoint id="898" root="" location="pluginData/dialogos.plugin.pocketsphinx" mode="755" />
       <mountPoint id="562" root="" location="lib" mode="755" />
       <mountPoint id="788" root="" location="examples" mode="755" />
     </mountPoints>
@@ -74,10 +72,6 @@
       <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/jtok-core-1.9.3.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
       <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/jwnl-1.3.3.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
       <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/log4j-1.2.16.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="563" file="../build/install/dialogos-distribution/lib/dialogos-plugin-pocketsphinx-${compiler:dialogos.pocketsphinx.mavenversion}.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="563" file="../lib/pocketsphinx.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="563" file="../build/install/dialogos-distribution/lib/zt-zip-1.12.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="563" file="../build/install/dialogos-distribution/lib/json-simple-1.1.1.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
       <fileEntry mountPoint="568" file="../build/install/dialogos-distribution/lib/dialogos-plugin-nxt-${compiler:dialogos.nxt.mavenversion}.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
       <fileEntry mountPoint="568" file="../build/install/dialogos-distribution/lib/libusb4java-1.2.0-linux-arm.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
       <fileEntry mountPoint="568" file="../build/install/dialogos-distribution/lib/libusb4java-1.2.0-linux-x86.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
@@ -94,12 +88,6 @@
       <fileEntry mountPoint="568" file="../build/install/dialogos-distribution/lib/purejavacomm-1.0.1.RELEASE.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
       <fileEntry mountPoint="573" file="../build/install/dialogos-distribution/lib/dialogos-plugin-sqlite-${compiler:dialogos.sqlite.mavenversion}.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
       <fileEntry mountPoint="573" file="../build/install/dialogos-distribution/lib/sqlite-jdbc-3.21.0.1.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <dirEntry mountPoint="898" file="../install4j/models/pocketsphinx_de" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" entryMode="direct" subDirectory="pocketsphinx_de" excludeSuffixes="" dirMode="755" overrideDirMode="false">
-        <exclude />
-      </dirEntry>
-      <dirEntry mountPoint="898" file="../install4j/models/pocketsphinx_en" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" entryMode="direct" subDirectory="pocketsphinx_en" excludeSuffixes="" dirMode="755" overrideDirMode="false">
-        <exclude />
-      </dirEntry>
       <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/AppleJavaExtensions-1.4.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
       <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/ClientInterface-${compiler:dialogos.core.mavenversion}.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
       <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/Diamant-${compiler:dialogos.core.mavenversion}.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
@@ -246,36 +234,6 @@
         </include>
         <dependencies>
           <component id="684" />
-        </dependencies>
-      </component>
-      <component name="Pocketsphinx plugin" id="567" customizedId="" displayDescription="false" hideHelpButton="false" selected="false" changeable="true" downloadable="true" hidden="false">
-        <description>A plugin that integrates the Pocketsphinx speech recognizer as an alternative or in addition to the default speech recognizer.</description>
-        <include all="false">
-          <entry location="plugins/Pocketsphinx" fileType="regular" />
-          <entry location=".i4j_external_352/.dialogos/dialogos.plugin.pocketsphinx" fileType="regular" />
-        </include>
-        <dependencies>
-          <component id="684" />
-        </dependencies>
-      </component>
-      <component name="Pocketsphinx: German language support" id="355" customizedId="" displayDescription="false" hideHelpButton="false" selected="false" changeable="true" downloadable="true" hidden="false">
-        <description>Pocketsphinx speech recognition support for German</description>
-        <include all="false">
-          <entry location="pluginData/dialogos.plugin.pocketsphinx/de" fileType="regular" />
-        </include>
-        <dependencies>
-          <component id="684" />
-          <component id="567" />
-        </dependencies>
-      </component>
-      <component name="Pocketsphinx: English language support" id="153" customizedId="" displayDescription="false" hideHelpButton="false" selected="false" changeable="true" downloadable="true" hidden="false">
-        <description>Pocketsphinx speech recognition support for English</description>
-        <include all="false">
-          <entry location="pluginData/dialogos.plugin.pocketsphinx/en-us" fileType="regular" />
-        </include>
-        <dependencies>
-          <component id="684" />
-          <component id="567" />
         </dependencies>
       </component>
     </components>
@@ -584,6 +542,52 @@ return console.askOkCancel(message, true);
               </formComponent>
             </formComponents>
           </screen>
+          <screen name="" id="1138" customizedId="" beanClass="com.install4j.runtime.beans.screens.FileAssociationsScreen" enabled="true" commentSet="false" comment="" actionElevationType="inherit" styleId="" rollbackBarrier="false" rollbackBarrierExitCode="0" backButton="2" finishScreen="false" wizardIndexChangeType="unchanged" wizardIndexKey="">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.FileAssociationsScreen" />
+              </java>
+            </serializedBean>
+            <styleOverrides />
+            <condition />
+            <validation />
+            <preActivation />
+            <postActivation />
+            <actions />
+            <formComponents>
+              <formComponent name="" id="1139" customizedId="" beanClass="com.install4j.runtime.beans.formcomponents.MultilineLabelComponent" enabled="true" commentSet="false" comment="" insetTop="" insetLeft="" insetBottom="" insetRight="" resetInitOnPrevious="false" useExternalParametrization="false" externalParametrizationName="" externalParametrizationMode="all">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.formcomponents.MultilineLabelComponent">
+                      <void property="labelText">
+                        <string>${i18n:SelectAssociationsLabel}</string>
+                      </void>
+                    </object>
+                  </java>
+                </serializedBean>
+                <initScript />
+                <visibilityScript />
+                <externalParametrizationPropertyNames />
+              </formComponent>
+              <formComponent name="" id="1140" customizedId="" beanClass="com.install4j.runtime.beans.formcomponents.FileAssociationsComponent" enabled="true" commentSet="false" comment="" insetTop="" insetLeft="" insetBottom="" insetRight="" resetInitOnPrevious="false" useExternalParametrization="true" externalParametrizationName="File Associations" externalParametrizationMode="include">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.formcomponents.FileAssociationsComponent">
+                      <void property="fillVertical">
+                        <boolean>true</boolean>
+                      </void>
+                    </object>
+                  </java>
+                </serializedBean>
+                <initScript />
+                <visibilityScript />
+                <externalParametrizationPropertyNames>
+                  <propertyName>showSelectionButtons</propertyName>
+                  <propertyName>selectionButtonPosition</propertyName>
+                </externalParametrizationPropertyNames>
+              </formComponent>
+            </formComponents>
+          </screen>
           <screen name="" id="15" customizedId="" beanClass="com.install4j.runtime.beans.screens.InstallationScreen" enabled="true" commentSet="false" comment="" actionElevationType="inherit" styleId="" rollbackBarrier="true" rollbackBarrierExitCode="0" backButton="2" finishScreen="false" wizardIndexChangeType="unchanged" wizardIndexKey="">
             <serializedBean>
               <java class="java.beans.XMLDecoder">
@@ -622,6 +626,24 @@ return console.askOkCancel(message, true);
                     <object class="com.install4j.runtime.beans.actions.desktop.RegisterAddRemoveAction">
                       <void property="itemName">
                         <string>${compiler:sys.fullName} ${compiler:sys.version}</string>
+                      </void>
+                    </object>
+                  </java>
+                </serializedBean>
+                <condition />
+              </action>
+              <action name="" id="1141" customizedId="" beanClass="com.install4j.runtime.beans.actions.desktop.CreateFileAssociationAction" enabled="true" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" rollbackBarrierExitCode="0" multiExec="false" failureStrategy="1" errorMessage="">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.actions.desktop.CreateFileAssociationAction">
+                      <void property="description">
+                        <string>DialogOS Dialog Model</string>
+                      </void>
+                      <void property="extension">
+                        <string>.dos</string>
+                      </void>
+                      <void property="launcherId">
+                        <string>250</string>
                       </void>
                     </object>
                   </java>
