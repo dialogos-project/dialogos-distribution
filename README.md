@@ -22,16 +22,21 @@ For the actual source distribution and documentation please refer to
 
 ## Building downloadable installers:
 
-Please refer to the instructions in [`install4j/README`](../blob/master/install4j/README). 
 You will need a local installation of [install4j](https://www.ej-technologies.com/products/install4j/overview.html).
+
+Run `install4j/execute-install4j.sh`.  The script will build the project and either build the installers (if install4j is in your PATH) or give you the install4j command you have to run (if install4j is not in your PATH).
+
+The installers can be found under `install4j/generated_installers/`.
+
 
 ## Release process:
 
 For new major/minor versions:
 
- * make a new branch in the DialogOS repository, call this branch vX.X-release 
+ * make a new branch in the DialogOS (not DialogOS-distribution!) repository, call this branch vX.X-release 
  * update the revision of DialogOS both in its `Diamant/src/main/java/com/clt/diamant/Version.java` as well as in `build.gradle`
  * set `IS_NONRELEASE = false;` in `Diamant/src/main/java/com/clt/diamant/Version.java`
+ * push that branch to github
  * Test.
  * tag the release commit in dialogos as vX.X.X
  * for all external plugins that you intend to include in the release: have them build against the tagged release of dialogos in `build.gradle`. Test.
@@ -39,7 +44,7 @@ For new major/minor versions:
  * refer to the updated tags/commit ids in `build.gradle` in dialogos-distribution
  * Test dialogos-distribution, consider updating the CHANGELOG
  * tag the release commit in dialogos-distribution with the exact same tag as you did for dialogos.
- * re-build again, and create installers as per instructions in [`install4j/README`](install4j/README)
+ * create installers as per instructions in [`install4j/README`](install4j/README)
  * in dialogos's github.com page, [create a release](https://github.com/dialogos-project/dialogos/releases), associate it with the tag and upload the release.
 
 For bugfix releases:
@@ -48,6 +53,11 @@ For bugfix releases:
  * apply bugfixes to the release branch (e.g. by cherry-picking from master)
  * update `Diamant/src/main/java/com/clt/diamant/Version.java`
  * Test.
- * tag bugfix release vX.X.Y ; ALSO do this bugfixes were only applied to plugins and dialogos itself was unchanged. This is important to keep release versions of dialogos-distribution and dialogos in synchrony.
+ * tag bugfix release vX.X.Y ; ALSO do this if bugfixes were only applied to plugins and dialogos itself was unchanged. This is important to keep release versions of dialogos-distribution and dialogos in synchrony.
  * continue as above. 
+
+Note that new files stemming from new / changed dependencies need to
+be added manually to the dialogos.install4j file.  There is no magic
+way to recognize them and especially not to group them into the
+correct installation bundle.
 

@@ -13,10 +13,9 @@
     </searchSequence>
     <variables>
       <variable name="dialogos.core.mavenversion" value="SET_EXTERNALLY" description="" category="" />
-      <variable name="dialogos.sqlite.mavenversion" value="SET_EXTERNALLY" description="" category="" />
-      <variable name="dialogos.pocketsphinx.mavenversion" value="SET_EXTERNALLY" description="" category="" />
-      <variable name="dialogos.nxt.mavenversion" value="SET_EXTERNALLY" description="" category="" />
-      <variable name="installer.download.base" value="http://tmp.chark.eu/dialogos" description="" category="" />
+	  <variable name="dialogos.sqlite.mavenversion" value="SET_EXTERNALLY" description="" category="" />
+	  <variable name="dialogos.nxt.mavenversion" value="SET_EXTERNALLY" description="" category="" />
+      <variable name="installer.download.base" value="SET_EXTERNALLY" description="" category="" />
     </variables>
     <mergedProjects />
     <codeSigning macEnabled="false" macPkcs12File="" windowsEnabled="false" windowsKeySource="pkcs12" windowsPvkFile="" windowsSpcFile="" windowsPkcs12File="" />
@@ -255,7 +254,6 @@
           <scanDirectory location="plugins" failOnError="false" />
           <scanDirectory location="plugins/Sphinx" failOnError="false" />
           <scanDirectory location="plugins/MaryTTS" failOnError="false" />
-          <scanDirectory location="plugins/Pocketsphinx" failOnError="false" />
           <scanDirectory location="plugins/NXT" failOnError="false" />
           <scanDirectory location="plugins/Sqlite" failOnError="false" />
         </classPath>

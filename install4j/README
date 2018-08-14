@@ -1,7 +1,0 @@
- * run ```gradlew installDist``` to prepare all the files that the installer wants to include
- * run execute-install4j.sh
-
-Note that new files stemming from new / changed dependencies need to
-be added manually to the dialogos.install4j file.  There is no magic
-way to recognize them and especially not to group them into the
-correct installation bundle.
