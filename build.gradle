@@ -11,12 +11,10 @@ repositories {
 
 // In this section you declare the dependencies for your production and test code
 dependencies {
-  runtime group:'com.github.dialogos-project', name:'dialogos', version:'ba65862370960c97d76a00971f206fe6ef621f25'
+  runtime group:'com.github.dialogos-project', name:'dialogos', version:'v2.0.0'
 
-  runtime group:'com.github.dialogos-project', name:'dialogos-plugin-sqlite', version:'adc3737153ab96844a685120733b02a108dcf7f3'
-  runtime group:'com.github.dialogos-project', name:'dialogos-plugin-nxt', version:'ef541d610f'
-  runtime group:'com.github.dialogos-project', name:'dialogos-plugin-pocketsphinx', version:'76bb33ace8f1861b72dcc4db2b0780127248e4a6'
-  runtime files('lib/pocketsphinx.jar') // for pocketsphinx plugin
+  runtime group:'com.github.dialogos-project', name:'dialogos-plugin-sqlite', version:'v1.0.1'
+  runtime group:'com.github.dialogos-project', name:'dialogos-plugin-nxt', version:'v2.0.0'
   runtime files('install4j/models/sphinx4-de-de-uhh.jar') // German model file for Sphinx-4
 
 //  runtime group:'com.github.dialogos-project', name:'dialogos-plugin-minimalio', version:'master-SNAPSHOT'
