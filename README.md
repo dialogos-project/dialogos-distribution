@@ -1,4 +1,4 @@
-# DialogOS distribution.
+# DialogOS distribution
 
 **Please report problems with the dialogos-distribution project on the [DialogOS issue tracker](https://github.com/dialogos-project/dialogos/issues)**
 
@@ -29,25 +29,85 @@ Run `install4j/execute-install4j.sh`.  The script will build the project and eit
 The installers generated are placed under `install4j/generated_installers/`.
 
 
-## Release process:
+## Release process for new major/minor versions
 
-For new major/minor versions:
+In the code examples below, we create a release for version 2.0.1. Modify the version as needed.
 
- * make a new branch in the DialogOS (not DialogOS-distribution!) repository, call this branch vX.X-release 
- * update the revision of DialogOS both in its `Diamant/src/main/java/com/clt/diamant/Version.java` as well as in `build.gradle`
- * set `IS_NONRELEASE = false;` in `Diamant/src/main/java/com/clt/diamant/Version.java`
- * push that branch to github
- * Test.
- * tag the release commit in dialogos as vX.X.X
- * for all external plugins that you intend to include in the release: have them build against the tagged release of dialogos in `build.gradle`. Test.
- * tag each plugin OR note down the release commit id
- * refer to the updated tags/commit ids in `build.gradle` in dialogos-distribution
- * Test dialogos-distribution, consider updating the CHANGELOG
- * tag the release commit in dialogos-distribution with the exact same tag as you did for dialogos.
- * create installers as per [the instructions above](#building-downloadable-installers)
- * in dialogos's github.com page, [create a release](https://github.com/dialogos-project/dialogos/releases), associate it with the tag and upload the release.
+### Create new release of DialogOS Core
 
-For bugfix releases:
+On the `master` branch, edit `CHANGELOG.md` to describe the new version. Commit and push your changes.
+
+Create a branch for the new release in the DialogOS (not DialogOS-distribution!) repository:
+
+```
+git checkout -b v2.0.1-release
+```
+
+Edit `Diamant/src/main/java/com/clt/diamant/Version.java` and `build.gradle` to set the new version. Set `IS_NONRELEASE = false;` in `Diamant/src/main/java/com/clt/diamant/Version.java`.
+
+Test, then push that branch to Github:
+
+```
+git commit -am "release 2.0.1"
+git push --set-upstream origin v2.0.1-release
+```
+
+Tag the release commit in the DialogOS repository:
+
+```
+git tag -a v2.0.1 -m "release version v2.0.1"
+git push origin --tags
+```
+
+### Update SNAPSHOT revision on DialogOS master branch
+
+Revert your working copy of DialogOS to the master branch:
+
+```
+git checkout master
+```
+
+Edit `Diamant/src/main/java/com/clt/diamant/Version.java` and `build.gradle` to set the new SNAPSHOT version. Ensure that `IS_NONRELEASE` is `true` (as it should always be on the `master` branch). Set the version in `Version.java` to `2.0.2` and in `build.gradle` to `2.0.2-SNAPSHOT`.
+
+Push the snapshot version to Github:
+
+```
+git commit -am "set next snapshot release in master branch"
+git push
+```
+
+### Update plugins
+
+For all plugins that you intend to include in the distribution for your new release (in particular, the NXT and Sqlite plugins): Change their `build.gradle` to point to the tagged release of your new DialogOS version. Rebuild and test.
+
+Update the version of the plugin in `build.gradle` and in the `getVersion` method of the plugin's Plugin subclass. Update the CHANGELOG.md. Rebuild, commit, and push.
+
+Tag the Git version as above and push the tag to Github. This should create a Jitpack artifact for the new version of the plugin.
+
+
+### Build installers
+
+Check out the repository `dialogos-project/dialogos-distribution`.
+
+Set the version in `build.gradle` and in `install4j/dialogos.install4j` (install4j -> application -> version) to the same version of the DialogOS Core.
+
+Edit `build.gradle` so it depends on your new versions of DialogOS Core and the plugins.
+
+Commit and push your changes. Tag the commit with the exact same tag that you used for DialogOS.
+
+Switch to the `install4j` directory and execute `execute-install4j.sh`. This should produce installers with the new version number in the `generated_installers` subdirectory for Windows, Linux, and MacOS.
+
+
+### Create the release
+
+On the [Github Releases](https://github.com/dialogos-project/dialogos/releases) page for DialogOS (not dialogos-release), select the new tag for your release and click on "Edit Tag". This will bring you to a page that allows you to create a release for that tag. Name the release "DialogOS 2.0.1", add a text that describes the main changes, and upload the full installers that install4j created.
+
+
+### Update the website
+
+In the `dialogos-project.github.io` repository, modify the tag and release in `_config.yml` to the new version.
+
+## For bugfix releases
 
  * apply any bugfixes necessary to external plugins and create new tag or note down commit id to be released
  * apply bugfixes to the release branch (e.g. by cherry-picking from master)
