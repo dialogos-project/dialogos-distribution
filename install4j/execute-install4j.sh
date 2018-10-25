@@ -7,12 +7,15 @@
 
 set -e
 
-cd $(dirname $0)
+# needed for compatibility across Linux and MacOS
+SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
+
+cd $SCRIPTPATH
 
 # make sure the dialogos distribution tree is up to date
 cd ..
 ./gradlew installDist
-cd $(dirname $0)
+cd $SCRIPTPATH
 
 # grep all version numbers from build.gradle
 dialogosver=$(grep " name:'dialogos'" ../build.gradle | sed "s/.*version:'\(.*\)'/\1/")

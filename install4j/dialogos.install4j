@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <install4j version="7.0.4" transformSequenceNumber="7">
   <directoryPresets config="models/sphinx4-de-de-uhh.jar" />
-  <application name="DialogOS" distributionSourceDir="" applicationId="0985-7768-2548-4677" mediaDir="./generated_installers" mediaFilePattern="${compiler:sys.shortName}_${compiler:sys.platform}_${compiler:sys.version}" compression="9" lzmaCompression="true" pack200Compression="true" excludeSignedFromPacking="true" commonExternalFiles="true" createMd5Sums="true" shrinkRuntime="true" shortName="DialogOS" publisher="" publisherWeb="http://dialogos-project.github.io" version="2.0 RC" allPathsRelative="true" backupOnSave="false" autoSave="false" convertDotsToUnderscores="true" macSignature="????" macVolumeId="623654d76cd9c023" javaMinVersion="1.7" javaMaxVersion="" allowBetaVM="false" jdkMode="runtimeJre" jdkName="">
+  <application name="DialogOS" distributionSourceDir="" applicationId="0985-7768-2548-4677" mediaDir="./generated_installers" mediaFilePattern="${compiler:sys.shortName}_${compiler:sys.platform}_${compiler:sys.version}" compression="9" lzmaCompression="true" pack200Compression="true" excludeSignedFromPacking="true" commonExternalFiles="true" createMd5Sums="true" shrinkRuntime="true" shortName="DialogOS" publisher="" publisherWeb="http://dialogos-project.github.io" version="2.0.1" allPathsRelative="true" backupOnSave="false" autoSave="false" convertDotsToUnderscores="true" macSignature="????" macVolumeId="623654d76cd9c023" javaMinVersion="1.7" javaMaxVersion="" allowBetaVM="false" jdkMode="runtimeJre" jdkName="">
     <languages skipLanguageSelection="false" languageSelectionInPrincipalLanguage="false">
       <principalLanguage id="en" customLocalizationFile="" />
       <additionalLanguages />
@@ -638,7 +638,7 @@ return console.askOkCancel(message, true);
                         <string>DialogOS Dialog Model</string>
                       </void>
                       <void property="extension">
-                        <string>.dos</string>
+                        <string>dos</string>
                       </void>
                       <void property="launcherId">
                         <string>250</string>
