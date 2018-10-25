@@ -2,31 +2,11 @@
 
 **Please report problems with the dialogos-distribution project on the [DialogOS issue tracker](https://github.com/dialogos-project/dialogos/issues)**
 
-
 This repository ties together the core of DialogOS with various plugins that should be distributed
 by containing all the relevant dependencies in its `build.gradle`, as well as all required data files
 (e.g. models for speech recognition). 
-It serves two purposes:
 
- 1. We build the installer files from a `full' installation that includes all plugins and data files.
-    This works by building and locally installing all files that DialogOS needs to run 
-    with all plugins that are deemed useful for distribution. 
-    We then call install4j (proprietary software) to make the installer files.
-    We finally upload the installer to some webspace.
- 2. It can be used to quickly run an installation of DialogOS with all plugins available by calling
-     * `./gradlew installDist` followed by `build/install/bin/dialogos-distribution`,
-     * or alternatively: `./gradlew run`. 
-
-For the actual source distribution and documentation please refer to 
-<http://github.com/dialogos-project/dialogos>.
-
-## Building downloadable installers:
-
-You will need a local installation of [install4j](https://www.ej-technologies.com/products/install4j/overview.html).
-
-Run `install4j/execute-install4j.sh`.  The script will build the project and either build the installers (if install4j is in your PATH) or give you the install4j command you have to run (if install4j is not in your PATH).
-
-The installers generated are placed under `install4j/generated_installers/`.
+Its main use is to generate downloadable installers for end users.
 
 
 ## Release process for new major/minor versions
@@ -86,6 +66,8 @@ Tag the Git version as above and push the tag to Github. This should create a Ji
 
 
 ### Build installers
+
+You will need a local installation of [install4j](https://www.ej-technologies.com/products/install4j/overview.html).
 
 Check out the repository `dialogos-project/dialogos-distribution`.
 
