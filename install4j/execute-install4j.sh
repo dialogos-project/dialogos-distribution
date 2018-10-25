@@ -12,6 +12,10 @@ SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 
 cd $SCRIPTPATH
 
+# This would work too, if "realpath" is installed.
+#installerdir="$(dirname "$(realpath "$0")")"
+#cd $installerdir
+
 # make sure the dialogos distribution tree is up to date
 cd ..
 ./gradlew installDist
@@ -24,13 +28,12 @@ nxtver=$(grep " name:'dialogos-plugin-nxt'" ../build.gradle | sed "s/.*version:'
 
 currver=$(git describe)
 
-downloadbase=https://github.com/dialogos/dialogos-distribution/releases/download/$currver/
-
-opts="-D dialogos.core.mavenversion=$dialogosver,dialogos.sqlite.mavenversion=$sqlitever,dialogos.nxt.mavenversion=$nxtver,dialogos.pocketsphinx.mavenversion=$pocketsphinxver,installer.download.base='$downloadbase' dialogos.install4j"
+opts="-D dialogos.core.mavenversion=$dialogosver,dialogos.sqlite.mavenversion=$sqlitever,dialogos.nxt.mavenversion=$nxtver,dialogos.pocketsphinx.mavenversion=$pocketsphinxver dialogos.install4j"
 
 if which install4jc > /dev/null; then
 	install4jc $opts
 else
 	echo "install4j not found in path.  Please run "
-	echo install4jc $opts
+	echo cd $installerdir
+	echo /path/to/your/install4j/install4jc $opts
 fi

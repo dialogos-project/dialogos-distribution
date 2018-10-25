@@ -1330,61 +1330,6 @@ return console.askYesNo(message, true);
     </styles>
   </installerGui>
   <mediaSets>
-    <unixInstaller name="Unix Net Installer" id="59" customizedId="" mediaFileName="${compiler:sys.shortName}_netinstaller_${compiler:sys.platform}_${compiler:sys.version}" installDir="${compiler:sys.shortName}" overridePrincipalLanguage="false" jreBitType="all" runPostProcessor="false" postProcessor="" failOnPostProcessorError="false" useLegacyMediaFileIds="false" legacyMediaFileIds="" downloadURL="${compiler:installer.download.base}" includeAllDownloadableComponents="false" includedJRE="" manualJREEntry="false" bundleType="1" jreURL="" jreShared="false" directDownload="false" installOnlyIfNecessary="false" customInstallBaseDir="" contentFilesType="3">
-      <excludedComponents />
-      <includedDownloadableComponents>
-        <component id="564" />
-        <component id="566" />
-        <component id="901" />
-      </includedDownloadableComponents>
-      <excludedLaunchers />
-      <excludedBeans />
-      <overriddenPrincipalLanguage id="en" customLocalizationFile="" />
-      <exclude />
-      <variables />
-      <autoUpdate useMinUpdatableVersion="false" minUpdatableVersion="" useMaxUpdatableVersion="false" maxUpdatableVersion="">
-        <commentFiles />
-        <customAttributes />
-      </autoUpdate>
-      <installerScript mode="1" file="">
-        <content />
-      </installerScript>
-    </unixInstaller>
-    <windows name="Windows Net Installer" id="351" customizedId="" mediaFileName="${compiler:sys.shortName}_netinstaller_${compiler:sys.platform}_${compiler:sys.version}" installDir="${compiler:sys.shortName}" overridePrincipalLanguage="false" jreBitType="64" runPostProcessor="false" postProcessor="" failOnPostProcessorError="false" useLegacyMediaFileIds="false" legacyMediaFileIds="" downloadURL="${compiler:installer.download.base}" includeAllDownloadableComponents="false" includedJRE="" manualJREEntry="false" bundleType="2" jreURL="" jreShared="false" directDownload="false" installOnlyIfNecessary="true" customInstallBaseDir="" contentFilesType="3" verifyIntegrity="true">
-      <excludedComponents />
-      <includedDownloadableComponents>
-        <component id="564" />
-        <component id="566" />
-        <component id="901" />
-      </includedDownloadableComponents>
-      <excludedLaunchers />
-      <excludedBeans />
-      <overriddenPrincipalLanguage id="en" customLocalizationFile="" />
-      <exclude />
-      <variables />
-      <autoUpdate useMinUpdatableVersion="false" minUpdatableVersion="" useMaxUpdatableVersion="false" maxUpdatableVersion="">
-        <commentFiles />
-        <customAttributes />
-      </autoUpdate>
-    </windows>
-    <macosFolder name="macOS Net Installer" id="1013" customizedId="" mediaFileName="${compiler:sys.shortName}_netinstaller_${compiler:sys.platform}_${compiler:sys.version}" installDir="${compiler:sys.fullName}" overridePrincipalLanguage="false" jreBitType="all" runPostProcessor="false" postProcessor="" failOnPostProcessorError="false" useLegacyMediaFileIds="false" legacyMediaFileIds="" downloadURL="${compiler:installer.download.base}" includeAllDownloadableComponents="false" includedJRE="" manualJREEntry="false" bundleType="1" jreURL="" jreShared="false" directDownload="false" installOnlyIfNecessary="false" requiredVmIdPrefix="" customInstallBaseDir="" contentFilesType="3" installerName="${i18n:InstallerName(${compiler:sys.fullName})}" volumeName="${compiler:sys.shortName}" compressDmg="false" signLaunchers="false">
-      <excludedComponents />
-      <includedDownloadableComponents>
-        <component id="564" />
-        <component id="566" />
-        <component id="901" />
-      </includedDownloadableComponents>
-      <excludedLaunchers />
-      <excludedBeans />
-      <overriddenPrincipalLanguage id="en" customLocalizationFile="" />
-      <exclude />
-      <variables />
-      <autoUpdate useMinUpdatableVersion="false" minUpdatableVersion="" useMaxUpdatableVersion="false" maxUpdatableVersion="">
-        <commentFiles />
-        <customAttributes />
-      </autoUpdate>
-      <topLevelFiles />
-    </macosFolder>
     <unixInstaller name="Unix Full Installer" id="1020" customizedId="" mediaFileName="${compiler:sys.shortName}_fullinstaller_${compiler:sys.platform}_${compiler:sys.version}" installDir="${compiler:sys.shortName}" overridePrincipalLanguage="false" jreBitType="all" runPostProcessor="false" postProcessor="" failOnPostProcessorError="false" useLegacyMediaFileIds="false" legacyMediaFileIds="" downloadURL="${compiler:installer.download.base}" includeAllDownloadableComponents="true" includedJRE="" manualJREEntry="false" bundleType="1" jreURL="" jreShared="false" directDownload="false" installOnlyIfNecessary="false" customInstallBaseDir="" contentFilesType="3">
       <excludedComponents />
       <includedDownloadableComponents>
