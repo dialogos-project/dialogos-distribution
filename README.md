@@ -26,7 +26,7 @@ You will need a local installation of [install4j](https://www.ej-technologies.co
 
 Run `install4j/execute-install4j.sh`.  The script will build the project and either build the installers (if install4j is in your PATH) or give you the install4j command you have to run (if install4j is not in your PATH).
 
-The installers can be found under `install4j/generated_installers/`.
+The installers generated are placed under `install4j/generated_installers/`.
 
 
 ## Release process:
@@ -44,7 +44,7 @@ For new major/minor versions:
  * refer to the updated tags/commit ids in `build.gradle` in dialogos-distribution
  * Test dialogos-distribution, consider updating the CHANGELOG
  * tag the release commit in dialogos-distribution with the exact same tag as you did for dialogos.
- * create installers as per instructions in [`install4j/README`](install4j/README)
+ * create installers as per [the instructions above](#building-downloadable-installers)
  * in dialogos's github.com page, [create a release](https://github.com/dialogos-project/dialogos/releases), associate it with the tag and upload the release.
 
 For bugfix releases:
