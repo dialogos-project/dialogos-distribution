@@ -165,10 +165,7 @@ def replace_version_website(v1,v2,v3):
 
         m = re.match(r"(.*tag:\s*)(\S+)(.*)", line)
         if m:
-            if v3:
-                return f"{m.group(1)}v{v1}.{v2}.{v3}{m.group(3)}"
-            else:
-                return f"{m.group(1)}v{v1}.{v2}{m.group(3)}"
+            return f"{m.group(1)}{v1}.{v2}.{v3}{m.group(3)}"
 
         m = re.match(r"(.*version:\s*\")([^\"]+)(.*)", line)
         if m:
