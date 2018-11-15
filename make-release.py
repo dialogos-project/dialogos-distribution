@@ -4,6 +4,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+from datetime import datetime
 
 
 
@@ -88,7 +89,7 @@ def replace_version_plugin_build_gradle(v1, v2, v3, is_release):
         line = line.rstrip()
 
         # dependencies
-        m = re.match(r"(.*name:\s*'dialogos'.*version:')([^']+)(.*)", line)
+        m = re.match(r"(.*name:\s*'dialogos.*version:')([^']+)(.*)", line)
         if m:
             return f"{m.group(1)}{v1}.{v2}.{v3}{m.group(3)}"
 
@@ -179,145 +180,192 @@ vs = f"{v1}.{v2}.{v3}"
 
 
 
+timestr = "{:%Y_%m_%d_%H:%M:%S}".format(datetime.now())
+logfilename = f"log_{timestr}.txt"
+
+print(f"Logfile is {logfilename}.")
+
+with open(logfilename, "w") as logfile:
+    ### CREATE RELEASE FOR DIALOGOS CORE
+
+    print("Updating and building DialogOS Core ...")
+
+    ## Check out repositories
+    subprocess.run(["git", "clone", f"{github_base}/dialogos"], stdout=logfile, stderr=logfile)
 
 
-### CREATE RELEASE FOR DIALOGOS CORE
-
-## Check out repositories
-subprocess.run(["git", "clone", f"{github_base}/dialogos"])
-
-
-## Create branch for release in dialogos
-os.chdir("dialogos")
-subprocess.run(["git", "checkout", "-b", f"v{vs}-release"])
+    ## Create branch for release in dialogos
+    os.chdir("dialogos")
+    subprocess.run(["git", "checkout", "-b", f"v{vs}-release"], stdout=logfile, stderr=logfile)
 
 
-## Edit dialogos version files
-edit_file("Diamant/src/main/java/com/clt/diamant/Version.java", replace_version_java(v1, v2, v3, True))
-edit_file("build.gradle", replace_version_build_gradle(v1, v2, v3, True))
+    ## Edit dialogos version files
+    edit_file("Diamant/src/main/java/com/clt/diamant/Version.java", replace_version_java(v1, v2, v3, True))
+    edit_file("build.gradle", replace_version_build_gradle(v1, v2, v3, True))
 
 
-## Check that it still builds
-cpl = subprocess.run(["./gradlew", "compileJava", "test"])
-if cpl.returncode > 0:
-    print("\n\nFailed rebuilding dialogos after edits. Please fix and rerun this script.")
-    sys.exit(1)
+    ## Check that it still builds
+    cpl = subprocess.run(["./gradlew", "compileJava", "test"], stdout=logfile, stderr=logfile)
+    if cpl.returncode > 0:
+        print("\n\nFailed rebuilding dialogos after edits. Please fix and rerun this script.")
+        sys.exit(1)
 
-## Publish dialogos-core and all subprojects to maven-local repository so plugins can pick them up
-cpl = subprocess.run(["./gradlew", "publishToMavenLocal"])
-if cpl.returncode > 0:
-    print("\n\nFailed publishing dialogos to Maven Local. Please fix and rerun this script.")
-    sys.exit(1)
-
-
-## Push new versions of these files to Github
-# subprocess.run(["git", "commit", "-am", f"release {vs}"])
-# subprocess.run(["git", "push", "--set-upstream", "origin", "v{vs}-release"])
-
-## Tag dialogos release; NB tag also defines version name on Jitpack
-# subprocess.run(["git", "tag", "-a", f"{vs}", "-m", "release version v{vs}"])
-# subprocess.run(["git", "push", "origin", "--tags"])
-
-## Back to original directory
-os.chdir("..")
+    ## Publish dialogos-core and all subprojects to maven-local repository so plugins can pick them up
+    cpl = subprocess.run(["./gradlew", "publishToMavenLocal"], stdout=logfile, stderr=logfile)
+    if cpl.returncode > 0:
+        print("\n\nFailed publishing dialogos to Maven Local. Please fix and rerun this script.")
+        sys.exit(1)
 
 
-
-
-
-## CREATE RELEASE FOR NXT PLUGIN
-
-# Check out repositories
-subprocess.run(["git", "clone", f"{github_base}/dialogos-plugin-nxt"])
-
-# Create branch for release in dialogos
-os.chdir("dialogos-plugin-nxt")
-subprocess.run(["git", "checkout", "-b", f"v{vs}-release"])
-
-# Edit dialogos version files
-edit_file("src/main/java/com/clt/dialogos/lego/nxt/Plugin.java", replace_version_plugin_java(v1, v2, v3, True))
-edit_file("build.gradle", replace_version_plugin_build_gradle(v1, v2, v3, True))
-
-# Check that it still builds
-cpl = subprocess.run(["./gradlew", "compileJava", "test"])
-if cpl.returncode > 0:
-    print("\n\nFailed rebuilding NXT plugin after edits. Please fix and rerun this script.")
-    sys.exit(1)
-
-# Push new versions of these files to Github
-# subprocess.run(["git", "commit", "-am", f"release {vs}: now depends on dialogos-core v{vs}"])
-# subprocess.run(["git", "push", "--set-upstream", "origin", "v{vs}-release"])
-
-# Tag dialogos release; NB tag also defines version name on Jitpack
-# subprocess.run(["git", "tag", "-a", f"{vs}", "-m", "release version v{vs}"])
-# subprocess.run(["git", "push", "origin", "--tags"])
-
-# Back to original directory
-os.chdir("..")
+    ## Back to original directory
+    os.chdir("..")
 
 
 
 
 
-## CREATE RELEASE FOR SQLITE PLUGIN
+    ## CREATE RELEASE FOR NXT PLUGIN
 
-# Check out repositories
-subprocess.run(["git", "clone", f"{github_base}/dialogos-plugin-sqlite"])
+    print("Updating and building NXT plugin ...")
 
-# Create branch for release in dialogos
-os.chdir("dialogos-plugin-sqlite")
-subprocess.run(["git", "checkout", "-b", f"v{vs}-release"])
+    # Check out repositories
+    subprocess.run(["git", "clone", f"{github_base}/dialogos-plugin-nxt"], stdout=logfile, stderr=logfile)
 
-# Edit dialogos version files
-edit_file("src/main/java/edu/cmu/lti/dialogos/db/sqlite/Plugin.java", replace_version_plugin_java(v1, v2, v3, True))
-edit_file("build.gradle", replace_version_plugin_build_gradle(v1, v2, v3, True))
+    # Create branch for release in dialogos
+    os.chdir("dialogos-plugin-nxt")
+    subprocess.run(["git", "checkout", "-b", f"v{vs}-release"], stdout=logfile, stderr=logfile)
 
-# Check that it still builds
-cpl = subprocess.run(["./gradlew", "compileJava", "test"])
-if cpl.returncode > 0:
-    print("\n\nFailed rebuilding SQLite plugin after edits. Please fix and rerun this script.")
-    sys.exit(1)
+    # Edit dialogos version files
+    edit_file("src/main/java/com/clt/dialogos/lego/nxt/Plugin.java", replace_version_plugin_java(v1, v2, v3, True))
+    edit_file("build.gradle", replace_version_plugin_build_gradle(v1, v2, v3, True))
 
-# Push new versions of these files to Github
-# subprocess.run(["git", "commit", "-am", f"release {vs}: now depends on dialogos-core v{vs}"])
-# subprocess.run(["git", "push", "--set-upstream", "origin", "v{vs}-release"])
+    # Check that it still builds
+    cpl = subprocess.run(["./gradlew", "compileJava", "test", "publishToMavenLocal"], stdout=logfile, stderr=logfile)
+    if cpl.returncode > 0:
+        print("\n\nFailed rebuilding NXT plugin after edits. Please fix and rerun this script.")
+        sys.exit(1)
 
-# Tag dialogos release; NB tag also defines version name on Jitpack
-# subprocess.run(["git", "tag", "-a", f"{vs}", "-m", "release version v{vs}"])
-# subprocess.run(["git", "push", "origin", "--tags"])
+    # Push new versions of these files to Github
+    # subprocess.run(["git", "commit", "-am", f"release {vs}: now depends on dialogos-core v{vs}"])
+    # subprocess.run(["git", "push", "--set-upstream", "origin", "v{vs}-release"])
 
-# Back to original directory
-os.chdir("..")
+    # Tag dialogos release; NB tag also defines version name on Jitpack
+    # subprocess.run(["git", "tag", "-a", f"{vs}", "-m", "release version v{vs}"])
+    # subprocess.run(["git", "push", "origin", "--tags"])
 
-
-
-
-
-
-## BUILD DISTRIBUTION
-
-# Check out repositories
-subprocess.run(["git", "clone", f"{github_base}/dialogos-distribution"])
-
-# Create branch for release in dialogos
-os.chdir("dialogos-distribution")
-subprocess.run(["git", "checkout", "-b", f"v{vs}-release"])
-
-# Edit version in files
-edit_file("install4j/dialogos.install4j", replace_version_install4j(v1, v2, v3))
-edit_file("build.gradle", replace_version_plugin_build_gradle(v1, v2, v3, True))
+    # Back to original directory
+    os.chdir("..")
 
 
 
 
 
-# Push new versions of these files to Github
-# subprocess.run(["git", "commit", "-am", f"release {vs}: now depends on dialogos-core v{vs}"])
-# subprocess.run(["git", "push", "--set-upstream", "origin", "v{vs}-release"])
+    ## CREATE RELEASE FOR SQLITE PLUGIN
 
-# Tag dialogos release; NB tag also defines version name on Jitpack
-# subprocess.run(["git", "tag", "-a", f"{vs}", "-m", "release version v{vs}"])
-# subprocess.run(["git", "push", "origin", "--tags"])
+    print("Updating and building SQLite plugin ...")
 
-# Back to original directory
-os.chdir("..")
+    # Check out repositories
+    subprocess.run(["git", "clone", f"{github_base}/dialogos-plugin-sqlite"], stdout=logfile, stderr=logfile)
+
+    # Create branch for release in dialogos
+    os.chdir("dialogos-plugin-sqlite")
+    subprocess.run(["git", "checkout", "-b", f"v{vs}-release"], stdout=logfile, stderr=logfile)
+
+    # Edit dialogos version files
+    edit_file("src/main/java/edu/cmu/lti/dialogos/db/sqlite/Plugin.java", replace_version_plugin_java(v1, v2, v3, True))
+    edit_file("build.gradle", replace_version_plugin_build_gradle(v1, v2, v3, True))
+
+    # Check that it still builds
+    cpl = subprocess.run(["./gradlew", "compileJava", "test", "publishToMavenLocal"], stdout=logfile, stderr=logfile)
+    if cpl.returncode > 0:
+        print("\n\nFailed rebuilding SQLite plugin after edits. Please fix and rerun this script.")
+        sys.exit(1)
+
+    # Push new versions of these files to Github
+    # subprocess.run(["git", "commit", "-am", f"release {vs}: now depends on dialogos-core v{vs}"])
+    # subprocess.run(["git", "push", "--set-upstream", "origin", "v{vs}-release"])
+
+    # Tag dialogos release; NB tag also defines version name on Jitpack
+    # subprocess.run(["git", "tag", "-a", f"{vs}", "-m", "release version v{vs}"])
+    # subprocess.run(["git", "push", "origin", "--tags"])
+
+    # Back to original directory
+    os.chdir("..")
+
+
+
+
+
+
+    ## BUILD DISTRIBUTION
+
+    print("Updating and building dialogos-distribution ...")
+
+    # Check out repositories
+    subprocess.run(["git", "clone", f"{github_base}/dialogos-distribution"], stdout=logfile, stderr=logfile)
+
+    # Create branch for release in dialogos
+    os.chdir("dialogos-distribution")
+    subprocess.run(["git", "checkout", "-b", f"v{vs}-release"], stdout=logfile, stderr=logfile)
+
+    # Edit version in files
+    edit_file("install4j/dialogos.install4j", replace_version_install4j(v1, v2, v3))
+    edit_file("build.gradle", replace_version_plugin_build_gradle(v1, v2, v3, True))
+
+    # Build installer
+    cpl = subprocess.run(["./gradlew", "build"], stdout=logfile, stderr=logfile)
+    if cpl.returncode > 0:
+        print("\n\nFailed rebuilding dialogos-distribution after edits. Please fix and rerun this script.")
+        sys.exit(1)
+
+    print("Building installers ...")
+
+    os.chdir("install4j")
+    cpl = subprocess.run(["./execute-install4j.sh", "build"], stdout=logfile, stderr=logfile)
+    if cpl.returncode > 0:
+        print("\n\nFailed building install4j installer. Please fix and rerun this script.")
+        sys.exit(1)
+
+    # If install4j fails because install4jc is not in the PATH, add it to the PATH before running
+    # the make-release script.
+    #
+    # On MacOS: export PATH=$PATH:/Applications/install4j.app/Contents/Resources/app/bin
+
+    # Push new versions of these files to Github
+    # subprocess.run(["git", "commit", "-am", f"release {vs}"])
+    # subprocess.run(["git", "push", "--set-upstream", "origin", "v{vs}-release"])
+
+    # Tag dialogos release; NB tag also defines version name on Jitpack
+    # subprocess.run(["git", "tag", "-a", f"{vs}", "-m", "release version v{vs}"])
+    # subprocess.run(["git", "push", "origin", "--tags"])
+
+    # Back to original directory
+    os.chdir("..")
+
+
+    print("Done, installers are in dialogos-distribution/install4j/generated_installers.\n")
+
+
+
+    sys.exit(0)
+
+    ## PUSH AND TAG ALL REPOSITORIES
+    ## NB tag also determines version number on Jitpack
+    print("Pushing and tagging DialogOS Core to Github ...")
+
+    for dir in ["dialogos", "dialogos-plugin-nxt", "dialogos-plugin-sqlite", "dialgos-distribution"]:
+        print(f"Pushing to and tagging on Github: {dir} ...")
+        os.chdir(dir)
+        subprocess.run(["git", "commit", "-am", f"release {vs}"], stdout=logfile, stderr=logfile)
+        subprocess.run(["git", "push", "--set-upstream", "origin", "v{vs}-release"], stdout=logfile, stderr=logfile)
+        subprocess.run(["git", "tag", "-a", f"{vs}", "-m", "release version v{vs}"], stdout=logfile, stderr=logfile)
+        subprocess.run(["git", "push", "origin", "--tags"], stdout=logfile, stderr=logfile)
+        os.chdir("..")
+
+
+    ## PREPARE DIALOGOS FOR NEXT DEVELOPMENT CYCLE
+
+
+
+
+
