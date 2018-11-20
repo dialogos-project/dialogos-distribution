@@ -36,4 +36,5 @@ else
 	echo "install4j not found in path.  Please run "
 	echo cd $installerdir
 	echo /path/to/your/install4j/install4jc $opts
+	exit 1
 fi

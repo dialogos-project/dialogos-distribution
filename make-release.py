@@ -12,12 +12,30 @@ import argparse
 parser = argparse.ArgumentParser(description="Build a DialogOS release.")
 
 parser.add_argument("--publish", action="store_true", default=False, help="Push changes to Github and update the website. Without this option, only local changes are made.")
+parser.add_argument("--only-publish", action="store_true", default=False, help="Push changes to Github and update the website. Assume that the distribution was already built correctly locally and only needs to be pushed.")
 
 args = parser.parse_args()
 
 
 
 ### UTILITY METHODS FOR FILE EDITING
+
+def check_special_errors(logfile):
+    logfile.flush()
+
+    with open(logfile.name, "r") as read_logfile:
+        for line in read_logfile:
+            if "install4j not found in path" in line:
+                print("\nERROR: install4j not found in path.")
+                print("Please put install4j on the path and rerun the script.")
+                sys.exit(1)
+
+            m = re.match(r"fatal: destination path '([^']+)' already exists and is not an empty directory.*", line)
+            if m:
+                print(f"\nERROR: Trying to git clone, but directory '{m.group(1)}' already exists.")
+                print("Go to a fresh directory and rerun the script.")
+                sys.exit(1)
+    
 
 def run(cmdlist, logfile):
     cpl = subprocess.run(cmdlist, stdout=logfile, stderr=logfile)
@@ -26,6 +44,9 @@ def run(cmdlist, logfile):
         print(f"\nError while executing command (return code: {cpl.returncode}).")
         print(f"Erroneous command was: {' '.join(cmdlist)}")
         print(f"   in directory {os.getcwd()}")
+
+        check_special_errors(logfile)
+
         print("Please check the logfile for errors.")
         sys.exit(1)
 
@@ -252,148 +273,155 @@ logfilename = f"log_{timestr}.txt"
 print(f"\nLogfile is {logfilename}.\n")
 
 with open(logfilename, "w") as logfile:
-    ### CREATE RELEASE FOR DIALOGOS CORE
+    if args.only_publish:
+        print("Running with option --only-publish, skipping rebuild.")
 
-    print("Updating and building DialogOS Core ...")
+    else:
+        ### CREATE RELEASE FOR DIALOGOS CORE
 
-    ## Check out repositories
-    run(["git", "clone", f"{github_base}/dialogos"], logfile)
+        print("Updating and building DialogOS Core ...")
 
-
-    ## Create branch for release in dialogos
-    os.chdir("dialogos")
-    run(["git", "checkout", "-b", f"v{vs}-release"], logfile)
-
-
-    ## Edit dialogos version files
-    edit_file("Diamant/src/main/java/com/clt/diamant/Version.java", replace_version_java(v1, v2, v3, True))
-    edit_file("build.gradle", replace_version_build_gradle(v1, v2, v3, True))
-    run(["git", "commit", "-am", f"release {vs}"], logfile)
-
-    ## Check that it still builds
-    cpl = subprocess.run(["./gradlew", "compileJava", "test"], stdout=logfile, stderr=logfile)
-    if cpl.returncode > 0:
-        print("\n\nFailed rebuilding dialogos after edits. Please fix and rerun this script.")
-        sys.exit(1)
-
-    ## Publish dialogos-core and all subprojects to maven-local repository so plugins can pick them up
-    cpl = subprocess.run(["./gradlew", "publishToMavenLocal"], stdout=logfile, stderr=logfile)
-    if cpl.returncode > 0:
-        print("\n\nFailed publishing dialogos to Maven Local. Please fix and rerun this script.")
-        sys.exit(1)
+        ## Check out repositories
+        run(["git", "clone", f"{github_base}/dialogos"], logfile)
 
 
-    ## Back to original directory
-    os.chdir("..")
+        ## Create branch for release in dialogos
+        os.chdir("dialogos")
+        run(["git", "checkout", "-b", f"v{vs}-release"], logfile)
 
 
+        ## Edit dialogos version files
+        edit_file("Diamant/src/main/java/com/clt/diamant/Version.java", replace_version_java(v1, v2, v3, True))
+        edit_file("build.gradle", replace_version_build_gradle(v1, v2, v3, True))
+        run(["git", "commit", "-am", f"release {vs}"], logfile)
+
+        ## Check that it still builds
+        cpl = subprocess.run(["./gradlew", "compileJava", "test"], stdout=logfile, stderr=logfile)
+        if cpl.returncode > 0:
+            print("\n\nFailed rebuilding dialogos after edits. Please fix and rerun this script.")
+            sys.exit(1)
+
+            ## Publish dialogos-core and all subprojects to maven-local repository so plugins can pick them up
+            cpl = subprocess.run(["./gradlew", "publishToMavenLocal"], stdout=logfile, stderr=logfile)
+            if cpl.returncode > 0:
+                print("\n\nFailed publishing dialogos to Maven Local. Please fix and rerun this script.")
+                sys.exit(1)
 
 
-
-    ## CREATE RELEASE FOR NXT PLUGIN
-
-    print("Updating and building NXT plugin ...")
-
-    # Check out repositories
-    run(["git", "clone", f"{github_base}/dialogos-plugin-nxt"], logfile)
-
-    # Create branch for release in dialogos
-    os.chdir("dialogos-plugin-nxt")
-    run(["git", "checkout", "-b", f"v{vs}-release"], logfile)
-
-    # Edit dialogos version files
-    edit_file("src/main/java/com/clt/dialogos/lego/nxt/Plugin.java", replace_version_plugin_java(v1, v2, v3, True))
-    edit_file("build.gradle", replace_version_plugin_build_gradle(v1, v2, v3, True))
-    run(["git", "commit", "-am", f"release {vs}"], logfile)
-
-    # Check that it still builds
-    cpl = subprocess.run(["./gradlew", "compileJava", "test", "publishToMavenLocal"], stdout=logfile, stderr=logfile)
-    if cpl.returncode > 0:
-        print("\n\nFailed rebuilding NXT plugin after edits. Please fix and rerun this script.")
-        sys.exit(1)
-
-    # Back to original directory
-    os.chdir("..")
+        ## Back to original directory
+        os.chdir("..")
 
 
 
 
 
-    ## CREATE RELEASE FOR SQLITE PLUGIN
+        ## CREATE RELEASE FOR NXT PLUGIN
 
-    print("Updating and building SQLite plugin ...")
+        print("Updating and building NXT plugin ...")
 
-    # Check out repositories
-    run(["git", "clone", f"{github_base}/dialogos-plugin-sqlite"], logfile)
+        # Check out repositories
+        run(["git", "clone", f"{github_base}/dialogos-plugin-nxt"], logfile)
 
-    # Create branch for release in dialogos
-    os.chdir("dialogos-plugin-sqlite")
-    run(["git", "checkout", "-b", f"v{vs}-release"], logfile)
+        # Create branch for release in dialogos
+        os.chdir("dialogos-plugin-nxt")
+        run(["git", "checkout", "-b", f"v{vs}-release"], logfile)
 
-    # Edit dialogos version files
-    edit_file("src/main/java/edu/cmu/lti/dialogos/db/sqlite/Plugin.java", replace_version_plugin_java(v1, v2, v3, True))
-    edit_file("build.gradle", replace_version_plugin_build_gradle(v1, v2, v3, True))
-    run(["git", "commit", "-am", f"release {vs}"], logfile)
+        # Edit dialogos version files
+        edit_file("src/main/java/com/clt/dialogos/lego/nxt/Plugin.java", replace_version_plugin_java(v1, v2, v3, True))
+        edit_file("build.gradle", replace_version_plugin_build_gradle(v1, v2, v3, True))
+        run(["git", "commit", "-am", f"release {vs}"], logfile)
 
-    # Check that it still builds
-    cpl = subprocess.run(["./gradlew", "compileJava", "test", "publishToMavenLocal"], stdout=logfile, stderr=logfile)
-    if cpl.returncode > 0:
-        print("\n\nFailed rebuilding SQLite plugin after edits. Please fix and rerun this script.")
-        sys.exit(1)
+        # Check that it still builds
+        cpl = subprocess.run(["./gradlew", "compileJava", "test", "publishToMavenLocal"], stdout=logfile, stderr=logfile)
+        if cpl.returncode > 0:
+            print("\n\nFailed rebuilding NXT plugin after edits. Please fix and rerun this script.")
+            sys.exit(1)
 
-    # Back to original directory
-    os.chdir("..")
-
-
+        # Back to original directory
+        os.chdir("..")
 
 
 
 
-    ## BUILD DISTRIBUTION
 
-    print("Updating and building dialogos-distribution ...")
+        ## CREATE RELEASE FOR SQLITE PLUGIN
 
-    # Check out repositories
-    run(["git", "clone", f"{github_base}/dialogos-distribution"], logfile)
+        print("Updating and building SQLite plugin ...")
 
-    # Create branch for release in dialogos
-    os.chdir("dialogos-distribution")
-    run(["git", "checkout", "-b", f"v{vs}-release"], logfile)
+        # Check out repositories
+        run(["git", "clone", f"{github_base}/dialogos-plugin-sqlite"], logfile)
 
-    # Edit version in files
-    edit_file("install4j/dialogos.install4j", replace_version_install4j(v1, v2, v3))
-    edit_file("build.gradle", replace_version_plugin_build_gradle(v1, v2, v3, True))
-    run(["git", "commit", "-am", f"release {vs}"], logfile)
+        # Create branch for release in dialogos
+        os.chdir("dialogos-plugin-sqlite")
+        run(["git", "checkout", "-b", f"v{vs}-release"], logfile)
 
-    # Build installer
-    cpl = subprocess.run(["./gradlew", "build"], stdout=logfile, stderr=logfile)
-    if cpl.returncode > 0:
-        print("\n\nFailed rebuilding dialogos-distribution after edits. Please fix and rerun this script.")
-        sys.exit(1)
+        # Edit dialogos version files
+        edit_file("src/main/java/edu/cmu/lti/dialogos/db/sqlite/Plugin.java", replace_version_plugin_java(v1, v2, v3, True))
+        edit_file("build.gradle", replace_version_plugin_build_gradle(v1, v2, v3, True))
+        run(["git", "commit", "-am", f"release {vs}"], logfile)
 
-    print("Building installers ...")
+        # Check that it still builds
+        cpl = subprocess.run(["./gradlew", "compileJava", "test", "publishToMavenLocal"], stdout=logfile, stderr=logfile)
+        if cpl.returncode > 0:
+            print("\n\nFailed rebuilding SQLite plugin after edits. Please fix and rerun this script.")
+            sys.exit(1)
 
-    os.chdir("install4j")
-    cpl = subprocess.run(["./execute-install4j.sh", "build"], stdout=logfile, stderr=logfile)
-    if cpl.returncode > 0:
-        print("\n\nFailed building install4j installer. Please fix and rerun this script.")
-        sys.exit(1)
-
-    # If install4j fails because install4jc is not in the PATH, add it to the PATH before running
-    # the make-release script.
-    #
-    # On MacOS: export PATH=$PATH:/Applications/install4j.app/Contents/Resources/app/bin
-
-    # Back to original directory
-    os.chdir("../..")
+        # Back to original directory
+        os.chdir("..")
 
 
-    print("Done, installers are in dialogos-distribution/install4j/generated_installers.")
-    print(f"Please upload them to Github under the {vs} release on https://github.com/dialogos-project/dialogos/tags")
-    print("")
 
 
-    if not args.publish:
+
+
+        ## BUILD DISTRIBUTION
+
+        print("Updating and building dialogos-distribution ...")
+
+        # Check out repositories
+        run(["git", "clone", f"{github_base}/dialogos-distribution"], logfile)
+
+        # Create branch for release in dialogos
+        os.chdir("dialogos-distribution")
+        run(["git", "checkout", "-b", f"v{vs}-release"], logfile)
+
+        # Edit version in files
+        edit_file("install4j/dialogos.install4j", replace_version_install4j(v1, v2, v3))
+        edit_file("build.gradle", replace_version_plugin_build_gradle(v1, v2, v3, True))
+        run(["git", "commit", "-am", f"release {vs}"], logfile)
+
+        # Build installer
+        cpl = subprocess.run(["./gradlew", "build"], stdout=logfile, stderr=logfile)
+        if cpl.returncode > 0:
+            print("\n\nFailed rebuilding dialogos-distribution after edits. Please fix and rerun this script.")
+            sys.exit(1)
+
+        print("Building installers ...")
+
+        os.chdir("install4j")
+        cpl = subprocess.run(["./execute-install4j.sh", "build"], stdout=logfile, stderr=logfile)
+        if cpl.returncode > 0:
+            print("\n\nFailed building install4j installer. Please fix and rerun this script.")
+            sys.exit(1)
+
+        # If install4j fails because install4jc is not in the PATH, add it to the PATH before running
+        # the make-release script.
+        #
+        # On MacOS: export PATH=$PATH:/Applications/install4j.app/Contents/Resources/app/bin
+
+        # Back to original directory
+        os.chdir("../..")
+
+
+        print("Done, installers are in dialogos-distribution/install4j/generated_installers.")
+        print(f"Please upload them to Github under the {vs} release on https://github.com/dialogos-project/dialogos/tags")
+        print("")
+
+
+
+        
+
+    if not args.publish and not args.only_publish:
         print("Skipping 'git push' operations and website modifications.")
         print("If you want them, rerun this script with the --publish option.")
 
