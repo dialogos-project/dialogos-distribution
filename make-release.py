@@ -6,6 +6,15 @@ import sys
 import tempfile
 from datetime import datetime
 
+### PARSING COMMAND-LINE OPTIONS
+
+import argparse
+parser = argparse.ArgumentParser(description="Build a DialogOS release.")
+
+parser.add_argument("--publish", action="store_true", default=False, help="Push changes to Github and update the website. Without this option, only local changes are made.")
+
+args = parser.parse_args()
+
 
 
 ### UTILITY METHODS FOR FILE EDITING
@@ -384,55 +393,58 @@ with open(logfilename, "w") as logfile:
     print("")
 
 
+    if not args.publish:
+        print("Skipping 'git push' operations and website modifications.")
+        print("If you want them, rerun this script with the --publish option.")
 
 
-    ## PUSH AND TAG ALL REPOSITORIES
-    ## NB tag also determines version number on Jitpack
-    print("Pushing and tagging DialogOS Core to Github ...")
+    else:
+        ## PUSH AND TAG ALL REPOSITORIES
+        ## NB tag also determines version number on Jitpack
+        print("Pushing and tagging DialogOS Core to Github ...")
 
-    for dir in ["dialogos", "dialogos-plugin-nxt", "dialogos-plugin-sqlite", "dialogos-distribution"]:
-        print(f"Tagging Git versions and pushing to Github: {dir} ...")
-        os.chdir(dir)
-        run(["git", "push", "--set-upstream", "origin", f"v{vs}-release"], logfile)
-        run(["git", "tag", "-a", f"{vs}", "-m", f"release version v{vs}"], logfile)
-        run(["git", "push", "origin", "--tags"], logfile)
+        for dir in ["dialogos", "dialogos-plugin-nxt", "dialogos-plugin-sqlite", "dialogos-distribution"]:
+            print(f"Tagging Git versions and pushing to Github: {dir} ...")
+            os.chdir(dir)
+            run(["git", "push", "--set-upstream", "origin", f"v{vs}-release"], logfile)
+            run(["git", "tag", "-a", f"{vs}", "-m", f"release version v{vs}"], logfile)
+            run(["git", "push", "origin", "--tags"], logfile)
+            os.chdir("..")
+
+
+        ## PREPARE DIALOGOS FOR NEXT DEVELOPMENT CYCLE
+        print(f"Setting version of DialogOS Core to next development version ({s_new_dev_version}) ...")
+
+        os.chdir("dialogos")
+        run(["git", "checkout", "master"], logfile)
+
+        # edit dialogos version files
+        edit_file("Diamant/src/main/java/com/clt/diamant/Version.java", replace_version_java(dv1, dv2, dv3, False))
+        edit_file("build.gradle", replace_version_build_gradle(dv1, dv2, dv3, False))
+        run(["git", "commit", "-am", f"prepared for next development cycle: version {s_new_dev_version}"], logfile)
+        run(["git", "push"], logfile)
+
+        # check that it still builds
+        cpl = subprocess.run(["./gradlew", "compileJava", "test"], stdout=logfile, stderr=logfile)
+        if cpl.returncode > 0:
+            print("\n\nFailed rebuilding dialogos after edits. Please fix and rerun this script.")
+            sys.exit(1)
+
         os.chdir("..")
 
 
 
-    ## PREPARE DIALOGOS FOR NEXT DEVELOPMENT CYCLE
-    print(f"Setting version of DialogOS Core to next development version ({s_new_dev_version}) ...")
+        ## UPDATE WEBSITE
+        print("Updating website ...")
 
-    os.chdir("dialogos")
-    run(["git", "checkout", "master"], logfile)
+        run(["git", "clone", f"{github_base}/dialogos-project.github.io"], logfile)
+        os.chdir("dialogos-project.github.io")
 
-    # edit dialogos version files
-    edit_file("Diamant/src/main/java/com/clt/diamant/Version.java", replace_version_java(dv1, dv2, dv3, False))
-    edit_file("build.gradle", replace_version_build_gradle(dv1, dv2, dv3, False))
-    run(["git", "commit", "-am", f"prepared for next development cycle: version {s_new_dev_version}"], logfile)
-    run(["git", "push"], logfile)
+        edit_file("_config.yml", replace_version_website(v1,v2,v3))
 
-    # check that it still builds
-    cpl = subprocess.run(["./gradlew", "compileJava", "test"], stdout=logfile, stderr=logfile)
-    if cpl.returncode > 0:
-        print("\n\nFailed rebuilding dialogos after edits. Please fix and rerun this script.")
-        sys.exit(1)
-
-    os.chdir("..")
-
-
-
-    ## UPDATE WEBSITE
-    print("Updating website ...")
-
-    run(["git", "clone", f"{github_base}/dialogos-project.github.io"], logfile)
-    os.chdir("dialogos-project.github.io")
-
-    edit_file("_config.yml", replace_version_website(v1,v2,v3))
-
-    run(["git", "commit", "-am", "updated link to release {vs}"], logfile)
-    run(["git", "push"], logfile)
-
+        run(["git", "commit", "-am", "updated link to release {vs}"], logfile)
+        run(["git", "push"], logfile)
+    
 
     print("Done.")
 
