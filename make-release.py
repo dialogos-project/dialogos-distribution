@@ -12,9 +12,15 @@ import argparse
 parser = argparse.ArgumentParser(description="Build a DialogOS release.")
 
 parser.add_argument("--publish", action="store_true", default=False, help="Push changes to Github and update the website. Without this option, only local changes are made.")
-parser.add_argument("--only-publish", action="store_true", default=False, help="Push changes to Github and update the website. Assume that the distribution was already built correctly locally and only needs to be pushed.")
+parser.add_argument("--only-publish", action="store_true", default=False, help="Push changes to Github and update the website. Assumes that the distribution was already built correctly locally and only needs to be pushed.")
 
 args = parser.parse_args()
+
+
+timestr = "{:%Y_%m_%d_%H:%M:%S}".format(datetime.now())
+logfilename = f"log_{timestr}.txt"
+absolute_logfilename = os.path.abspath(logfilename)
+
 
 
 
@@ -23,11 +29,11 @@ args = parser.parse_args()
 def check_special_errors(logfile):
     logfile.flush()
 
-    with open(logfile.name, "r") as read_logfile:
+    with open(absolute_logfilename, "r") as read_logfile:
         for line in read_logfile:
             if "install4j not found in path" in line:
-                print("\nERROR: install4j not found in path.")
-                print("Please put install4j on the path and rerun the script.")
+                print("\nERROR: install4j not found in PATH.")
+                print("Please put install4j on the PATH and rerun the script.")
                 sys.exit(1)
 
             m = re.match(r"fatal: destination path '([^']+)' already exists and is not an empty directory.*", line)
@@ -267,9 +273,6 @@ dv1, dv2, dv3 = parse_version(s_new_dev_version)
 
 ## LET'S GO
 
-timestr = "{:%Y_%m_%d_%H:%M:%S}".format(datetime.now())
-logfilename = f"log_{timestr}.txt"
-
 print(f"\nLogfile is {logfilename}.\n")
 
 with open(logfilename, "w") as logfile:
@@ -401,6 +404,7 @@ with open(logfilename, "w") as logfile:
         os.chdir("install4j")
         cpl = subprocess.run(["./execute-install4j.sh", "build"], stdout=logfile, stderr=logfile)
         if cpl.returncode > 0:
+            check_special_errors(logfile)
             print("\n\nFailed building install4j installer. Please fix and rerun this script.")
             sys.exit(1)
 
