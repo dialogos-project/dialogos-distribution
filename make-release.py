@@ -304,11 +304,11 @@ with open(logfilename, "w") as logfile:
             print("\n\nFailed rebuilding dialogos after edits. Please fix and rerun this script.")
             sys.exit(1)
 
-            ## Publish dialogos-core and all subprojects to maven-local repository so plugins can pick them up
-            cpl = subprocess.run(["./gradlew", "publishToMavenLocal"], stdout=logfile, stderr=logfile)
-            if cpl.returncode > 0:
-                print("\n\nFailed publishing dialogos to Maven Local. Please fix and rerun this script.")
-                sys.exit(1)
+        ## Publish dialogos-core and all subprojects to maven-local repository so plugins can pick them up
+        cpl = subprocess.run(["./gradlew", "publishToMavenLocal"], stdout=logfile, stderr=logfile)
+        if cpl.returncode > 0:
+            print("\n\nFailed publishing dialogos to Maven Local. Please fix and rerun this script.")
+            sys.exit(1)
 
 
         ## Back to original directory
