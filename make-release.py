@@ -474,7 +474,7 @@ with open(logfilename, "w") as logfile:
 
         edit_file("_config.yml", replace_version_website(v1,v2,v3))
 
-        run(["git", "commit", "-am", "updated link to release {vs}"], logfile)
+        run(["git", "commit", "-am", f"updated link to release {vs}"], logfile)
         run(["git", "push"], logfile)
     
 
