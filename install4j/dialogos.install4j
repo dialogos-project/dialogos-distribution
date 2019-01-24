@@ -276,7 +276,7 @@
           <component id="684" />
         </dependencies>
       </component>
-      <component name="Alexa plugin (experimental)" id="1225" customizedId="" displayDescription="false" hideHelpButton="false" selected="false" changeable="true" downloadable="true" hidden="false">
+      <component name="Alexa plugin" id="1225" customizedId="" displayDescription="false" hideHelpButton="false" selected="false" changeable="true" downloadable="true" hidden="false">
         <description>A plugin for compiling a DialogOS dialog into a skill for Amazon Alexa. This plugin is experimental and may or may not work for you.</description>
         <include all="false">
           <entry location="plugins/Alexa" fileType="regular" />
