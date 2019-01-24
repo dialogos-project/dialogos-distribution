@@ -311,6 +311,8 @@
           <scanDirectory location="plugins/MaryTTS" failOnError="false" />
           <scanDirectory location="plugins/NXT" failOnError="false" />
           <scanDirectory location="plugins/Sqlite" failOnError="false" />
+          <scanDirectory location="plugins/EV3" failOnError="false" />
+          <scanDirectory location="plugins/Alexa" failOnError="false" />
         </classPath>
         <modulePath />
         <nativeLibraryDirectories />
