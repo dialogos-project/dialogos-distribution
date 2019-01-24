@@ -28,7 +28,8 @@ nxtver=$(grep " name:'dialogos-plugin-nxt'" ../build.gradle | sed "s/.*version:'
 
 currver=$(git describe)
 
-opts="-D dialogos.core.mavenversion=$dialogosver,dialogos.sqlite.mavenversion=$sqlitever,dialogos.nxt.mavenversion=$nxtver,dialogos.pocketsphinx.mavenversion=$pocketsphinxver dialogos.install4j"
+#opts="-D dialogos.core.mavenversion=$dialogosver,dialogos.sqlite.mavenversion=$sqlitever,dialogos.nxt.mavenversion=$nxtver,dialogos.pocketsphinx.mavenversion=$pocketsphinxver dialogos.install4j"
+opts="dialogos.install4j"
 
 if which install4jc > /dev/null; then
 	install4jc $opts

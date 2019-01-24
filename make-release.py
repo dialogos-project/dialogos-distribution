@@ -405,7 +405,7 @@ with open(logfilename, "w") as logfile:
 
 
         
-        ## CREATE RELEASE FOR ALEXAN PLUGIN
+        ## CREATE RELEASE FOR ALEXA PLUGIN
 
         print("Updating and building Alexa plugin ...")
 
