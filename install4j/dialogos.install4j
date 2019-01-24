@@ -170,7 +170,7 @@
         </include>
         <dependencies />
       </component>
-      <component name="Sphinx" id="564" customizedId="" displayDescription="false" hideHelpButton="false" selected="true" changeable="true" downloadable="true" hidden="false">
+      <component name="Sphinx" id="564" customizedId="" displayDescription="false" hideHelpButton="false" selected="true" changeable="false" downloadable="true" hidden="false">
         <description>DialogOS's standard component for speech recognition (supports English and German).</description>
         <include all="false">
           <entry location="plugins/Sphinx" fileType="regular" />
@@ -197,7 +197,7 @@
           <component id="564" />
         </dependencies>
       </component>
-      <component name="MaryTTS" id="566" customizedId="" displayDescription="false" hideHelpButton="false" selected="true" changeable="true" downloadable="true" hidden="false">
+      <component name="MaryTTS" id="566" customizedId="" displayDescription="false" hideHelpButton="false" selected="true" changeable="false" downloadable="true" hidden="false">
         <description>DialogOS's standard component for speech synthesis (includes English, German, and French).</description>
         <include all="false">
           <entry location="plugins/MaryTTS/DialogOS_MaryTTSPlugin-${sys.version}.jar" fileType="regular" />
@@ -258,8 +258,8 @@
           <component id="566" />
         </dependencies>
       </component>
-      <component name="EV3 plugin" id="1224" customizedId="" displayDescription="false" hideHelpButton="false" selected="false" changeable="true" downloadable="false" hidden="false">
-        <description />
+      <component name="EV3 plugin" id="1224" customizedId="" displayDescription="false" hideHelpButton="false" selected="false" changeable="true" downloadable="true" hidden="false">
+        <description>A plugin to integrate with LEGO Mindstorms EV3 robots.</description>
         <include all="false">
           <entry location="plugins/EV3" fileType="regular" />
         </include>
@@ -276,15 +276,15 @@
           <component id="684" />
         </dependencies>
       </component>
-      <component name="Alexa plugin (experimental)" id="1225" customizedId="" displayDescription="false" hideHelpButton="false" selected="false" changeable="true" downloadable="false" hidden="false">
-        <description />
+      <component name="Alexa plugin (experimental)" id="1225" customizedId="" displayDescription="false" hideHelpButton="false" selected="false" changeable="true" downloadable="true" hidden="false">
+        <description>A plugin for compiling a DialogOS dialog into a skill for Amazon Alexa. This plugin is experimental and may or may not work for you.</description>
         <include all="false">
           <entry location="plugins/Alexa" fileType="regular" />
         </include>
         <dependencies />
       </component>
       <component name="NXT plugin" id="569" customizedId="" displayDescription="false" hideHelpButton="false" selected="false" changeable="true" downloadable="true" hidden="false">
-        <description>A plugin to integrate with LEGO Mindstorms robots.</description>
+        <description>A plugin to integrate with LEGO Mindstorms NXT robots.</description>
         <include all="false">
           <entry location="plugins/NXT" fileType="regular" />
         </include>
