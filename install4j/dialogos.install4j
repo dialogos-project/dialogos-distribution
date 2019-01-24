@@ -12,6 +12,7 @@
       <envVar name="JDK_HOME" />
     </searchSequence>
     <variables>
+      <variable name="dialogos.version" value="SET_EXTERNALLY" description="" category="" />
       <variable name="installer.download.base" value="SET_EXTERNALLY" description="" category="" />
     </variables>
     <mergedProjects />
@@ -277,7 +278,7 @@
         </dependencies>
       </component>
       <component name="Alexa plugin" id="1225" customizedId="" displayDescription="false" hideHelpButton="false" selected="false" changeable="true" downloadable="true" hidden="false">
-        <description>A plugin for compiling a DialogOS dialog into a skill for Amazon Alexa. This plugin is experimental and may or may not work for you.</description>
+        <description>A plugin for compiling a DialogOS dialog into a skill for Amazon Alexa.</description>
         <include all="false">
           <entry location="plugins/Alexa" fileType="regular" />
         </include>
