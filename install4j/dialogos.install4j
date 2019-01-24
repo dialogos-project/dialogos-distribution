@@ -258,7 +258,7 @@
           <component id="566" />
         </dependencies>
       </component>
-      <component name="EV3 plugin" id="1224" customizedId="" displayDescription="false" hideHelpButton="false" selected="false" changeable="true" downloadable="true" hidden="false">
+      <component name="Lego Mindstorms EV3 plugin" id="1224" customizedId="" displayDescription="false" hideHelpButton="false" selected="false" changeable="true" downloadable="true" hidden="false">
         <description>A plugin to integrate with LEGO Mindstorms EV3 robots.</description>
         <include all="false">
           <entry location="plugins/EV3" fileType="regular" />
@@ -283,7 +283,7 @@
         </include>
         <dependencies />
       </component>
-      <component name="NXT plugin" id="569" customizedId="" displayDescription="false" hideHelpButton="false" selected="false" changeable="true" downloadable="true" hidden="false">
+      <component name="Lego Mindstorms NXT plugin" id="569" customizedId="" displayDescription="false" hideHelpButton="false" selected="false" changeable="true" downloadable="true" hidden="false">
         <description>A plugin to integrate with LEGO Mindstorms NXT robots.</description>
         <include all="false">
           <entry location="plugins/NXT" fileType="regular" />
