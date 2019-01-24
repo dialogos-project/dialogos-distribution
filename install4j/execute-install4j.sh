@@ -31,6 +31,8 @@ currver=$(git describe)
 #opts="-D dialogos.core.mavenversion=$dialogosver,dialogos.sqlite.mavenversion=$sqlitever,dialogos.nxt.mavenversion=$nxtver,dialogos.pocketsphinx.mavenversion=$pocketsphinxver dialogos.install4j"
 opts="-D dialogos.version=$dialogosver dialogos.install4j"
 
+echo "Running install4jc with options: $opts"
+
 if which install4jc > /dev/null; then
 	install4jc $opts
 else
