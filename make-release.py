@@ -433,6 +433,35 @@ with open(logfilename, "w") as logfile:
 
 
 
+        ## CREATE RELEASE FOR SQLITE PLUGIN
+
+        print("Updating and building ROS plugin ...")
+
+        # Check out repositories
+        run(["git", "clone", f"{github_base}/dialogos-plugin-ros"], logfile)
+
+        # Create branch for release in dialogos
+        os.chdir("dialogos-plugin-ros")
+        run(["git", "checkout", "-b", f"v{vs}-release"], logfile)
+
+        # Edit dialogos version files
+        edit_file("src/main/java/app/dialogos/ros/plugin/ROSPlugin.java", replace_version_plugin_java(v1, v2, v3, True))
+        edit_file("build.gradle", replace_version_plugin_build_gradle(v1, v2, v3, True))
+        run(["git", "commit", "-am", f"release {vs}"], logfile)
+
+        # Check that it still builds
+        cpl = subprocess.run(["./gradlew", "compileJava", "test", "publishToMavenLocal"], stdout=logfile, stderr=logfile)
+        if cpl.returncode > 0:
+            print("\n\nFailed rebuilding ROS plugin after edits. Please fix and rerun this script.")
+            sys.exit(1)
+
+        # Back to original directory
+        os.chdir("..")
+
+
+
+
+        
 
 
 
@@ -494,7 +523,7 @@ with open(logfilename, "w") as logfile:
         ## NB tag also determines version number on Jitpack
         print("Pushing and tagging DialogOS Core to Github ...")
 
-        for dir in ["dialogos", "dialogos-plugin-nxt", "dialogos-plugin-sqlite", "dialogos-plugin-ev3", "dialogos-alexa-plugin",  "dialogos-distribution"]:
+        for dir in ["dialogos", "dialogos-plugin-nxt", "dialogos-plugin-sqlite", "dialogos-plugin-ev3", "dialogos-alexa-plugin", "dialogos-plugin-ros", "dialogos-distribution"]:
             print(f"Tagging Git versions and pushing to Github: {dir} ...")
             os.chdir(dir)
             run(["git", "push", "--set-upstream", "origin", f"v{vs}-release"], logfile)

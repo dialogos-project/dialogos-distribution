@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<install4j version="7.0.8" transformSequenceNumber="7">
-  <directoryPresets config="../build/install/dialogos-distribution/lib/gson-2.8.5.jar" />
-  <application name="DialogOS" distributionSourceDir="" applicationId="0985-7768-2548-4677" mediaDir="./generated_installers" mediaFilePattern="${compiler:sys.shortName}_${compiler:sys.platform}_${compiler:sys.version}" compression="9" lzmaCompression="true" pack200Compression="true" excludeSignedFromPacking="true" commonExternalFiles="true" createMd5Sums="true" shrinkRuntime="true" shortName="DialogOS" publisher="" publisherWeb="http://dialogos-project.github.io" version="2.0.1" allPathsRelative="true" backupOnSave="false" autoSave="false" convertDotsToUnderscores="true" macSignature="????" macVolumeId="623654d76cd9c023" javaMinVersion="1.7" javaMaxVersion="" allowBetaVM="false" jdkMode="runtimeJre" jdkName="">
+<install4j version="7.0.4" transformSequenceNumber="7">
+  <directoryPresets config="../build/install/dialogos-distribution/lib/xml-apis-1.0.b2.jar" />
+  <application name="DialogOS" distributionSourceDir="" applicationId="0985-7768-2548-4677" mediaDir="./generated_installers" mediaFilePattern="${compiler:sys.shortName}_${compiler:sys.platform}_${compiler:sys.version}" compression="9" lzmaCompression="true" pack200Compression="true" excludeSignedFromPacking="true" commonExternalFiles="true" createMd5Sums="true" shrinkRuntime="true" shortName="DialogOS" publisher="" publisherWeb="http://dialogos-project.github.io" version="2.1.0" allPathsRelative="true" backupOnSave="false" autoSave="false" convertDotsToUnderscores="true" macSignature="????" macVolumeId="623654d76cd9c023" javaMinVersion="1.7" javaMaxVersion="" allowBetaVM="false" jdkMode="runtimeJre" jdkName="">
     <languages skipLanguageSelection="false" languageSelectionInPrincipalLanguage="false">
       <principalLanguage id="en" customLocalizationFile="" />
       <additionalLanguages />
@@ -16,10 +16,7 @@
       <variable name="installer.download.base" value="SET_EXTERNALLY" description="" category="" />
     </variables>
     <mergedProjects />
-    <codeSigning macEnabled="false" macPkcs12File="" windowsEnabled="false" windowsKeySource="pkcs12" windowsPvkFile="" windowsSpcFile="" windowsPkcs12File="" windowsPkcs11Library="" windowsPkcs11Slot="">
-      <windowsKeystoreIdentifier issuer="" serial="" subject="" />
-      <windowsPkcs11Identifier issuer="" serial="" subject="" />
-    </codeSigning>
+    <codeSigning macEnabled="false" macPkcs12File="" windowsEnabled="false" windowsKeySource="pkcs12" windowsPvkFile="" windowsSpcFile="" windowsPkcs12File="" />
   </application>
   <files keepModificationTimes="true" missingFilesStrategy="warn" globalExcludeSuffixes="" defaultOverwriteMode="4" defaultUninstallMode="0" launcherOverwriteMode="3" defaultFileMode="644" defaultDirMode="755">
     <filesets />
@@ -34,6 +31,7 @@
       <mountPoint id="573" root="" location="plugins/Sqlite" mode="755" />
       <mountPoint id="1222" root="" location="plugins/EV3" mode="755" />
       <mountPoint id="1223" root="" location="plugins/Alexa" mode="755" />
+      <mountPoint id="1340" root="" location="plugins/ROS" mode="755" />
       <mountPoint id="559" root="" location="pluginData" mode="755" />
       <mountPoint id="562" root="" location="lib" mode="755" />
       <mountPoint id="788" root="" location="examples" mode="755" />
@@ -133,6 +131,32 @@
       <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/log4j-slf4j-impl-2.8.2.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
       <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/slf4j-api-1.7.25.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
       <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/dialogos-alexa-plugin-${compiler:dialogos.version}.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/actionlib_msgs-1.12.6.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/apache_xmlrpc_client-0.3.6.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/apache_xmlrpc_common-0.3.6.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/apache_xmlrpc_server-0.3.6.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/com.springsource.org.apache.commons.codec-1.3.0.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/com.springsource.org.apache.commons.httpclient-3.1.0.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/com.springsource.org.apache.commons.io-1.4.0.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/com.springsource.org.apache.commons.lang-2.4.0.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/com.springsource.org.apache.commons.logging-1.1.1.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/com.springsource.org.apache.commons.net-2.0.0.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/commons-pool-1.6.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/dialogos-plugin-ros-2.1.0.1.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/dnsjava-2.1.1.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/geometry_msgs-1.12.6.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/gradle_plugins-0.3.3.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/guava-14.0.1.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/message_generation-0.3.3.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/nav_msgs-1.12.6.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/netty-3.5.2.Final.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/rosgraph_msgs-1.11.2.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/rosjava-0.3.6.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/rosjava_test_msgs-0.3.0.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/std_msgs-0.5.11.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/tf2_msgs-0.5.17.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/ws-commons-util-1.0.1.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/xml-apis-1.0.b2.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
       <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/AppleJavaExtensions-1.4.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
       <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/ClientInterface-${compiler:dialogos.version}.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
       <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/Diamant-${compiler:dialogos.version}.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
@@ -172,7 +196,10 @@
       <component name="Sphinx" id="564" customizedId="" displayDescription="false" hideHelpButton="false" selected="true" changeable="false" downloadable="true" hidden="false">
         <description>DialogOS's standard component for speech recognition (supports English and German).</description>
         <include all="false">
-          <entry location="plugins/Sphinx" fileType="regular" />
+          <entry location="plugins/Sphinx/DialogOS_SphinxPlugin-${compiler:dialogos.version}.jar" fileType="regular" />
+          <entry location="plugins/Sphinx/sphinx4-core-44a5c08.jar" fileType="regular" />
+          <entry location="plugins/Sphinx/commons-codec-1.10.jar" fileType="regular" />
+          <entry location="plugins/Sphinx/commons-math3-3.2.jar" fileType="regular" />
         </include>
         <dependencies>
           <component id="684" />
@@ -291,6 +318,13 @@
           <component id="684" />
         </dependencies>
       </component>
+      <component name="Robot Operating System (ROS) plugin" id="1341" customizedId="" displayDescription="false" hideHelpButton="false" selected="true" changeable="true" downloadable="false" hidden="false">
+        <description />
+        <include all="false">
+          <entry location="plugins/ROS" fileType="regular" />
+        </include>
+        <dependencies />
+      </component>
     </components>
   </files>
   <launchers>
@@ -314,6 +348,7 @@
           <scanDirectory location="plugins/Sqlite" failOnError="false" />
           <scanDirectory location="plugins/EV3" failOnError="false" />
           <scanDirectory location="plugins/Alexa" failOnError="false" />
+          <scanDirectory location="plugins/ROS" failOnError="false" />
         </classPath>
         <modulePath />
         <nativeLibraryDirectories />
@@ -361,9 +396,6 @@
           </java>
         </serializedBean>
         <styleOverrides />
-        <customScript mode="1" file="">
-          <content />
-        </customScript>
         <launcherIds />
         <variables />
         <startup>
@@ -772,9 +804,6 @@ return console.askOkCancel(message, true);
           </java>
         </serializedBean>
         <styleOverrides />
-        <customScript mode="1" file="">
-          <content />
-        </customScript>
         <launcherIds />
         <variables />
         <startup>
@@ -1450,8 +1479,8 @@ return console.askYesNo(message, true);
       <topLevelFiles />
     </macosFolder>
   </mediaSets>
-  <buildIds buildAll="true">
-    <mediaSet refId="351" />
+  <buildIds buildAll="false">
+    <mediaSet refId="1020" />
   </buildIds>
   <buildOptions verbose="false" faster="false" disableSigning="false" disableJreBundling="false" debug="false" />
 </install4j>

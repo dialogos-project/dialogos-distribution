@@ -7,8 +7,9 @@ plugins {
 repositories {
   mavenLocal()
   jcenter()
-  maven { url "https://jitpack.io" }
   maven { url "http://akci.coli.uni-saarland.de/artifactory/external" }
+  maven { url "http://github.com/rosjava/rosjava_mvn_repo/raw/master" }
+  maven { url "https://jitpack.io" } // keep jitpack last
 }
 
 // In this section you declare the dependencies for your production and test code
@@ -17,10 +18,11 @@ dependencies {
 
   runtime group:'com.github.dialogos-project', name:'dialogos-plugin-sqlite', version:'2.1.0'
   runtime group:'com.github.dialogos-project', name:'dialogos-plugin-nxt', version:'2.1.0'
+  runtime group:'com.github.dialogos-project', name:'dialogos-plugin-ros', version:'2.1.0.1'
   runtime files('install4j/models/sphinx4-de-de-uhh.jar') // German model file for Sphinx-4
 
-  runtime group:'com.github.dialogos-project', name:'dialogos-plugin-ev3', version:'2.1.0'
-  runtime group:'com.github.dialogos-project', name:'dialogos-alexa-plugin', version:'2.1.0'
+//  runtime group:'com.github.dialogos-project', name:'dialogos-plugin-ev3', version:'2.1.0'
+//  runtime group:'com.github.dialogos-project', name:'dialogos-alexa-plugin', version:'2.1.0'
   
   implementation 'org.slf4j:slf4j-api:1.7.25'
   testCompile 'junit:junit:4.12'
