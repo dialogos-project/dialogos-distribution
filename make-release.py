@@ -433,7 +433,7 @@ with open(logfilename, "w") as logfile:
 
 
 
-        ## CREATE RELEASE FOR SQLITE PLUGIN
+        ## CREATE RELEASE FOR ROS PLUGIN
 
         print("Updating and building ROS plugin ...")
 
