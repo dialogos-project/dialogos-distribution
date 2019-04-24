@@ -21,5 +21,5 @@ for n in Manual Handbuch;do
 		xargs cat | \
 		grep -v "^\[\[(this page in" | \
 		grep -v "^\[\[(diese Seite auf" > ../$n.md
-	pandoc ../$n.md -o ../$n.pdf
+	pandoc -f gfm ../$n.md -o ../$n.pdf
 done
