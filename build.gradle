@@ -18,8 +18,7 @@ dependencies {
 
   runtime group:'com.github.dialogos-project', name:'dialogos-plugin-sqlite', version:'2.1.0'
   runtime group:'com.github.dialogos-project', name:'dialogos-plugin-nxt', version:'2.1.0'
-  runtime group:'com.github.dialogos-project', name:'dialogos-plugin-ros', version:'2.1.0.1'
-  runtime files('install4j/models/sphinx4-de-de-uhh.jar') // German model file for Sphinx-4
+  runtime group:'com.github.dialogos-project', name:'dialogos-plugin-ros', version:'2.1.0'
 
   runtime group:'com.github.dialogos-project', name:'dialogos-plugin-ev3', version:'2.1.0'
   runtime group:'com.github.dialogos-project', name:'dialogos-alexa-plugin', version:'2.1.0'

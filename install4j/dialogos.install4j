@@ -42,7 +42,7 @@
       <fileEntry mountPoint="560" file="../build/install/dialogos-distribution/lib/sphinx4-data-44a5c08.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
       <fileEntry mountPoint="560" file="../build/install/dialogos-distribution/lib/commons-codec-1.10.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
       <fileEntry mountPoint="560" file="../build/install/dialogos-distribution/lib/commons-math3-3.2.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="560" file="../build/install/dialogos-distribution/lib/sphinx4-de-de-uhh.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
+      <fileEntry mountPoint="560" file="../build/install/dialogos-distribution/lib/sphinx-de-de-uhh.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
       <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/DialogOS_MaryTTSPlugin-${compiler:dialogos.version}.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
       <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/marytts-common-5.2.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
       <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/marytts-lang-de-5.2.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
@@ -217,7 +217,7 @@
       <component name="Sphinx: German language support" id="899" customizedId="" displayDescription="false" hideHelpButton="false" selected="true" changeable="true" downloadable="true" hidden="false">
         <description />
         <include all="false">
-          <entry location="plugins/Sphinx/sphinx4-de-de-uhh.jar" fileType="regular" />
+          <entry location="plugins/Sphinx/sphinx-de-de-uhh.jar" fileType="regular" />
         </include>
         <dependencies>
           <component id="564" />
