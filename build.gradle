@@ -22,7 +22,12 @@ dependencies {
 
   runtime group:'com.github.dialogos-project', name:'dialogos-plugin-ev3', version:'2.1.0'
   runtime group:'com.github.dialogos-project', name:'dialogos-alexa-plugin', version:'2.1.0'
-  
+
+  runtime(group: 'com.github.cmusphinx', name:'sphinx4', version:'44a5c08') {
+    exclude module: 'sphinx4-samples'
+  }
+  runtime group: 'com.github.dialogos-project', name:'sphinx-de-de-uhh', version:'1.0'
+
   implementation 'org.slf4j:slf4j-api:1.7.25'
   testCompile 'junit:junit:4.12'
 }
