@@ -14,14 +14,14 @@ repositories {
 
 // In this section you declare the dependencies for your production and test code
 dependencies {
-  runtime group:'com.github.dialogos-project', name:'dialogos', version:'2.1.0'
+  runtime group:'com.github.dialogos-project', name:'dialogos', version:'2.1.2'
 
-  runtime group:'com.github.dialogos-project', name:'dialogos-plugin-sqlite', version:'2.1.0'
-  runtime group:'com.github.dialogos-project', name:'dialogos-plugin-nxt', version:'2.1.0'
-  runtime group:'com.github.dialogos-project', name:'dialogos-plugin-ros', version:'2.1.0'
+  runtime group:'com.github.dialogos-project', name:'dialogos-plugin-sqlite', version:'2.1.2'
+  runtime group:'com.github.dialogos-project', name:'dialogos-plugin-nxt', version:'2.1.2'
+  runtime group:'com.github.dialogos-project', name:'dialogos-plugin-ros', version:'2.1.2'
 
-  runtime group:'com.github.dialogos-project', name:'dialogos-plugin-ev3', version:'2.1.0'
-  runtime group:'com.github.dialogos-project', name:'dialogos-alexa-plugin', version:'2.1.0'
+  runtime group:'com.github.dialogos-project', name:'dialogos-plugin-ev3', version:'2.1.2'
+  runtime group:'com.github.dialogos-project', name:'dialogos-alexa-plugin', version:'2.1.2'
 
   runtime(group: 'com.github.cmusphinx', name:'sphinx4', version:'44a5c08') {
     exclude module: 'sphinx4-samples'
