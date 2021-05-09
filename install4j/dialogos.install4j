@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <install4j version="9.0.2" transformSequenceNumber="9">
   <directoryPresets config="../build/install/dialogos-distribution/lib/xml-apis-1.0.b2.jar" />
-  <application name="DialogOS" applicationId="0985-7768-2548-4677" mediaDir="./generated_installers" compression="9" lzmaCompression="true" commonExternalFiles="true" shortName="DialogOS" publisher="Universität des Saarlandes" publisherWeb="http://dialogos-project.github.io" version="2.1.0" allPathsRelative="true" macVolumeId="623654d76cd9c023" javaMinVersion="1.8" jdkMode="runtimeJre">
+  <application name="DialogOS" applicationId="0985-7768-2548-4677" mediaDir="./generated_installers" mediaFilePattern="${compiler:sys.shortName}_${compiler:sys.platform}_${compiler:sys.jreBundleArch}_${compiler:sys.version}" compression="9" lzmaCompression="true" commonExternalFiles="true" shortName="DialogOS" publisher="Universität des Saarlandes" publisherWeb="http://dialogos-project.github.io" version="2.1.0" allPathsRelative="true" macVolumeId="623654d76cd9c023" javaMinVersion="1.8" jdkMode="runtimeJre">
     <variables>
       <variable name="dialogos.version" value="SET_EXTERNALLY" />
       <variable name="installer.download.base" value="SET_EXTERNALLY" />
@@ -833,6 +833,6 @@ return console.askYesNo(message, true);
     </macosFolder>
   </mediaSets>
   <buildIds buildAll="false">
-    <mediaSet refId="1020" />
+    <mediaSet refId="1346" />
   </buildIds>
 </install4j>
