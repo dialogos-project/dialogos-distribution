@@ -1,344 +1,313 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<install4j version="7.0.4" transformSequenceNumber="7">
+<install4j version="9.0.2" transformSequenceNumber="9">
   <directoryPresets config="../build/install/dialogos-distribution/lib/xml-apis-1.0.b2.jar" />
-  <application name="DialogOS" distributionSourceDir="" applicationId="0985-7768-2548-4677" mediaDir="./generated_installers" mediaFilePattern="${compiler:sys.shortName}_${compiler:sys.platform}_${compiler:sys.version}" compression="9" lzmaCompression="true" pack200Compression="false" excludeSignedFromPacking="true" commonExternalFiles="true" createMd5Sums="true" shrinkRuntime="true" shortName="DialogOS" publisher="" publisherWeb="http://dialogos-project.github.io" version="2.1.0" allPathsRelative="true" backupOnSave="false" autoSave="false" convertDotsToUnderscores="true" macSignature="????" macVolumeId="623654d76cd9c023" javaMinVersion="1.7" javaMaxVersion="" allowBetaVM="false" jdkMode="runtimeJre" jdkName="">
-    <languages skipLanguageSelection="false" languageSelectionInPrincipalLanguage="false">
-      <principalLanguage id="en" customLocalizationFile="" />
-      <additionalLanguages />
-    </languages>
-    <searchSequence>
-      <registry />
-      <envVar name="JAVA_HOME" />
-      <envVar name="JDK_HOME" />
-    </searchSequence>
+  <application name="DialogOS" applicationId="0985-7768-2548-4677" mediaDir="./generated_installers" compression="9" lzmaCompression="true" commonExternalFiles="true" shortName="DialogOS" publisher="Universität des Saarlandes" publisherWeb="http://dialogos-project.github.io" version="2.1.0" allPathsRelative="true" macVolumeId="623654d76cd9c023" javaMinVersion="1.8" jdkMode="runtimeJre">
     <variables>
-      <variable name="dialogos.version" value="SET_EXTERNALLY" description="" category="" />
-      <variable name="installer.download.base" value="SET_EXTERNALLY" description="" category="" />
+      <variable name="dialogos.version" value="SET_EXTERNALLY" />
+      <variable name="installer.download.base" value="SET_EXTERNALLY" />
     </variables>
-    <mergedProjects />
-    <codeSigning macEnabled="false" macPkcs12File="" windowsEnabled="false" windowsKeySource="pkcs12" windowsPvkFile="" windowsSpcFile="" windowsPkcs12File="" />
+    <jreBundles jdkProviderId="JBR" release="11/latest" />
   </application>
-  <files keepModificationTimes="true" missingFilesStrategy="warn" globalExcludeSuffixes="" defaultOverwriteMode="4" defaultUninstallMode="0" launcherOverwriteMode="3" defaultFileMode="644" defaultDirMode="755">
-    <filesets />
+  <files keepModificationTimes="true" preserveSymlinks="false">
     <roots>
-      <root id="352" fileset="" location="${installer:sys.userHome}" />
+      <root id="352" location="${installer:sys.userHome}" />
     </roots>
     <mountPoints>
-      <mountPoint id="558" root="" location="plugins" mode="755" />
-      <mountPoint id="560" root="" location="plugins/Sphinx" mode="755" />
-      <mountPoint id="561" root="" location="plugins/MaryTTS" mode="755" />
-      <mountPoint id="568" root="" location="plugins/NXT" mode="755" />
-      <mountPoint id="573" root="" location="plugins/Sqlite" mode="755" />
-      <mountPoint id="1222" root="" location="plugins/EV3" mode="755" />
-      <mountPoint id="1223" root="" location="plugins/Alexa" mode="755" />
-      <mountPoint id="1340" root="" location="plugins/ROS" mode="755" />
-      <mountPoint id="559" root="" location="pluginData" mode="755" />
-      <mountPoint id="562" root="" location="lib" mode="755" />
-      <mountPoint id="788" root="" location="examples" mode="755" />
+      <mountPoint id="558" location="plugins" />
+      <mountPoint id="560" location="plugins/Sphinx" />
+      <mountPoint id="561" location="plugins/MaryTTS" />
+      <mountPoint id="568" location="plugins/NXT" />
+      <mountPoint id="573" location="plugins/Sqlite" />
+      <mountPoint id="1222" location="plugins/EV3" />
+      <mountPoint id="1223" location="plugins/Alexa" />
+      <mountPoint id="1340" location="plugins/ROS" />
+      <mountPoint id="559" location="pluginData" />
+      <mountPoint id="562" location="lib" />
+      <mountPoint id="788" location="examples" />
     </mountPoints>
     <entries>
-      <fileEntry mountPoint="560" file="../build/install/dialogos-distribution/lib/DialogOS_SphinxPlugin-${compiler:dialogos.version}.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="560" file="../build/install/dialogos-distribution/lib/sphinx4-core-44a5c08.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="560" file="../build/install/dialogos-distribution/lib/sphinx4-data-44a5c08.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="560" file="../build/install/dialogos-distribution/lib/commons-codec-1.10.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="560" file="../build/install/dialogos-distribution/lib/commons-math3-3.2.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="560" file="../build/install/dialogos-distribution/lib/sphinx-de-de-uhh-1.0.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/DialogOS_MaryTTSPlugin-${compiler:dialogos.version}.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/marytts-common-5.2.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/marytts-lang-de-5.2.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/marytts-lang-en-5.2.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/marytts-lang-fr-5.2.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/marytts-runtime-5.2.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/marytts-signalproc-5.2.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/voice-bits1-hsmm-5.2.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/voice-bits3-hsmm-5.2.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/voice-cmu-slt-hsmm-5.2.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/voice-upmc-pierre-hsmm-5.2.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/Jampack-1.0.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/commons-collections-3.2.2.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/commons-lang-2.6.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/emotionml-checker-java-1.1.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/fast-md5-2.7.1.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/guava-14.0.1.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/hsqldb-2.0.0.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/trove4j-2.0.2.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/swing-layout-1.0.3.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/jama-1.0.3.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/httpcore-4.4.9.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/httpcore-nio-4.1.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/opennlp-maxent-3.0.3.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/opennlp-tools-1.5.3.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/icu4j-54.1.1.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/jtok-core-1.9.3.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/jwnl-1.3.3.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/log4j-1.2.16.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="568" file="../build/install/dialogos-distribution/lib/dialogos-plugin-nxt-${compiler:dialogos.version}.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="568" file="../build/install/dialogos-distribution/lib/libusb4java-1.2.0-linux-arm.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="568" file="../build/install/dialogos-distribution/lib/libusb4java-1.2.0-linux-x86.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="568" file="../build/install/dialogos-distribution/lib/libusb4java-1.2.0-linux-x86_64.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="568" file="../build/install/dialogos-distribution/lib/libusb4java-1.2.0-osx-x86.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="568" file="../build/install/dialogos-distribution/lib/libusb4java-1.2.0-osx-x86_64.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="568" file="../build/install/dialogos-distribution/lib/libusb4java-1.2.0-windows-x86.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="568" file="../build/install/dialogos-distribution/lib/libusb4java-1.2.0-windows-x86_64.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="568" file="../build/install/dialogos-distribution/lib/usb-api-1.0.2.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="568" file="../build/install/dialogos-distribution/lib/usb4java-1.2.0.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="568" file="../build/install/dialogos-distribution/lib/usb4java-javax-1.2.0.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="568" file="../build/install/dialogos-distribution/lib/commons-lang3-3.2.1.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="568" file="../build/install/dialogos-distribution/lib/jna-4.2.2.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="568" file="../build/install/dialogos-distribution/lib/purejavacomm-1.0.1.RELEASE.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="573" file="../build/install/dialogos-distribution/lib/dialogos-plugin-sqlite-${compiler:dialogos.version}.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="573" file="../build/install/dialogos-distribution/lib/sqlite-jdbc-3.21.0.1.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1222" file="../build/install/dialogos-distribution/lib/bluecove-2.1.1-20190110.191129-2.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1222" file="../build/install/dialogos-distribution/lib/commons-lang3-3.2.1.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1222" file="../build/install/dialogos-distribution/lib/dialogos-plugin-ev3-${compiler:dialogos.version}.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1222" file="../build/install/dialogos-distribution/lib/libusb4java-1.2.0-linux-arm.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1222" file="../build/install/dialogos-distribution/lib/libusb4java-1.2.0-linux-x86_64.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1222" file="../build/install/dialogos-distribution/lib/libusb4java-1.2.0-linux-x86.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1222" file="../build/install/dialogos-distribution/lib/libusb4java-1.2.0-osx-x86_64.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1222" file="../build/install/dialogos-distribution/lib/libusb4java-1.2.0-osx-x86.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1222" file="../build/install/dialogos-distribution/lib/libusb4java-1.2.0-windows-x86_64.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1222" file="../build/install/dialogos-distribution/lib/libusb4java-1.2.0-windows-x86.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1222" file="../build/install/dialogos-distribution/lib/usb-api-1.0.2.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1222" file="../build/install/dialogos-distribution/lib/usb4java-1.2.0.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1222" file="../build/install/dialogos-distribution/lib/usb4java-javax-1.2.0.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/ask-sdk-2.11.1.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/ask-sdk-apache-client-2.11.1.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/ask-sdk-core-2.11.1.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/ask-sdk-dynamodb-persistence-adapter-2.11.1.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/ask-sdk-lambda-support-2.11.1.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/ask-sdk-model-1.11.1.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/ask-sdk-runtime-2.11.1.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/ask-sdk-servlet-support-2.11.1.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/aws-java-sdk-core-1.11.420.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/aws-java-sdk-dynamodb-1.11.420.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/aws-java-sdk-kms-1.11.420.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/aws-java-sdk-s3-1.11.420.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/aws-lambda-java-core-1.0.0.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/commons-codec-1.10.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/commons-io-2.6.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/commons-logging-1.2.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/httpclient-4.5.5.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/httpcore-4.4.9.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/ion-java-1.0.2.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/jackson-annotations-2.9.5.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/jackson-core-2.9.5.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/jackson-databind-2.9.5.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/jackson-dataformat-cbor-2.6.7.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/jackson-datatype-jsr310-2.9.5.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/jmespath-java-1.11.420.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/joda-time-2.8.1.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/log4j-api-2.8.2.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/log4j-slf4j-impl-2.8.2.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/slf4j-api-1.7.25.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/dialogos-alexa-plugin-${compiler:dialogos.version}.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/actionlib_msgs-1.12.7.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/apache_xmlrpc_client-0.3.6.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/apache_xmlrpc_common-0.3.6.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/apache_xmlrpc_server-0.3.6.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/com.springsource.org.apache.commons.codec-1.3.0.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/com.springsource.org.apache.commons.httpclient-3.1.0.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/com.springsource.org.apache.commons.io-1.4.0.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/com.springsource.org.apache.commons.lang-2.4.0.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/com.springsource.org.apache.commons.logging-1.1.1.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/com.springsource.org.apache.commons.net-2.0.0.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/commons-pool-1.6.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/dialogos-plugin-ros-${compiler:dialogos.version}.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/dnsjava-2.1.1.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/nav_msgs-1.12.7.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/gradle_plugins-0.3.3.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/guava-14.0.1.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/message_generation-0.3.3.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/nav_msgs-1.12.6.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/netty-3.5.2.Final.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/rosgraph_msgs-1.11.2.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/rosjava-0.3.6.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/rosjava_test_msgs-0.3.0.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/std_msgs-0.5.11.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/tf2_msgs-0.5.20.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/ws-commons-util-1.0.1.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/xml-apis-1.0.b2.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/AppleJavaExtensions-1.4.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/ClientInterface-${compiler:dialogos.version}.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/Diamant-${compiler:dialogos.version}.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/MRJToolkitStubs-1.0.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/com.clt.audio-${compiler:dialogos.version}.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/com.clt.base-${compiler:dialogos.version}.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/com.clt.mac-${compiler:dialogos.version}.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/com.clt.script-${compiler:dialogos.version}.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/com.clt.speech-${compiler:dialogos.version}.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/com.clt.xml-${compiler:dialogos.version}.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/commons-io-2.6.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/groovy-all-2.4.10.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/java-cup-11b-2015.03.26.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/java-cup-11b-runtime-2015.03.26.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/jdom2-2.0.6.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/jmdns-3.5.3.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/json-20180130.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/native-j-file-chooser-1.6.4.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/rsyntaxtextarea-2.6.1.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/slf4j-api-1.7.25.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/slf4j-log4j12-1.6.1.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/gson-2.8.5.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
-      <dirEntry mountPoint="788" file="../examples" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" entryMode="direct" subDirectory="examples" excludeSuffixes="" dirMode="755" overrideDirMode="false">
-        <exclude />
-      </dirEntry>
+      <fileEntry mountPoint="560" file="../build/install/dialogos-distribution/lib/DialogOS_SphinxPlugin-${compiler:dialogos.version}.jar" />
+      <fileEntry mountPoint="560" file="../build/install/dialogos-distribution/lib/sphinx4-core-44a5c08.jar" />
+      <fileEntry mountPoint="560" file="../build/install/dialogos-distribution/lib/sphinx4-data-44a5c08.jar" />
+      <fileEntry mountPoint="560" file="../build/install/dialogos-distribution/lib/commons-codec-1.10.jar" />
+      <fileEntry mountPoint="560" file="../build/install/dialogos-distribution/lib/commons-math3-3.2.jar" />
+      <fileEntry mountPoint="560" file="../build/install/dialogos-distribution/lib/sphinx-de-de-uhh-1.0.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/DialogOS_MaryTTSPlugin-${compiler:dialogos.version}.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/marytts-common-5.2.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/marytts-lang-de-5.2.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/marytts-lang-en-5.2.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/marytts-lang-fr-5.2.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/marytts-runtime-5.2.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/marytts-signalproc-5.2.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/voice-bits1-hsmm-5.2.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/voice-bits3-hsmm-5.2.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/voice-cmu-slt-hsmm-5.2.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/voice-upmc-pierre-hsmm-5.2.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/Jampack-1.0.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/commons-collections-3.2.2.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/commons-lang-2.6.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/emotionml-checker-java-1.1.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/fast-md5-2.7.1.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/guava-14.0.1.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/hsqldb-2.0.0.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/trove4j-2.0.2.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/swing-layout-1.0.3.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/jama-1.0.3.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/httpcore-4.4.9.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/httpcore-nio-4.1.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/opennlp-maxent-3.0.3.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/opennlp-tools-1.5.3.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/icu4j-54.1.1.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/jtok-core-1.9.3.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/jwnl-1.3.3.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/log4j-1.2.16.jar" />
+      <fileEntry mountPoint="568" file="../build/install/dialogos-distribution/lib/dialogos-plugin-nxt-${compiler:dialogos.version}.jar" />
+      <fileEntry mountPoint="568" file="../build/install/dialogos-distribution/lib/libusb4java-1.2.0-linux-arm.jar" />
+      <fileEntry mountPoint="568" file="../build/install/dialogos-distribution/lib/libusb4java-1.2.0-linux-x86.jar" />
+      <fileEntry mountPoint="568" file="../build/install/dialogos-distribution/lib/libusb4java-1.2.0-linux-x86_64.jar" />
+      <fileEntry mountPoint="568" file="../build/install/dialogos-distribution/lib/libusb4java-1.2.0-osx-x86.jar" />
+      <fileEntry mountPoint="568" file="../build/install/dialogos-distribution/lib/libusb4java-1.2.0-osx-x86_64.jar" />
+      <fileEntry mountPoint="568" file="../build/install/dialogos-distribution/lib/libusb4java-1.2.0-windows-x86.jar" />
+      <fileEntry mountPoint="568" file="../build/install/dialogos-distribution/lib/libusb4java-1.2.0-windows-x86_64.jar" />
+      <fileEntry mountPoint="568" file="../build/install/dialogos-distribution/lib/usb-api-1.0.2.jar" />
+      <fileEntry mountPoint="568" file="../build/install/dialogos-distribution/lib/usb4java-1.2.0.jar" />
+      <fileEntry mountPoint="568" file="../build/install/dialogos-distribution/lib/usb4java-javax-1.2.0.jar" />
+      <fileEntry mountPoint="568" file="../build/install/dialogos-distribution/lib/commons-lang3-3.2.1.jar" />
+      <fileEntry mountPoint="568" file="../build/install/dialogos-distribution/lib/jna-4.2.2.jar" />
+      <fileEntry mountPoint="568" file="../build/install/dialogos-distribution/lib/purejavacomm-1.0.1.RELEASE.jar" />
+      <fileEntry mountPoint="573" file="../build/install/dialogos-distribution/lib/dialogos-plugin-sqlite-${compiler:dialogos.version}.jar" />
+      <fileEntry mountPoint="573" file="../build/install/dialogos-distribution/lib/sqlite-jdbc-3.21.0.1.jar" />
+      <fileEntry mountPoint="1222" file="../build/install/dialogos-distribution/lib/bluecove-2.1.1-20190110.191129-2.jar" />
+      <fileEntry mountPoint="1222" file="../build/install/dialogos-distribution/lib/commons-lang3-3.2.1.jar" />
+      <fileEntry mountPoint="1222" file="../build/install/dialogos-distribution/lib/dialogos-plugin-ev3-${compiler:dialogos.version}.jar" />
+      <fileEntry mountPoint="1222" file="../build/install/dialogos-distribution/lib/libusb4java-1.2.0-linux-arm.jar" />
+      <fileEntry mountPoint="1222" file="../build/install/dialogos-distribution/lib/libusb4java-1.2.0-linux-x86_64.jar" />
+      <fileEntry mountPoint="1222" file="../build/install/dialogos-distribution/lib/libusb4java-1.2.0-linux-x86.jar" />
+      <fileEntry mountPoint="1222" file="../build/install/dialogos-distribution/lib/libusb4java-1.2.0-osx-x86_64.jar" />
+      <fileEntry mountPoint="1222" file="../build/install/dialogos-distribution/lib/libusb4java-1.2.0-osx-x86.jar" />
+      <fileEntry mountPoint="1222" file="../build/install/dialogos-distribution/lib/libusb4java-1.2.0-windows-x86_64.jar" />
+      <fileEntry mountPoint="1222" file="../build/install/dialogos-distribution/lib/libusb4java-1.2.0-windows-x86.jar" />
+      <fileEntry mountPoint="1222" file="../build/install/dialogos-distribution/lib/usb-api-1.0.2.jar" />
+      <fileEntry mountPoint="1222" file="../build/install/dialogos-distribution/lib/usb4java-1.2.0.jar" />
+      <fileEntry mountPoint="1222" file="../build/install/dialogos-distribution/lib/usb4java-javax-1.2.0.jar" />
+      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/ask-sdk-2.11.1.jar" />
+      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/ask-sdk-apache-client-2.11.1.jar" />
+      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/ask-sdk-core-2.11.1.jar" />
+      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/ask-sdk-dynamodb-persistence-adapter-2.11.1.jar" />
+      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/ask-sdk-lambda-support-2.11.1.jar" />
+      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/ask-sdk-model-1.11.1.jar" />
+      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/ask-sdk-runtime-2.11.1.jar" />
+      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/ask-sdk-servlet-support-2.11.1.jar" />
+      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/aws-java-sdk-core-1.11.420.jar" />
+      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/aws-java-sdk-dynamodb-1.11.420.jar" />
+      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/aws-java-sdk-kms-1.11.420.jar" />
+      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/aws-java-sdk-s3-1.11.420.jar" />
+      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/aws-lambda-java-core-1.0.0.jar" />
+      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/commons-codec-1.10.jar" />
+      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/commons-io-2.6.jar" />
+      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/commons-logging-1.2.jar" />
+      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/httpclient-4.5.5.jar" />
+      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/httpcore-4.4.9.jar" />
+      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/ion-java-1.0.2.jar" />
+      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/jackson-annotations-2.9.5.jar" />
+      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/jackson-core-2.9.5.jar" />
+      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/jackson-databind-2.9.5.jar" />
+      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/jackson-dataformat-cbor-2.6.7.jar" />
+      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/jackson-datatype-jsr310-2.9.5.jar" />
+      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/jmespath-java-1.11.420.jar" />
+      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/joda-time-2.8.1.jar" />
+      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/log4j-api-2.8.2.jar" />
+      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/log4j-slf4j-impl-2.8.2.jar" />
+      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/slf4j-api-1.7.25.jar" />
+      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/dialogos-alexa-plugin-${compiler:dialogos.version}.jar" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/actionlib_msgs-1.12.7.jar" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/apache_xmlrpc_client-0.3.6.jar" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/apache_xmlrpc_common-0.3.6.jar" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/apache_xmlrpc_server-0.3.6.jar" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/com.springsource.org.apache.commons.codec-1.3.0.jar" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/com.springsource.org.apache.commons.httpclient-3.1.0.jar" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/com.springsource.org.apache.commons.io-1.4.0.jar" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/com.springsource.org.apache.commons.lang-2.4.0.jar" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/com.springsource.org.apache.commons.logging-1.1.1.jar" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/com.springsource.org.apache.commons.net-2.0.0.jar" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/commons-pool-1.6.jar" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/dialogos-plugin-ros-${compiler:dialogos.version}.jar" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/dnsjava-2.1.1.jar" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/nav_msgs-1.12.7.jar" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/gradle_plugins-0.3.3.jar" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/guava-14.0.1.jar" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/message_generation-0.3.3.jar" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/nav_msgs-1.12.6.jar" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/netty-3.5.2.Final.jar" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/rosgraph_msgs-1.11.2.jar" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/rosjava-0.3.6.jar" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/rosjava_test_msgs-0.3.0.jar" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/std_msgs-0.5.11.jar" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/tf2_msgs-0.5.20.jar" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/ws-commons-util-1.0.1.jar" />
+      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/xml-apis-1.0.b2.jar" />
+      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/AppleJavaExtensions-1.4.jar" />
+      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/ClientInterface-${compiler:dialogos.version}.jar" />
+      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/Diamant-${compiler:dialogos.version}.jar" />
+      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/MRJToolkitStubs-1.0.jar" />
+      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/com.clt.audio-${compiler:dialogos.version}.jar" />
+      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/com.clt.base-${compiler:dialogos.version}.jar" />
+      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/com.clt.mac-${compiler:dialogos.version}.jar" />
+      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/com.clt.script-${compiler:dialogos.version}.jar" />
+      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/com.clt.speech-${compiler:dialogos.version}.jar" />
+      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/com.clt.xml-${compiler:dialogos.version}.jar" />
+      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/commons-io-2.6.jar" />
+      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/groovy-all-2.4.10.jar" />
+      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/java-cup-11b-2015.03.26.jar" />
+      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/java-cup-11b-runtime-2015.03.26.jar" />
+      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/jdom2-2.0.6.jar" />
+      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/jmdns-3.5.3.jar" />
+      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/json-20180130.jar" />
+      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/native-j-file-chooser-1.6.4.jar" />
+      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/rsyntaxtextarea-2.6.1.jar" />
+      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/slf4j-api-1.7.25.jar" />
+      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/slf4j-log4j12-1.6.1.jar" />
+      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/gson-2.8.5.jar" />
+      <dirEntry mountPoint="788" file="../examples" subDirectory="examples" />
     </entries>
     <components>
-      <component name="DialogOS" id="684" customizedId="" displayDescription="false" hideHelpButton="false" selected="true" changeable="false" downloadable="false" hidden="false">
+      <component name="DialogOS" id="684" changeable="false">
         <description>The main DialogOS component.</description>
-        <include all="false">
-          <entry location="lib" fileType="regular" />
-          <entry location="examples/simple_woz.dos" fileType="regular" />
+        <include>
+          <entry location="lib" />
+          <entry location="examples/simple_woz.dos" />
           <entry location="dialogos" fileType="launcher" />
         </include>
-        <dependencies />
       </component>
-      <component name="Sphinx" id="564" customizedId="" displayDescription="false" hideHelpButton="false" selected="true" changeable="false" downloadable="true" hidden="false">
+      <component name="Sphinx" id="564" changeable="false" downloadable="true">
         <description>DialogOS's standard component for speech recognition (supports English and German).</description>
-        <include all="false">
-          <entry location="plugins/Sphinx/DialogOS_SphinxPlugin-${compiler:dialogos.version}.jar" fileType="regular" />
-          <entry location="plugins/Sphinx/sphinx4-core-44a5c08.jar" fileType="regular" />
-          <entry location="plugins/Sphinx/commons-codec-1.10.jar" fileType="regular" />
-          <entry location="plugins/Sphinx/commons-math3-3.2.jar" fileType="regular" />
+        <include>
+          <entry location="plugins/Sphinx/DialogOS_SphinxPlugin-${compiler:dialogos.version}.jar" />
+          <entry location="plugins/Sphinx/sphinx4-core-44a5c08.jar" />
+          <entry location="plugins/Sphinx/commons-codec-1.10.jar" />
+          <entry location="plugins/Sphinx/commons-math3-3.2.jar" />
         </include>
         <dependencies>
           <component id="684" />
         </dependencies>
       </component>
-      <component name="Sphinx: English language support" id="1027" customizedId="" displayDescription="false" hideHelpButton="false" selected="true" changeable="true" downloadable="true" hidden="false">
-        <description />
-        <include all="false">
-          <entry location="plugins/Sphinx/sphinx4-data-44a5c08.jar" fileType="regular" />
+      <component name="Sphinx: English language support" id="1027" downloadable="true">
+        <include>
+          <entry location="plugins/Sphinx/sphinx4-data-44a5c08.jar" />
         </include>
         <dependencies>
           <component id="564" />
         </dependencies>
       </component>
-      <component name="Sphinx: German language support" id="899" customizedId="" displayDescription="false" hideHelpButton="false" selected="true" changeable="true" downloadable="true" hidden="false">
-        <description />
-        <include all="false">
-          <entry location="plugins/Sphinx/sphinx-de-de-uhh-1.0.jar" fileType="regular" />
+      <component name="Sphinx: German language support" id="899" downloadable="true">
+        <include>
+          <entry location="plugins/Sphinx/sphinx-de-de-uhh-1.0.jar" />
         </include>
         <dependencies>
           <component id="564" />
         </dependencies>
       </component>
-      <component name="MaryTTS" id="566" customizedId="" displayDescription="false" hideHelpButton="false" selected="true" changeable="false" downloadable="true" hidden="false">
+      <component name="MaryTTS" id="566" changeable="false" downloadable="true">
         <description>DialogOS's standard component for speech synthesis (includes English, German, and French).</description>
-        <include all="false">
-          <entry location="plugins/MaryTTS/DialogOS_MaryTTSPlugin-${compiler:dialogos.version}.jar" fileType="regular" />
-          <entry location="plugins/MaryTTS/marytts-common-5.2.jar" fileType="regular" />
-          <entry location="plugins/MaryTTS/marytts-runtime-5.2.jar" fileType="regular" />
-          <entry location="plugins/MaryTTS/marytts-signalproc-5.2.jar" fileType="regular" />
-          <entry location="plugins/MaryTTS/Jampack-1.0.jar" fileType="regular" />
-          <entry location="plugins/MaryTTS/commons-collections-3.2.2.jar" fileType="regular" />
-          <entry location="plugins/MaryTTS/commons-lang-2.6.jar" fileType="regular" />
-          <entry location="plugins/MaryTTS/emotionml-checker-java-1.1.jar" fileType="regular" />
-          <entry location="plugins/MaryTTS/fast-md5-2.7.1.jar" fileType="regular" />
-          <entry location="plugins/MaryTTS/guava-14.0.1.jar" fileType="regular" />
-          <entry location="plugins/MaryTTS/hsqldb-2.0.0.jar" fileType="regular" />
-          <entry location="plugins/MaryTTS/trove4j-2.0.2.jar" fileType="regular" />
-          <entry location="plugins/MaryTTS/swing-layout-1.0.3.jar" fileType="regular" />
-          <entry location="plugins/MaryTTS/jama-1.0.3.jar" fileType="regular" />
-          <entry location="plugins/MaryTTS/httpcore-4.1.jar" fileType="regular" />
-          <entry location="plugins/MaryTTS/httpcore-nio-4.1.jar" fileType="regular" />
-          <entry location="plugins/MaryTTS/opennlp-maxent-3.0.3.jar" fileType="regular" />
-          <entry location="plugins/MaryTTS/opennlp-tools-1.5.3.jar" fileType="regular" />
-          <entry location="plugins/MaryTTS/icu4j-54.1.1.jar" fileType="regular" />
-          <entry location="plugins/MaryTTS/jtok-core-1.9.3.jar" fileType="regular" />
-          <entry location="plugins/MaryTTS/jwnl-1.3.3.jar" fileType="regular" />
-          <entry location="plugins/MaryTTS/log4j-1.2.16.jar" fileType="regular" />
+        <include>
+          <entry location="plugins/MaryTTS/DialogOS_MaryTTSPlugin-${compiler:dialogos.version}.jar" />
+          <entry location="plugins/MaryTTS/marytts-common-5.2.jar" />
+          <entry location="plugins/MaryTTS/marytts-runtime-5.2.jar" />
+          <entry location="plugins/MaryTTS/marytts-signalproc-5.2.jar" />
+          <entry location="plugins/MaryTTS/Jampack-1.0.jar" />
+          <entry location="plugins/MaryTTS/commons-collections-3.2.2.jar" />
+          <entry location="plugins/MaryTTS/commons-lang-2.6.jar" />
+          <entry location="plugins/MaryTTS/emotionml-checker-java-1.1.jar" />
+          <entry location="plugins/MaryTTS/fast-md5-2.7.1.jar" />
+          <entry location="plugins/MaryTTS/guava-14.0.1.jar" />
+          <entry location="plugins/MaryTTS/hsqldb-2.0.0.jar" />
+          <entry location="plugins/MaryTTS/trove4j-2.0.2.jar" />
+          <entry location="plugins/MaryTTS/swing-layout-1.0.3.jar" />
+          <entry location="plugins/MaryTTS/jama-1.0.3.jar" />
+          <entry location="plugins/MaryTTS/httpcore-4.1.jar" />
+          <entry location="plugins/MaryTTS/httpcore-nio-4.1.jar" />
+          <entry location="plugins/MaryTTS/opennlp-maxent-3.0.3.jar" />
+          <entry location="plugins/MaryTTS/opennlp-tools-1.5.3.jar" />
+          <entry location="plugins/MaryTTS/icu4j-54.1.1.jar" />
+          <entry location="plugins/MaryTTS/jtok-core-1.9.3.jar" />
+          <entry location="plugins/MaryTTS/jwnl-1.3.3.jar" />
+          <entry location="plugins/MaryTTS/log4j-1.2.16.jar" />
         </include>
         <dependencies>
           <component id="684" />
         </dependencies>
       </component>
-      <component name="MaryTTS: German language support" id="900" customizedId="" displayDescription="false" hideHelpButton="false" selected="true" changeable="true" downloadable="true" hidden="false">
-        <description />
-        <include all="false">
-          <entry location="plugins/MaryTTS/marytts-lang-de-5.2.jar" fileType="regular" />
-          <entry location="plugins/MaryTTS/voice-bits1-hsmm-5.2.jar" fileType="regular" />
-          <entry location="plugins/MaryTTS/voice-bits3-hsmm-5.2.jar" fileType="regular" />
+      <component name="MaryTTS: German language support" id="900" downloadable="true">
+        <include>
+          <entry location="plugins/MaryTTS/marytts-lang-de-5.2.jar" />
+          <entry location="plugins/MaryTTS/voice-bits1-hsmm-5.2.jar" />
+          <entry location="plugins/MaryTTS/voice-bits3-hsmm-5.2.jar" />
         </include>
         <dependencies>
           <component id="566" />
         </dependencies>
       </component>
-      <component name="MaryTTS: English language support" id="901" customizedId="" displayDescription="false" hideHelpButton="false" selected="true" changeable="true" downloadable="true" hidden="false">
-        <description />
-        <include all="false">
-          <entry location="plugins/MaryTTS/marytts-lang-en-5.2.jar" fileType="regular" />
-          <entry location="plugins/MaryTTS/voice-cmu-slt-hsmm-5.2.jar" fileType="regular" />
+      <component name="MaryTTS: English language support" id="901" downloadable="true">
+        <include>
+          <entry location="plugins/MaryTTS/marytts-lang-en-5.2.jar" />
+          <entry location="plugins/MaryTTS/voice-cmu-slt-hsmm-5.2.jar" />
         </include>
         <dependencies>
           <component id="566" />
         </dependencies>
       </component>
-      <component name="MaryTTS: French language support" id="902" customizedId="" displayDescription="false" hideHelpButton="false" selected="false" changeable="true" downloadable="true" hidden="false">
-        <description />
-        <include all="false">
-          <entry location="plugins/MaryTTS/marytts-lang-fr-5.2.jar" fileType="regular" />
-          <entry location="plugins/MaryTTS/voice-upmc-pierre-hsmm-5.2.jar" fileType="regular" />
+      <component name="MaryTTS: French language support" id="902" selected="false" downloadable="true">
+        <include>
+          <entry location="plugins/MaryTTS/marytts-lang-fr-5.2.jar" />
+          <entry location="plugins/MaryTTS/voice-upmc-pierre-hsmm-5.2.jar" />
         </include>
         <dependencies>
           <component id="566" />
         </dependencies>
       </component>
-      <component name="Lego Mindstorms EV3 plugin" id="1224" customizedId="" displayDescription="false" hideHelpButton="false" selected="false" changeable="true" downloadable="true" hidden="false">
+      <component name="Lego Mindstorms EV3 plugin" id="1224" selected="false" downloadable="true">
         <description>A plugin to integrate with LEGO Mindstorms EV3 robots.</description>
-        <include all="false">
-          <entry location="plugins/EV3" fileType="regular" />
+        <include>
+          <entry location="plugins/EV3" />
         </include>
-        <dependencies />
       </component>
-      <component name="SQLite plugin" id="575" customizedId="" displayDescription="false" hideHelpButton="false" selected="true" changeable="true" downloadable="true" hidden="false">
+      <component name="SQLite plugin" id="575" downloadable="true">
         <description>A plugin to integrate with SQLite databases.</description>
-        <include all="false">
-          <entry location="plugins/Sqlite" fileType="regular" />
-          <entry location="examples/millionaire.db" fileType="regular" />
-          <entry location="examples/millionaire.dos" fileType="regular" />
+        <include>
+          <entry location="plugins/Sqlite" />
+          <entry location="examples/millionaire.db" />
+          <entry location="examples/millionaire.dos" />
         </include>
         <dependencies>
           <component id="684" />
         </dependencies>
       </component>
-      <component name="Alexa plugin" id="1225" customizedId="" displayDescription="false" hideHelpButton="false" selected="false" changeable="true" downloadable="true" hidden="false">
+      <component name="Alexa plugin" id="1225" selected="false" downloadable="true">
         <description>A plugin for compiling a DialogOS dialog into a skill for Amazon Alexa.</description>
-        <include all="false">
-          <entry location="plugins/Alexa" fileType="regular" />
+        <include>
+          <entry location="plugins/Alexa" />
         </include>
-        <dependencies />
       </component>
-      <component name="Lego Mindstorms NXT plugin" id="569" customizedId="" displayDescription="false" hideHelpButton="false" selected="false" changeable="true" downloadable="true" hidden="false">
+      <component name="Lego Mindstorms NXT plugin" id="569" selected="false" downloadable="true">
         <description>A plugin to integrate with LEGO Mindstorms NXT robots.</description>
-        <include all="false">
-          <entry location="plugins/NXT" fileType="regular" />
+        <include>
+          <entry location="plugins/NXT" />
         </include>
         <dependencies>
           <component id="684" />
         </dependencies>
       </component>
-      <component name="Robot Operating System (ROS) plugin" id="1341" customizedId="" displayDescription="false" hideHelpButton="false" selected="false" changeable="true" downloadable="false" hidden="false">
-        <description />
-        <include all="false">
-          <entry location="plugins/ROS" fileType="regular" />
+      <component name="Robot Operating System (ROS) plugin" id="1341" selected="false">
+        <include>
+          <entry location="plugins/ROS" />
         </include>
-        <dependencies />
       </component>
     </components>
   </files>
   <launchers>
-    <launcher name="DialogOS" id="250" customizedId="" external="false" excludeFromMenu="false" unixMode="755" unixAutoStart="true" menuName="" icnsFile="" customMacBundleIdentifier="false" macBundleIdentifier="" swtApp="false" fileset="" macBundleBinary="JavaApplicationStub" addMacEntitlements="false" macEntitlementsFile="" useCustomMacosExecutableName="false" customMacosExecutableName="" useJavaMinVersionOverride="false" javaMinVersionOverride="" useJavaMaxVersionOverride="false" javaMaxVersionOverride="" checkUpdater="false" updateExecutionMode="unattendedProgress" unattendedUpdateTitle="${i18n:updater.WindowTitle(&quot;${compiler:sys.fullName}&quot;)}">
-      <executable name="dialogos" type="1" iconSet="true" iconFile="" executableDir="" redirectStderr="true" stderrFile="error.log" stderrMode="overwrite" redirectStdout="false" stdoutFile="output.log" stdoutMode="overwrite" failOnStderrOutput="true" executableMode="1" changeWorkingDirectory="true" workingDirectory="." singleInstance="false" serviceStartType="2" serviceDependencies="" serviceDescription="" jreLocation="" executionLevel="asInvoker" checkConsoleParameter="false" globalSingleInstance="false" singleInstanceActivate="true" dpiAware="java9+">
-        <versionInfo include="false" fileVersion="" fileDescription="" legalCopyright="" internalName="" productName="" />
-      </executable>
-      <splashScreen show="false" width="0" height="0" bitmapFile="" textOverlay="false">
-        <text>
-          <statusLine x="20" y="20" text="" fontSize="8" fontColor="0,0,0" bold="false" />
-          <versionLine x="20" y="40" text="version ${compiler:sys.version}" fontSize="8" fontColor="0,0,0" bold="false" />
-        </text>
-      </splashScreen>
-      <java mainClass="com.clt.dialogos.DialogOS" mainMode="1" vmParameters="" arguments="" allowVMPassthroughParameters="true" preferredVM="" bundleRuntime="true">
+    <launcher name="DialogOS" id="250">
+      <executable name="dialogos" iconSet="true" executableMode="gui" />
+      <java mainClass="com.clt.dialogos.DialogOS">
         <classPath>
           <scanDirectory location="lib" failOnError="false" />
           <scanDirectory location="plugins" failOnError="false" />
@@ -350,228 +319,97 @@
           <scanDirectory location="plugins/Alexa" failOnError="false" />
           <scanDirectory location="plugins/ROS" failOnError="false" />
         </classPath>
-        <modulePath />
-        <nativeLibraryDirectories />
-        <vmOptions />
       </java>
-      <includedFiles />
-      <unextractableFiles />
-      <vmOptionsFile mode="template" overwriteMode="0" fileMode="644">
-        <content />
-      </vmOptionsFile>
-      <customScript mode="1" file="">
-        <content />
-      </customScript>
-      <infoPlist mode="1" file="">
-        <content />
-      </infoPlist>
+      <macStaticAssociationActions mode="selected" />
       <iconImageFiles>
         <file path="../AppIconLarge.png" />
       </iconImageFiles>
     </launcher>
   </launchers>
-  <installerGui installerType="1" addOnAppId="" suggestPreviousLocations="true" autoUpdateDescriptorUrl="" useAutoUpdateBaseUrl="false" autoUpdateBaseUrl="">
-    <staticMembers script="" />
-    <customCode />
-    <autoUpdate useMinUpdatableVersion="false" minUpdatableVersion="" useMaxUpdatableVersion="false" maxUpdatableVersion="">
-      <commentFiles />
-      <customAttributes />
-    </autoUpdate>
+  <installerGui>
     <applications>
-      <application name="" id="installer" customizedId="" beanClass="com.install4j.runtime.beans.applications.InstallerApplication" enabled="true" commentSet="false" comment="" actionElevationType="none" styleId="" fileset="" customIcnsFile="" customIcoFile="" macEntitlementsFile="" automaticLauncherIntegration="false" launchMode="startupFirstWindow" launchInNewProcess="true" launchSchedule="updateSchedule" allLaunchers="true">
+      <application id="installer" beanClass="com.install4j.runtime.beans.applications.InstallerApplication">
         <serializedBean>
-          <java class="java.beans.XMLDecoder">
-            <object class="com.install4j.runtime.beans.applications.InstallerApplication" id="InstallerApplication0">
-              <void property="customIconImageFiles">
-                <void method="add">
-                  <object class="com.install4j.api.beans.ExternalFile">
-                    <string>../AppIconLarge.png</string>
-                  </object>
-                </void>
-              </void>
-              <void property="useCustomIcon">
-                <boolean>true</boolean>
-              </void>
-            </object>
-          </java>
+          <property name="customIconImageFiles">
+            <add>
+              <object class="com.install4j.api.beans.ExternalFile">
+                <string>../AppIconLarge.png</string>
+              </object>
+            </add>
+          </property>
+          <property name="useCustomIcon" type="boolean" value="true" />
         </serializedBean>
-        <styleOverrides />
-        <launcherIds />
-        <variables />
         <startup>
-          <screen name="" id="1" customizedId="" beanClass="com.install4j.runtime.beans.screens.StartupScreen" enabled="true" commentSet="false" comment="" actionElevationType="inherit" styleId="" rollbackBarrier="false" rollbackBarrierExitCode="0" backButton="2" finishScreen="false" wizardIndexChangeType="unchanged" wizardIndexKey="">
-            <serializedBean>
-              <java class="java.beans.XMLDecoder">
-                <object class="com.install4j.runtime.beans.screens.StartupScreen" />
-              </java>
-            </serializedBean>
-            <styleOverrides />
-            <condition />
-            <validation />
-            <preActivation />
-            <postActivation />
+          <screen id="1" beanClass="com.install4j.runtime.beans.screens.StartupScreen" rollbackBarrierExitCode="0">
             <actions>
-              <action name="" id="22" customizedId="" beanClass="com.install4j.runtime.beans.actions.misc.RequestPrivilegesAction" enabled="true" commentSet="false" comment="" actionElevationType="none" rollbackBarrier="false" rollbackBarrierExitCode="0" multiExec="false" failureStrategy="1" errorMessage="">
-                <serializedBean>
-                  <java class="java.beans.XMLDecoder">
-                    <object class="com.install4j.runtime.beans.actions.misc.RequestPrivilegesAction" />
-                  </java>
-                </serializedBean>
-                <condition />
-              </action>
+              <action id="22" beanClass="com.install4j.runtime.beans.actions.misc.RequestPrivilegesAction" actionElevationType="none" rollbackBarrierExitCode="0" />
             </actions>
-            <formComponents />
           </screen>
         </startup>
         <screens>
-          <screen name="" id="2" customizedId="" beanClass="com.install4j.runtime.beans.screens.WelcomeScreen" enabled="true" commentSet="false" comment="" actionElevationType="inherit" styleId="41" rollbackBarrier="false" rollbackBarrierExitCode="0" backButton="2" finishScreen="false" wizardIndexChangeType="unchanged" wizardIndexKey="">
-            <serializedBean>
-              <java class="java.beans.XMLDecoder">
-                <object class="com.install4j.runtime.beans.screens.WelcomeScreen" />
-              </java>
-            </serializedBean>
-            <styleOverrides />
-            <condition />
-            <validation />
-            <preActivation />
-            <postActivation />
+          <screen id="2" beanClass="com.install4j.runtime.beans.screens.WelcomeScreen" styleId="41" rollbackBarrierExitCode="0">
             <actions>
-              <action name="" id="7" customizedId="" beanClass="com.install4j.runtime.beans.actions.misc.LoadResponseFileAction" enabled="true" commentSet="false" comment="" actionElevationType="inherit" rollbackBarrier="false" rollbackBarrierExitCode="0" multiExec="true" failureStrategy="1" errorMessage="">
+              <action id="7" beanClass="com.install4j.runtime.beans.actions.misc.LoadResponseFileAction" rollbackBarrierExitCode="0" multiExec="true">
                 <serializedBean>
-                  <java class="java.beans.XMLDecoder">
-                    <object class="com.install4j.runtime.beans.actions.misc.LoadResponseFileAction">
-                      <void property="excludedVariables">
-                        <array class="java.lang.String" length="1">
-                          <void index="0">
-                            <string>sys.installationDir</string>
-                          </void>
-                        </array>
-                      </void>
-                    </object>
-                  </java>
+                  <property name="excludedVariables" type="array" elementType="string" length="1">
+                    <element index="0">sys.installationDir</element>
+                  </property>
                 </serializedBean>
                 <condition>context.getBooleanVariable("sys.confirmedUpdateInstallation")</condition>
               </action>
             </actions>
             <formComponents>
-              <formComponent name="" id="3" customizedId="" beanClass="com.install4j.runtime.beans.formcomponents.MultilineLabelComponent" enabled="true" commentSet="false" comment="" insetTop="" insetLeft="" insetBottom="" insetRight="" resetInitOnPrevious="false" useExternalParametrization="false" externalParametrizationName="" externalParametrizationMode="all">
+              <formComponent id="3" beanClass="com.install4j.runtime.beans.formcomponents.MultilineLabelComponent">
                 <serializedBean>
-                  <java class="java.beans.XMLDecoder">
-                    <object class="com.install4j.runtime.beans.formcomponents.MultilineLabelComponent">
-                      <void property="labelText">
-                        <string>${form:welcomeMessage}</string>
-                      </void>
-                    </object>
-                  </java>
+                  <property name="labelText" type="string">${form:welcomeMessage}</property>
                 </serializedBean>
-                <initScript />
                 <visibilityScript>!context.isConsole()</visibilityScript>
-                <externalParametrizationPropertyNames />
               </formComponent>
-              <formComponent name="" id="4" customizedId="" beanClass="com.install4j.runtime.beans.formcomponents.ConsoleHandlerFormComponent" enabled="true" commentSet="false" comment="" insetTop="" insetLeft="" insetBottom="" insetRight="" resetInitOnPrevious="false" useExternalParametrization="false" externalParametrizationName="" externalParametrizationMode="all">
+              <formComponent id="4" beanClass="com.install4j.runtime.beans.formcomponents.ConsoleHandlerFormComponent">
                 <serializedBean>
-                  <java class="java.beans.XMLDecoder">
-                    <object class="com.install4j.runtime.beans.formcomponents.ConsoleHandlerFormComponent">
-                      <void property="consoleScript">
-                        <object class="com.install4j.api.beans.ScriptProperty">
-                          <void property="value">
-                            <string>String message = context.getMessage("ConsoleWelcomeLabel", context.getApplicationName());
+                  <property name="consoleScript">
+                    <object class="com.install4j.api.beans.ScriptProperty">
+                      <property name="value" type="string">String message = context.getMessage("ConsoleWelcomeLabel", context.getApplicationName());
 return console.askOkCancel(message, true);
-</string>
-                          </void>
-                        </object>
-                      </void>
+</property>
                     </object>
-                  </java>
+                  </property>
                 </serializedBean>
-                <initScript />
-                <visibilityScript />
-                <externalParametrizationPropertyNames />
               </formComponent>
-              <formComponent name="" id="5" customizedId="" beanClass="com.install4j.runtime.beans.formcomponents.UpdateAlertComponent" enabled="true" commentSet="false" comment="" insetTop="" insetLeft="" insetBottom="" insetRight="" resetInitOnPrevious="false" useExternalParametrization="true" externalParametrizationName="Update Alert" externalParametrizationMode="include">
-                <serializedBean>
-                  <java class="java.beans.XMLDecoder">
-                    <object class="com.install4j.runtime.beans.formcomponents.UpdateAlertComponent" />
-                  </java>
-                </serializedBean>
-                <initScript />
-                <visibilityScript />
+              <formComponent id="5" beanClass="com.install4j.runtime.beans.formcomponents.UpdateAlertComponent" useExternalParametrization="true" externalParametrizationName="Update Alert" externalParametrizationMode="include">
                 <externalParametrizationPropertyNames>
                   <propertyName>updateCheck</propertyName>
                 </externalParametrizationPropertyNames>
               </formComponent>
-              <formComponent name="" id="6" customizedId="" beanClass="com.install4j.runtime.beans.formcomponents.MultilineLabelComponent" enabled="true" commentSet="false" comment="" insetTop="20" insetLeft="" insetBottom="" insetRight="" resetInitOnPrevious="false" useExternalParametrization="false" externalParametrizationName="" externalParametrizationMode="all">
+              <formComponent id="6" beanClass="com.install4j.runtime.beans.formcomponents.MultilineLabelComponent" insetTop="20">
                 <serializedBean>
-                  <java class="java.beans.XMLDecoder">
-                    <object class="com.install4j.runtime.beans.formcomponents.MultilineLabelComponent">
-                      <void property="labelText">
-                        <string>${i18n:ClickNext}</string>
-                      </void>
-                    </object>
-                  </java>
+                  <property name="labelText" type="string">${i18n:ClickNext}</property>
                 </serializedBean>
-                <initScript />
-                <visibilityScript />
-                <externalParametrizationPropertyNames />
               </formComponent>
             </formComponents>
           </screen>
-          <screen name="" id="8" customizedId="" beanClass="com.install4j.runtime.beans.screens.InstallationDirectoryScreen" enabled="true" commentSet="false" comment="" actionElevationType="inherit" styleId="" rollbackBarrier="false" rollbackBarrierExitCode="0" backButton="2" finishScreen="false" wizardIndexChangeType="unchanged" wizardIndexKey="">
-            <serializedBean>
-              <java class="java.beans.XMLDecoder">
-                <object class="com.install4j.runtime.beans.screens.InstallationDirectoryScreen" />
-              </java>
-            </serializedBean>
-            <styleOverrides />
+          <screen id="8" beanClass="com.install4j.runtime.beans.screens.InstallationDirectoryScreen" rollbackBarrierExitCode="0">
             <condition>!context.getBooleanVariable("sys.confirmedUpdateInstallation")</condition>
-            <validation />
-            <preActivation />
-            <postActivation />
             <actions>
-              <action name="" id="11" customizedId="" beanClass="com.install4j.runtime.beans.actions.misc.LoadResponseFileAction" enabled="true" commentSet="false" comment="" actionElevationType="inherit" rollbackBarrier="false" rollbackBarrierExitCode="0" multiExec="true" failureStrategy="1" errorMessage="">
+              <action id="11" beanClass="com.install4j.runtime.beans.actions.misc.LoadResponseFileAction" rollbackBarrierExitCode="0" multiExec="true">
                 <serializedBean>
-                  <java class="java.beans.XMLDecoder">
-                    <object class="com.install4j.runtime.beans.actions.misc.LoadResponseFileAction">
-                      <void property="excludedVariables">
-                        <array class="java.lang.String" length="1">
-                          <void index="0">
-                            <string>sys.installationDir</string>
-                          </void>
-                        </array>
-                      </void>
-                    </object>
-                  </java>
+                  <property name="excludedVariables" type="array" elementType="string" length="1">
+                    <element index="0">sys.installationDir</element>
+                  </property>
                 </serializedBean>
                 <condition>context.getVariable("sys.responseFile") == null</condition>
               </action>
             </actions>
             <formComponents>
-              <formComponent name="" id="9" customizedId="" beanClass="com.install4j.runtime.beans.formcomponents.MultilineLabelComponent" enabled="true" commentSet="false" comment="" insetTop="" insetLeft="" insetBottom="25" insetRight="" resetInitOnPrevious="false" useExternalParametrization="false" externalParametrizationName="" externalParametrizationMode="all">
+              <formComponent id="9" beanClass="com.install4j.runtime.beans.formcomponents.MultilineLabelComponent" insetBottom="25">
                 <serializedBean>
-                  <java class="java.beans.XMLDecoder">
-                    <object class="com.install4j.runtime.beans.formcomponents.MultilineLabelComponent">
-                      <void property="labelText">
-                        <string>${i18n:SelectDirLabel(${compiler:sys.fullName})}</string>
-                      </void>
-                    </object>
-                  </java>
+                  <property name="labelText" type="string">${i18n:SelectDirLabel(${compiler:sys.fullName})}</property>
                 </serializedBean>
-                <initScript />
-                <visibilityScript />
-                <externalParametrizationPropertyNames />
               </formComponent>
-              <formComponent name="" id="10" customizedId="" beanClass="com.install4j.runtime.beans.formcomponents.InstallationDirectoryChooserComponent" enabled="true" commentSet="false" comment="" insetTop="" insetLeft="" insetBottom="" insetRight="" resetInitOnPrevious="false" useExternalParametrization="true" externalParametrizationName="Installation Directory Chooser" externalParametrizationMode="include">
+              <formComponent id="10" beanClass="com.install4j.runtime.beans.formcomponents.InstallationDirectoryChooserComponent" useExternalParametrization="true" externalParametrizationName="Installation Directory Chooser" externalParametrizationMode="include">
                 <serializedBean>
-                  <java class="java.beans.XMLDecoder">
-                    <object class="com.install4j.runtime.beans.formcomponents.InstallationDirectoryChooserComponent">
-                      <void property="requestFocus">
-                        <boolean>true</boolean>
-                      </void>
-                    </object>
-                  </java>
+                  <property name="requestFocus" type="boolean" value="true" />
                 </serializedBean>
-                <initScript />
-                <visibilityScript />
                 <externalParametrizationPropertyNames>
                   <propertyName>suggestAppDir</propertyName>
                   <propertyName>validateApplicationId</propertyName>
@@ -588,90 +426,35 @@ return console.askOkCancel(message, true);
               </formComponent>
             </formComponents>
           </screen>
-          <screen name="" id="12" customizedId="" beanClass="com.install4j.runtime.beans.screens.ComponentsScreen" enabled="true" commentSet="false" comment="" actionElevationType="inherit" styleId="" rollbackBarrier="false" rollbackBarrierExitCode="0" backButton="2" finishScreen="false" wizardIndexChangeType="unchanged" wizardIndexKey="">
-            <serializedBean>
-              <java class="java.beans.XMLDecoder">
-                <object class="com.install4j.runtime.beans.screens.ComponentsScreen" />
-              </java>
-            </serializedBean>
-            <styleOverrides />
-            <condition />
-            <validation />
-            <preActivation />
-            <postActivation />
-            <actions />
+          <screen id="12" beanClass="com.install4j.runtime.beans.screens.ComponentsScreen" rollbackBarrierExitCode="0">
             <formComponents>
-              <formComponent name="" id="13" customizedId="" beanClass="com.install4j.runtime.beans.formcomponents.MultilineLabelComponent" enabled="true" commentSet="false" comment="" insetTop="" insetLeft="" insetBottom="" insetRight="" resetInitOnPrevious="false" useExternalParametrization="false" externalParametrizationName="" externalParametrizationMode="all">
+              <formComponent id="13" beanClass="com.install4j.runtime.beans.formcomponents.MultilineLabelComponent">
                 <serializedBean>
-                  <java class="java.beans.XMLDecoder">
-                    <object class="com.install4j.runtime.beans.formcomponents.MultilineLabelComponent">
-                      <void property="labelText">
-                        <string>${i18n:SelectComponentsLabel2}</string>
-                      </void>
-                    </object>
-                  </java>
+                  <property name="labelText" type="string">${i18n:SelectComponentsLabel2}</property>
                 </serializedBean>
-                <initScript />
                 <visibilityScript>!context.isConsole()</visibilityScript>
-                <externalParametrizationPropertyNames />
               </formComponent>
-              <formComponent name="" id="14" customizedId="" beanClass="com.install4j.runtime.beans.formcomponents.ComponentSelectorComponent" enabled="true" commentSet="false" comment="" insetTop="" insetLeft="" insetBottom="" insetRight="" resetInitOnPrevious="false" useExternalParametrization="true" externalParametrizationName="Installation Components" externalParametrizationMode="include">
+              <formComponent id="14" beanClass="com.install4j.runtime.beans.formcomponents.ComponentSelectorComponent" useExternalParametrization="true" externalParametrizationName="Installation Components" externalParametrizationMode="include">
                 <serializedBean>
-                  <java class="java.beans.XMLDecoder">
-                    <object class="com.install4j.runtime.beans.formcomponents.ComponentSelectorComponent">
-                      <void property="fillVertical">
-                        <boolean>true</boolean>
-                      </void>
-                    </object>
-                  </java>
+                  <property name="fillVertical" type="boolean" value="true" />
                 </serializedBean>
-                <initScript />
-                <visibilityScript />
                 <externalParametrizationPropertyNames>
                   <propertyName>selectionChangedScript</propertyName>
                 </externalParametrizationPropertyNames>
               </formComponent>
             </formComponents>
           </screen>
-          <screen name="" id="1138" customizedId="" beanClass="com.install4j.runtime.beans.screens.FileAssociationsScreen" enabled="true" commentSet="false" comment="" actionElevationType="inherit" styleId="" rollbackBarrier="false" rollbackBarrierExitCode="0" backButton="2" finishScreen="false" wizardIndexChangeType="unchanged" wizardIndexKey="">
-            <serializedBean>
-              <java class="java.beans.XMLDecoder">
-                <object class="com.install4j.runtime.beans.screens.FileAssociationsScreen" />
-              </java>
-            </serializedBean>
-            <styleOverrides />
-            <condition />
-            <validation />
-            <preActivation />
-            <postActivation />
-            <actions />
+          <screen id="1138" beanClass="com.install4j.runtime.beans.screens.FileAssociationsScreen" rollbackBarrierExitCode="0">
             <formComponents>
-              <formComponent name="" id="1139" customizedId="" beanClass="com.install4j.runtime.beans.formcomponents.MultilineLabelComponent" enabled="true" commentSet="false" comment="" insetTop="" insetLeft="" insetBottom="" insetRight="" resetInitOnPrevious="false" useExternalParametrization="false" externalParametrizationName="" externalParametrizationMode="all">
+              <formComponent id="1139" beanClass="com.install4j.runtime.beans.formcomponents.MultilineLabelComponent">
                 <serializedBean>
-                  <java class="java.beans.XMLDecoder">
-                    <object class="com.install4j.runtime.beans.formcomponents.MultilineLabelComponent">
-                      <void property="labelText">
-                        <string>${i18n:SelectAssociationsLabel}</string>
-                      </void>
-                    </object>
-                  </java>
+                  <property name="labelText" type="string">${i18n:SelectAssociationsLabel}</property>
                 </serializedBean>
-                <initScript />
-                <visibilityScript />
-                <externalParametrizationPropertyNames />
               </formComponent>
-              <formComponent name="" id="1140" customizedId="" beanClass="com.install4j.runtime.beans.formcomponents.FileAssociationsComponent" enabled="true" commentSet="false" comment="" insetTop="" insetLeft="" insetBottom="" insetRight="" resetInitOnPrevious="false" useExternalParametrization="true" externalParametrizationName="File Associations" externalParametrizationMode="include">
+              <formComponent id="1140" beanClass="com.install4j.runtime.beans.formcomponents.FileAssociationsComponent" useExternalParametrization="true" externalParametrizationName="File Associations" externalParametrizationMode="include">
                 <serializedBean>
-                  <java class="java.beans.XMLDecoder">
-                    <object class="com.install4j.runtime.beans.formcomponents.FileAssociationsComponent">
-                      <void property="fillVertical">
-                        <boolean>true</boolean>
-                      </void>
-                    </object>
-                  </java>
+                  <property name="fillVertical" type="boolean" value="true" />
                 </serializedBean>
-                <initScript />
-                <visibilityScript />
                 <externalParametrizationPropertyNames>
                   <propertyName>showSelectionButtons</propertyName>
                   <propertyName>selectionButtonPosition</propertyName>
@@ -679,294 +462,101 @@ return console.askOkCancel(message, true);
               </formComponent>
             </formComponents>
           </screen>
-          <screen name="" id="15" customizedId="" beanClass="com.install4j.runtime.beans.screens.InstallationScreen" enabled="true" commentSet="false" comment="" actionElevationType="inherit" styleId="" rollbackBarrier="true" rollbackBarrierExitCode="0" backButton="2" finishScreen="false" wizardIndexChangeType="unchanged" wizardIndexKey="">
-            <serializedBean>
-              <java class="java.beans.XMLDecoder">
-                <object class="com.install4j.runtime.beans.screens.InstallationScreen" />
-              </java>
-            </serializedBean>
-            <styleOverrides />
-            <condition />
-            <validation />
-            <preActivation />
-            <postActivation />
+          <screen id="15" beanClass="com.install4j.runtime.beans.screens.InstallationScreen" rollbackBarrier="true" rollbackBarrierExitCode="0">
             <actions>
-              <action name="" id="17" customizedId="" beanClass="com.install4j.runtime.beans.actions.InstallFilesAction" enabled="true" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" rollbackBarrierExitCode="0" multiExec="false" failureStrategy="2" errorMessage="${i18n:FileCorrupted}">
+              <action id="17" beanClass="com.install4j.runtime.beans.actions.InstallFilesAction" actionElevationType="elevated" rollbackBarrierExitCode="0" failureStrategy="quit" errorMessage="${i18n:FileCorrupted}" />
+              <action id="18" beanClass="com.install4j.runtime.beans.actions.desktop.CreateProgramGroupAction" actionElevationType="elevated" rollbackBarrierExitCode="0">
                 <serializedBean>
-                  <java class="java.beans.XMLDecoder">
-                    <object class="com.install4j.runtime.beans.actions.InstallFilesAction" />
-                  </java>
-                </serializedBean>
-                <condition />
-              </action>
-              <action name="" id="18" customizedId="" beanClass="com.install4j.runtime.beans.actions.desktop.CreateProgramGroupAction" enabled="true" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" rollbackBarrierExitCode="0" multiExec="false" failureStrategy="1" errorMessage="">
-                <serializedBean>
-                  <java class="java.beans.XMLDecoder">
-                    <object class="com.install4j.runtime.beans.actions.desktop.CreateProgramGroupAction">
-                      <void property="uninstallerMenuName">
-                        <string>${i18n:UninstallerMenuEntry(${compiler:sys.fullName})}</string>
-                      </void>
-                    </object>
-                  </java>
+                  <property name="uninstallerMenuName" type="string">${i18n:UninstallerMenuEntry(${compiler:sys.fullName})}</property>
                 </serializedBean>
                 <condition>!context.getBooleanVariable("sys.programGroupDisabled")</condition>
               </action>
-              <action name="" id="19" customizedId="" beanClass="com.install4j.runtime.beans.actions.desktop.RegisterAddRemoveAction" enabled="true" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" rollbackBarrierExitCode="0" multiExec="false" failureStrategy="1" errorMessage="">
+              <action id="19" beanClass="com.install4j.runtime.beans.actions.desktop.RegisterAddRemoveAction" actionElevationType="elevated" rollbackBarrierExitCode="0">
                 <serializedBean>
-                  <java class="java.beans.XMLDecoder">
-                    <object class="com.install4j.runtime.beans.actions.desktop.RegisterAddRemoveAction">
-                      <void property="itemName">
-                        <string>${compiler:sys.fullName} ${compiler:sys.version}</string>
-                      </void>
-                    </object>
-                  </java>
+                  <property name="itemName" type="string">${compiler:sys.fullName} ${compiler:sys.version}</property>
                 </serializedBean>
-                <condition />
               </action>
-              <action name="" id="1141" customizedId="" beanClass="com.install4j.runtime.beans.actions.desktop.CreateFileAssociationAction" enabled="true" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" rollbackBarrierExitCode="0" multiExec="false" failureStrategy="1" errorMessage="">
+              <action id="1141" beanClass="com.install4j.runtime.beans.actions.desktop.CreateFileAssociationAction" actionElevationType="elevated" rollbackBarrierExitCode="0">
                 <serializedBean>
-                  <java class="java.beans.XMLDecoder">
-                    <object class="com.install4j.runtime.beans.actions.desktop.CreateFileAssociationAction">
-                      <void property="description">
-                        <string>DialogOS Dialog Model</string>
-                      </void>
-                      <void property="extension">
-                        <string>dos</string>
-                      </void>
-                      <void property="launcherId">
-                        <string>250</string>
-                      </void>
-                    </object>
-                  </java>
+                  <property name="description" type="string">DialogOS Dialog Model</property>
+                  <property name="extension" type="string">dos</property>
+                  <property name="launcherId" type="string">250</property>
                 </serializedBean>
-                <condition />
               </action>
             </actions>
             <formComponents>
-              <formComponent name="" id="16" customizedId="" beanClass="com.install4j.runtime.beans.formcomponents.ProgressComponent" enabled="true" commentSet="false" comment="" insetTop="" insetLeft="" insetBottom="" insetRight="" resetInitOnPrevious="false" useExternalParametrization="false" externalParametrizationName="" externalParametrizationMode="all">
+              <formComponent id="16" beanClass="com.install4j.runtime.beans.formcomponents.ProgressComponent">
                 <serializedBean>
-                  <java class="java.beans.XMLDecoder">
-                    <object class="com.install4j.runtime.beans.formcomponents.ProgressComponent">
-                      <void property="initialStatusMessage">
-                        <string>${i18n:WizardPreparing}</string>
-                      </void>
-                    </object>
-                  </java>
+                  <property name="initialStatusMessage" type="string">${i18n:WizardPreparing}</property>
                 </serializedBean>
-                <initScript />
-                <visibilityScript />
-                <externalParametrizationPropertyNames />
               </formComponent>
             </formComponents>
           </screen>
-          <screen name="" id="20" customizedId="" beanClass="com.install4j.runtime.beans.screens.FinishedScreen" enabled="true" commentSet="false" comment="" actionElevationType="inherit" styleId="41" rollbackBarrier="false" rollbackBarrierExitCode="0" backButton="2" finishScreen="true" wizardIndexChangeType="unchanged" wizardIndexKey="">
-            <serializedBean>
-              <java class="java.beans.XMLDecoder">
-                <object class="com.install4j.runtime.beans.screens.FinishedScreen" />
-              </java>
-            </serializedBean>
-            <styleOverrides />
-            <condition />
-            <validation />
-            <preActivation />
-            <postActivation />
-            <actions />
+          <screen id="20" beanClass="com.install4j.runtime.beans.screens.FinishedScreen" styleId="41" rollbackBarrierExitCode="0" finishScreen="true">
             <formComponents>
-              <formComponent name="" id="21" customizedId="" beanClass="com.install4j.runtime.beans.formcomponents.MultilineLabelComponent" enabled="true" commentSet="false" comment="" insetTop="" insetLeft="" insetBottom="10" insetRight="" resetInitOnPrevious="false" useExternalParametrization="false" externalParametrizationName="" externalParametrizationMode="all">
+              <formComponent id="21" beanClass="com.install4j.runtime.beans.formcomponents.MultilineLabelComponent" insetBottom="10">
                 <serializedBean>
-                  <java class="java.beans.XMLDecoder">
-                    <object class="com.install4j.runtime.beans.formcomponents.MultilineLabelComponent">
-                      <void property="labelText">
-                        <string>${form:finishedMessage}</string>
-                      </void>
-                    </object>
-                  </java>
+                  <property name="labelText" type="string">${form:finishedMessage}</property>
                 </serializedBean>
-                <initScript />
-                <visibilityScript />
-                <externalParametrizationPropertyNames />
               </formComponent>
             </formComponents>
           </screen>
         </screens>
       </application>
-      <application name="" id="uninstaller" customizedId="" beanClass="com.install4j.runtime.beans.applications.UninstallerApplication" enabled="true" commentSet="false" comment="" actionElevationType="none" styleId="" fileset="" customIcnsFile="" customIcoFile="" macEntitlementsFile="" automaticLauncherIntegration="false" launchMode="startupFirstWindow" launchInNewProcess="true" launchSchedule="updateSchedule" allLaunchers="true">
+      <application id="uninstaller" beanClass="com.install4j.runtime.beans.applications.UninstallerApplication">
         <serializedBean>
-          <java class="java.beans.XMLDecoder">
-            <object class="com.install4j.runtime.beans.applications.UninstallerApplication">
-              <void property="customMacosExecutableName">
-                <string>${i18n:UninstallerMenuEntry(${compiler:sys.fullName})}</string>
-              </void>
-              <void property="useCustomMacosExecutableName">
-                <boolean>true</boolean>
-              </void>
-            </object>
-          </java>
+          <property name="customMacosExecutableName" type="string">${i18n:UninstallerMenuEntry(${compiler:sys.fullName})}</property>
+          <property name="useCustomMacosExecutableName" type="boolean" value="true" />
         </serializedBean>
-        <styleOverrides />
-        <launcherIds />
-        <variables />
         <startup>
-          <screen name="" id="23" customizedId="" beanClass="com.install4j.runtime.beans.screens.StartupScreen" enabled="true" commentSet="false" comment="" actionElevationType="inherit" styleId="" rollbackBarrier="false" rollbackBarrierExitCode="0" backButton="2" finishScreen="false" wizardIndexChangeType="unchanged" wizardIndexKey="">
-            <serializedBean>
-              <java class="java.beans.XMLDecoder">
-                <object class="com.install4j.runtime.beans.screens.StartupScreen" />
-              </java>
-            </serializedBean>
-            <styleOverrides />
-            <condition />
-            <validation />
-            <preActivation />
-            <postActivation />
+          <screen id="23" beanClass="com.install4j.runtime.beans.screens.StartupScreen" rollbackBarrierExitCode="0">
             <actions>
-              <action name="" id="33" customizedId="" beanClass="com.install4j.runtime.beans.actions.misc.LoadResponseFileAction" enabled="true" commentSet="false" comment="" actionElevationType="inherit" rollbackBarrier="false" rollbackBarrierExitCode="0" multiExec="false" failureStrategy="1" errorMessage="">
-                <serializedBean>
-                  <java class="java.beans.XMLDecoder">
-                    <object class="com.install4j.runtime.beans.actions.misc.LoadResponseFileAction" />
-                  </java>
-                </serializedBean>
-                <condition />
-              </action>
-              <action name="" id="34" customizedId="" beanClass="com.install4j.runtime.beans.actions.misc.RequireInstallerPrivilegesAction" enabled="true" commentSet="false" comment="" actionElevationType="none" rollbackBarrier="false" rollbackBarrierExitCode="0" multiExec="false" failureStrategy="1" errorMessage="">
-                <serializedBean>
-                  <java class="java.beans.XMLDecoder">
-                    <object class="com.install4j.runtime.beans.actions.misc.RequireInstallerPrivilegesAction" />
-                  </java>
-                </serializedBean>
-                <condition />
-              </action>
+              <action id="33" beanClass="com.install4j.runtime.beans.actions.misc.LoadResponseFileAction" rollbackBarrierExitCode="0" />
+              <action id="34" beanClass="com.install4j.runtime.beans.actions.misc.RequireInstallerPrivilegesAction" actionElevationType="none" rollbackBarrierExitCode="0" />
             </actions>
-            <formComponents />
           </screen>
         </startup>
         <screens>
-          <screen name="" id="24" customizedId="" beanClass="com.install4j.runtime.beans.screens.UninstallWelcomeScreen" enabled="true" commentSet="false" comment="" actionElevationType="inherit" styleId="41" rollbackBarrier="false" rollbackBarrierExitCode="0" backButton="2" finishScreen="false" wizardIndexChangeType="unchanged" wizardIndexKey="">
-            <serializedBean>
-              <java class="java.beans.XMLDecoder">
-                <object class="com.install4j.runtime.beans.screens.UninstallWelcomeScreen" />
-              </java>
-            </serializedBean>
-            <styleOverrides />
-            <condition />
-            <validation />
-            <preActivation />
-            <postActivation />
-            <actions />
+          <screen id="24" beanClass="com.install4j.runtime.beans.screens.UninstallWelcomeScreen" styleId="41" rollbackBarrierExitCode="0">
             <formComponents>
-              <formComponent name="" id="25" customizedId="" beanClass="com.install4j.runtime.beans.formcomponents.MultilineLabelComponent" enabled="true" commentSet="false" comment="" insetTop="" insetLeft="" insetBottom="10" insetRight="" resetInitOnPrevious="false" useExternalParametrization="false" externalParametrizationName="" externalParametrizationMode="all">
+              <formComponent id="25" beanClass="com.install4j.runtime.beans.formcomponents.MultilineLabelComponent" insetBottom="10">
                 <serializedBean>
-                  <java class="java.beans.XMLDecoder">
-                    <object class="com.install4j.runtime.beans.formcomponents.MultilineLabelComponent">
-                      <void property="labelText">
-                        <string>${form:welcomeMessage}</string>
-                      </void>
-                    </object>
-                  </java>
+                  <property name="labelText" type="string">${form:welcomeMessage}</property>
                 </serializedBean>
-                <initScript />
                 <visibilityScript>!context.isConsole()</visibilityScript>
-                <externalParametrizationPropertyNames />
               </formComponent>
-              <formComponent name="" id="26" customizedId="" beanClass="com.install4j.runtime.beans.formcomponents.ConsoleHandlerFormComponent" enabled="true" commentSet="false" comment="" insetTop="" insetLeft="" insetBottom="" insetRight="" resetInitOnPrevious="false" useExternalParametrization="false" externalParametrizationName="" externalParametrizationMode="all">
+              <formComponent id="26" beanClass="com.install4j.runtime.beans.formcomponents.ConsoleHandlerFormComponent">
                 <serializedBean>
-                  <java class="java.beans.XMLDecoder">
-                    <object class="com.install4j.runtime.beans.formcomponents.ConsoleHandlerFormComponent">
-                      <void property="consoleScript">
-                        <object class="com.install4j.api.beans.ScriptProperty">
-                          <void property="value">
-                            <string>String message = context.getMessage("ConfirmUninstall", context.getApplicationName());
+                  <property name="consoleScript">
+                    <object class="com.install4j.api.beans.ScriptProperty">
+                      <property name="value" type="string">String message = context.getMessage("ConfirmUninstall", context.getApplicationName());
 return console.askYesNo(message, true);
-</string>
-                          </void>
-                        </object>
-                      </void>
+</property>
                     </object>
-                  </java>
+                  </property>
                 </serializedBean>
-                <initScript />
-                <visibilityScript />
-                <externalParametrizationPropertyNames />
               </formComponent>
             </formComponents>
           </screen>
-          <screen name="" id="27" customizedId="" beanClass="com.install4j.runtime.beans.screens.UninstallationScreen" enabled="true" commentSet="false" comment="" actionElevationType="inherit" styleId="" rollbackBarrier="false" rollbackBarrierExitCode="0" backButton="2" finishScreen="false" wizardIndexChangeType="unchanged" wizardIndexKey="">
-            <serializedBean>
-              <java class="java.beans.XMLDecoder">
-                <object class="com.install4j.runtime.beans.screens.UninstallationScreen" />
-              </java>
-            </serializedBean>
-            <styleOverrides />
-            <condition />
-            <validation />
-            <preActivation />
-            <postActivation />
+          <screen id="27" beanClass="com.install4j.runtime.beans.screens.UninstallationScreen" rollbackBarrierExitCode="0">
             <actions>
-              <action name="" id="29" customizedId="" beanClass="com.install4j.runtime.beans.actions.UninstallFilesAction" enabled="true" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" rollbackBarrierExitCode="0" multiExec="false" failureStrategy="1" errorMessage="">
-                <serializedBean>
-                  <java class="java.beans.XMLDecoder">
-                    <object class="com.install4j.runtime.beans.actions.UninstallFilesAction" />
-                  </java>
-                </serializedBean>
-                <condition />
-              </action>
+              <action id="29" beanClass="com.install4j.runtime.beans.actions.UninstallFilesAction" actionElevationType="elevated" rollbackBarrierExitCode="0" />
             </actions>
             <formComponents>
-              <formComponent name="" id="28" customizedId="" beanClass="com.install4j.runtime.beans.formcomponents.ProgressComponent" enabled="true" commentSet="false" comment="" insetTop="" insetLeft="" insetBottom="" insetRight="" resetInitOnPrevious="false" useExternalParametrization="false" externalParametrizationName="" externalParametrizationMode="all">
+              <formComponent id="28" beanClass="com.install4j.runtime.beans.formcomponents.ProgressComponent">
                 <serializedBean>
-                  <java class="java.beans.XMLDecoder">
-                    <object class="com.install4j.runtime.beans.formcomponents.ProgressComponent">
-                      <void property="initialStatusMessage">
-                        <string>${i18n:UninstallerPreparing}</string>
-                      </void>
-                    </object>
-                  </java>
+                  <property name="initialStatusMessage" type="string">${i18n:UninstallerPreparing}</property>
                 </serializedBean>
-                <initScript />
-                <visibilityScript />
-                <externalParametrizationPropertyNames />
               </formComponent>
             </formComponents>
           </screen>
-          <screen name="" id="32" customizedId="" beanClass="com.install4j.runtime.beans.screens.UninstallFailureScreen" enabled="true" commentSet="false" comment="" actionElevationType="inherit" styleId="" rollbackBarrier="false" rollbackBarrierExitCode="0" backButton="2" finishScreen="true" wizardIndexChangeType="unchanged" wizardIndexKey="">
-            <serializedBean>
-              <java class="java.beans.XMLDecoder">
-                <object class="com.install4j.runtime.beans.screens.UninstallFailureScreen" />
-              </java>
-            </serializedBean>
-            <styleOverrides />
-            <condition />
-            <validation />
-            <preActivation />
-            <postActivation />
-            <actions />
-            <formComponents />
-          </screen>
-          <screen name="" id="30" customizedId="" beanClass="com.install4j.runtime.beans.screens.UninstallSuccessScreen" enabled="true" commentSet="false" comment="" actionElevationType="inherit" styleId="41" rollbackBarrier="false" rollbackBarrierExitCode="0" backButton="2" finishScreen="true" wizardIndexChangeType="unchanged" wizardIndexKey="">
-            <serializedBean>
-              <java class="java.beans.XMLDecoder">
-                <object class="com.install4j.runtime.beans.screens.UninstallSuccessScreen" />
-              </java>
-            </serializedBean>
-            <styleOverrides />
-            <condition />
-            <validation />
-            <preActivation />
-            <postActivation />
-            <actions />
+          <screen id="32" beanClass="com.install4j.runtime.beans.screens.UninstallFailureScreen" rollbackBarrierExitCode="0" finishScreen="true" />
+          <screen id="30" beanClass="com.install4j.runtime.beans.screens.UninstallSuccessScreen" styleId="41" rollbackBarrierExitCode="0" finishScreen="true">
             <formComponents>
-              <formComponent name="" id="31" customizedId="" beanClass="com.install4j.runtime.beans.formcomponents.MultilineLabelComponent" enabled="true" commentSet="false" comment="" insetTop="" insetLeft="" insetBottom="10" insetRight="" resetInitOnPrevious="false" useExternalParametrization="false" externalParametrizationName="" externalParametrizationMode="all">
+              <formComponent id="31" beanClass="com.install4j.runtime.beans.formcomponents.MultilineLabelComponent" insetBottom="10">
                 <serializedBean>
-                  <java class="java.beans.XMLDecoder">
-                    <object class="com.install4j.runtime.beans.formcomponents.MultilineLabelComponent">
-                      <void property="labelText">
-                        <string>${form:successMessage}</string>
-                      </void>
-                    </object>
-                  </java>
+                  <property name="labelText" type="string">${form:successMessage}</property>
                 </serializedBean>
-                <initScript />
-                <visibilityScript />
-                <externalParametrizationPropertyNames />
               </formComponent>
             </formComponents>
           </screen>
@@ -974,182 +564,100 @@ return console.askYesNo(message, true);
       </application>
     </applications>
     <styles defaultStyleId="35">
-      <style name="Standard" id="35" customizedId="" beanClass="com.install4j.runtime.beans.styles.FormStyle" enabled="true" commentSet="false" comment="">
-        <serializedBean>
-          <java class="java.beans.XMLDecoder">
-            <object class="com.install4j.runtime.beans.styles.FormStyle" />
-          </java>
-        </serializedBean>
+      <style name="Standard" id="35" beanClass="com.install4j.runtime.beans.styles.FormStyle">
         <formComponents>
-          <formComponent name="Header" id="36" customizedId="" beanClass="com.install4j.runtime.beans.styles.NestedStyleComponent" enabled="true" commentSet="false" comment="" insetTop="0" insetLeft="" insetBottom="0" insetRight="" resetInitOnPrevious="false" useExternalParametrization="false" externalParametrizationName="" externalParametrizationMode="all">
+          <formComponent name="Header" id="36" beanClass="com.install4j.runtime.beans.styles.NestedStyleComponent" insetTop="0" insetBottom="0">
             <serializedBean>
-              <java class="java.beans.XMLDecoder">
-                <object class="com.install4j.runtime.beans.styles.NestedStyleComponent">
-                  <void property="styleId">
-                    <string>48</string>
-                  </void>
-                </object>
-              </java>
+              <property name="styleId" type="string">48</property>
             </serializedBean>
-            <initScript />
-            <visibilityScript />
-            <externalParametrizationPropertyNames />
           </formComponent>
-          <group name="Main" id="37" customizedId="" beanClass="com.install4j.runtime.beans.groups.VerticalFormComponentGroup" enabled="true" commentSet="false" comment="" actionElevationType="inherit" useExternalParametrization="false" externalParametrizationName="" externalParametrizationMode="all">
-            <serializedBean>
-              <java class="java.beans.XMLDecoder">
-                <object class="com.install4j.runtime.beans.groups.VerticalFormComponentGroup" />
-              </java>
-            </serializedBean>
+          <group name="Main" id="37" beanClass="com.install4j.runtime.beans.groups.VerticalFormComponentGroup">
             <beans>
-              <formComponent name="" id="38" customizedId="" beanClass="com.install4j.runtime.beans.styles.ContentComponent" enabled="true" commentSet="false" comment="" insetTop="10" insetLeft="20" insetBottom="10" insetRight="20" resetInitOnPrevious="false" useExternalParametrization="false" externalParametrizationName="" externalParametrizationMode="all">
+              <formComponent id="38" beanClass="com.install4j.runtime.beans.styles.ContentComponent" insetTop="10" insetLeft="20" insetBottom="10" insetRight="20" />
+              <formComponent name="Watermark" id="39" beanClass="com.install4j.runtime.beans.formcomponents.SeparatorComponent" insetTop="0" insetLeft="5" insetBottom="0" useExternalParametrization="true" externalParametrizationName="Custom watermark" externalParametrizationMode="include">
                 <serializedBean>
-                  <java class="java.beans.XMLDecoder">
-                    <object class="com.install4j.runtime.beans.styles.ContentComponent" />
-                  </java>
+                  <property name="enabledTitleText" type="boolean" value="false" />
+                  <property name="labelText" type="string">install4j</property>
                 </serializedBean>
-                <initScript />
-                <visibilityScript />
-                <externalParametrizationPropertyNames />
-              </formComponent>
-              <formComponent name="Watermark" id="39" customizedId="" beanClass="com.install4j.runtime.beans.formcomponents.SeparatorComponent" enabled="true" commentSet="false" comment="" insetTop="0" insetLeft="5" insetBottom="0" insetRight="" resetInitOnPrevious="false" useExternalParametrization="true" externalParametrizationName="Custom watermark" externalParametrizationMode="include">
-                <serializedBean>
-                  <java class="java.beans.XMLDecoder">
-                    <object class="com.install4j.runtime.beans.formcomponents.SeparatorComponent">
-                      <void property="enabledTitleText">
-                        <boolean>false</boolean>
-                      </void>
-                      <void property="labelText">
-                        <string>install4j</string>
-                      </void>
-                    </object>
-                  </java>
-                </serializedBean>
-                <initScript />
-                <visibilityScript />
                 <externalParametrizationPropertyNames>
                   <propertyName>labelText</propertyName>
                 </externalParametrizationPropertyNames>
               </formComponent>
-              <formComponent name="Footer" id="40" customizedId="" beanClass="com.install4j.runtime.beans.styles.NestedStyleComponent" enabled="true" commentSet="false" comment="" insetTop="0" insetLeft="" insetBottom="0" insetRight="" resetInitOnPrevious="false" useExternalParametrization="false" externalParametrizationName="" externalParametrizationMode="all">
+              <formComponent name="Footer" id="40" beanClass="com.install4j.runtime.beans.styles.NestedStyleComponent" insetTop="0" insetBottom="0">
                 <serializedBean>
-                  <java class="java.beans.XMLDecoder">
-                    <object class="com.install4j.runtime.beans.styles.NestedStyleComponent">
-                      <void property="styleId">
-                        <string>52</string>
-                      </void>
-                    </object>
-                  </java>
+                  <property name="styleId" type="string">52</property>
                 </serializedBean>
-                <initScript />
-                <visibilityScript />
-                <externalParametrizationPropertyNames />
               </formComponent>
             </beans>
-            <externalParametrizationPropertyNames />
           </group>
         </formComponents>
       </style>
-      <style name="Banner" id="41" customizedId="" beanClass="com.install4j.runtime.beans.styles.FormStyle" enabled="true" commentSet="false" comment="">
-        <serializedBean>
-          <java class="java.beans.XMLDecoder">
-            <object class="com.install4j.runtime.beans.styles.FormStyle" />
-          </java>
-        </serializedBean>
+      <style name="Banner" id="41" beanClass="com.install4j.runtime.beans.styles.FormStyle">
         <formComponents>
-          <group name="" id="42" customizedId="" beanClass="com.install4j.runtime.beans.groups.VerticalFormComponentGroup" enabled="true" commentSet="false" comment="" actionElevationType="inherit" useExternalParametrization="true" externalParametrizationName="Customize banner image" externalParametrizationMode="include">
+          <group id="42" beanClass="com.install4j.runtime.beans.groups.VerticalFormComponentGroup" useExternalParametrization="true" externalParametrizationName="Customize banner image" externalParametrizationMode="include">
             <serializedBean>
-              <java class="java.beans.XMLDecoder">
-                <object class="com.install4j.runtime.beans.groups.VerticalFormComponentGroup">
-                  <void property="backgroundColor">
-                    <object class="java.awt.Color">
-                      <int>255</int>
-                      <int>255</int>
-                      <int>255</int>
-                      <int>255</int>
-                    </object>
-                  </void>
-                  <void property="borderSides">
-                    <object class="com.install4j.runtime.beans.formcomponents.BorderSides">
-                      <void property="bottom">
-                        <boolean>true</boolean>
-                      </void>
-                    </object>
-                  </void>
-                  <void property="imageEdgeBackgroundColor">
-                    <object class="java.awt.Color">
-                      <int>25</int>
-                      <int>143</int>
-                      <int>220</int>
-                      <int>255</int>
-                    </object>
-                  </void>
-                  <void property="imageEdgeBorder">
-                    <boolean>true</boolean>
-                  </void>
-                  <void property="imageFile">
-                    <object class="com.install4j.api.beans.ExternalFile">
-                      <string>${compiler:sys.install4jHome}/resource/styles/wizard.png</string>
-                    </object>
-                  </void>
-                  <void property="insets">
-                    <object class="java.awt.Insets">
-                      <int>5</int>
-                      <int>10</int>
-                      <int>10</int>
-                      <int>10</int>
-                    </object>
-                  </void>
+              <property name="backgroundColor">
+                <object class="com.install4j.runtime.beans.LightOrDarkColor">
+                  <object class="java.awt.Color">
+                    <int>255</int>
+                    <int>255</int>
+                    <int>255</int>
+                    <int>255</int>
+                  </object>
+                  <object class="java.awt.Color">
+                    <int>49</int>
+                    <int>52</int>
+                    <int>53</int>
+                    <int>255</int>
+                  </object>
                 </object>
-              </java>
+              </property>
+              <property name="borderSides">
+                <object class="com.install4j.runtime.beans.formcomponents.BorderSides">
+                  <property name="bottom" type="boolean" value="true" />
+                </object>
+              </property>
+              <property name="imageEdgeBackgroundColor">
+                <object class="com.install4j.runtime.beans.LightOrDarkColor">
+                  <object class="java.awt.Color">
+                    <int>25</int>
+                    <int>143</int>
+                    <int>220</int>
+                    <int>255</int>
+                  </object>
+                  <object class="java.awt.Color">
+                    <int>0</int>
+                    <int>74</int>
+                    <int>151</int>
+                    <int>255</int>
+                  </object>
+                </object>
+              </property>
+              <property name="imageEdgeBorder" type="boolean" value="true" />
+              <property name="imageFile">
+                <object class="com.install4j.api.beans.ExternalFile">
+                  <string>${compiler:sys.install4jHome}/resource/styles/wizard.png</string>
+                </object>
+              </property>
+              <property name="insets">
+                <object class="java.awt.Insets">
+                  <int>5</int>
+                  <int>10</int>
+                  <int>10</int>
+                  <int>10</int>
+                </object>
+              </property>
             </serializedBean>
             <beans>
-              <formComponent name="" id="43" customizedId="" beanClass="com.install4j.runtime.beans.styles.ScreenTitleComponent" enabled="true" commentSet="false" comment="" insetTop="0" insetLeft="" insetBottom="" insetRight="" resetInitOnPrevious="false" useExternalParametrization="false" externalParametrizationName="" externalParametrizationMode="all">
+              <formComponent id="43" beanClass="com.install4j.runtime.beans.styles.ScreenTitleComponent" insetTop="0">
                 <serializedBean>
-                  <java class="java.beans.XMLDecoder">
-                    <object class="com.install4j.runtime.beans.styles.ScreenTitleComponent">
-                      <void property="labelFontSizePercent">
-                        <int>130</int>
-                      </void>
-                      <void property="labelFontStyle">
-                        <object class="java.lang.Enum" method="valueOf">
-                          <class>com.install4j.runtime.beans.formcomponents.FontStyle</class>
-                          <string>BOLD</string>
-                        </object>
-                      </void>
-                      <void property="labelFontType">
-                        <object class="java.lang.Enum" method="valueOf">
-                          <class>com.install4j.runtime.beans.formcomponents.FontType</class>
-                          <string>DERIVED</string>
-                        </object>
-                      </void>
-                    </object>
-                  </java>
+                  <property name="labelFontSizePercent" type="int" value="130" />
+                  <property name="labelFontStyle" type="enum" class="com.install4j.runtime.beans.formcomponents.FontStyle" value="BOLD" />
+                  <property name="labelFontType" type="enum" class="com.install4j.runtime.beans.formcomponents.FontType" value="DERIVED" />
                 </serializedBean>
-                <initScript />
-                <visibilityScript />
-                <externalParametrizationPropertyNames />
               </formComponent>
-              <formComponent name="" id="44" customizedId="" beanClass="com.install4j.runtime.beans.formcomponents.SeparatorComponent" enabled="true" commentSet="false" comment="" insetTop="" insetLeft="" insetBottom="" insetRight="" resetInitOnPrevious="false" useExternalParametrization="false" externalParametrizationName="" externalParametrizationMode="all">
-                <serializedBean>
-                  <java class="java.beans.XMLDecoder">
-                    <object class="com.install4j.runtime.beans.formcomponents.SeparatorComponent" />
-                  </java>
-                </serializedBean>
-                <initScript />
-                <visibilityScript />
-                <externalParametrizationPropertyNames />
-              </formComponent>
-              <formComponent name="" id="45" customizedId="" beanClass="com.install4j.runtime.beans.styles.ContentComponent" enabled="true" commentSet="false" comment="" insetTop="10" insetLeft="" insetBottom="0" insetRight="" resetInitOnPrevious="false" useExternalParametrization="false" externalParametrizationName="" externalParametrizationMode="all">
-                <serializedBean>
-                  <java class="java.beans.XMLDecoder">
-                    <object class="com.install4j.runtime.beans.styles.ContentComponent" />
-                  </java>
-                </serializedBean>
-                <initScript />
-                <visibilityScript />
-                <externalParametrizationPropertyNames />
-              </formComponent>
+              <formComponent id="44" beanClass="com.install4j.runtime.beans.formcomponents.SeparatorComponent" />
+              <formComponent id="45" beanClass="com.install4j.runtime.beans.styles.ContentComponent" insetTop="10" insetBottom="0" />
             </beans>
             <externalParametrizationPropertyNames>
               <propertyName>imageAnchor</propertyName>
@@ -1157,141 +665,80 @@ return console.askYesNo(message, true);
               <propertyName>imageFile</propertyName>
             </externalParametrizationPropertyNames>
           </group>
-          <formComponent name="" id="46" customizedId="" beanClass="com.install4j.runtime.beans.styles.NestedStyleComponent" enabled="true" commentSet="false" comment="" insetTop="" insetLeft="" insetBottom="0" insetRight="" resetInitOnPrevious="false" useExternalParametrization="false" externalParametrizationName="" externalParametrizationMode="all">
+          <formComponent id="46" beanClass="com.install4j.runtime.beans.styles.NestedStyleComponent" insetBottom="0">
             <serializedBean>
-              <java class="java.beans.XMLDecoder">
-                <object class="com.install4j.runtime.beans.styles.NestedStyleComponent">
-                  <void property="styleId">
-                    <string>52</string>
-                  </void>
-                </object>
-              </java>
+              <property name="styleId" type="string">52</property>
             </serializedBean>
-            <initScript />
-            <visibilityScript />
-            <externalParametrizationPropertyNames />
           </formComponent>
         </formComponents>
       </style>
-      <group name="Style components" id="47" customizedId="" beanClass="com.install4j.runtime.beans.groups.StyleGroup" enabled="true" commentSet="false" comment="" actionElevationType="inherit">
-        <serializedBean>
-          <java class="java.beans.XMLDecoder">
-            <object class="com.install4j.runtime.beans.groups.StyleGroup" />
-          </java>
-        </serializedBean>
+      <group name="Style components" id="47" beanClass="com.install4j.runtime.beans.groups.StyleGroup">
         <beans>
-          <style name="Standard header" id="48" customizedId="" beanClass="com.install4j.runtime.beans.styles.FormStyle" enabled="true" commentSet="false" comment="">
+          <style name="Standard header" id="48" beanClass="com.install4j.runtime.beans.styles.FormStyle">
             <serializedBean>
-              <java class="java.beans.XMLDecoder">
-                <object class="com.install4j.runtime.beans.styles.FormStyle">
-                  <void property="fillVertical">
-                    <boolean>false</boolean>
-                  </void>
-                  <void property="standalone">
-                    <boolean>false</boolean>
-                  </void>
-                  <void property="verticalAnchor">
-                    <object class="java.lang.Enum" method="valueOf">
-                      <class>com.install4j.api.beans.Anchor</class>
-                      <string>NORTH</string>
-                    </object>
-                  </void>
-                </object>
-              </java>
+              <property name="fillVertical" type="boolean" value="false" />
+              <property name="standalone" type="boolean" value="false" />
+              <property name="verticalAnchor" type="enum" class="com.install4j.api.beans.Anchor" value="NORTH" />
             </serializedBean>
             <formComponents>
-              <group name="" id="49" customizedId="" beanClass="com.install4j.runtime.beans.groups.VerticalFormComponentGroup" enabled="true" commentSet="false" comment="" actionElevationType="inherit" useExternalParametrization="true" externalParametrizationName="Customize title bar" externalParametrizationMode="include">
+              <group id="49" beanClass="com.install4j.runtime.beans.groups.VerticalFormComponentGroup" useExternalParametrization="true" externalParametrizationName="Customize title bar" externalParametrizationMode="include">
                 <serializedBean>
-                  <java class="java.beans.XMLDecoder">
-                    <object class="com.install4j.runtime.beans.groups.VerticalFormComponentGroup">
-                      <void property="backgroundColor">
-                        <object class="java.awt.Color">
-                          <int>255</int>
-                          <int>255</int>
-                          <int>255</int>
-                          <int>255</int>
-                        </object>
-                      </void>
-                      <void property="borderSides">
-                        <object class="com.install4j.runtime.beans.formcomponents.BorderSides">
-                          <void property="bottom">
-                            <boolean>true</boolean>
-                          </void>
-                        </object>
-                      </void>
-                      <void property="imageAnchor">
-                        <object class="java.lang.Enum" method="valueOf">
-                          <class>com.install4j.api.beans.Anchor</class>
-                          <string>NORTHEAST</string>
-                        </object>
-                      </void>
-                      <void property="imageEdgeBorderWidth">
-                        <int>2</int>
-                      </void>
-                      <void property="imageFile">
-                        <object class="com.install4j.api.beans.ExternalFile">
-                          <string>icon:${installer:sys.installerApplicationMode}_header.png</string>
-                        </object>
-                      </void>
-                      <void property="imageInsets">
-                        <object class="java.awt.Insets">
-                          <int>0</int>
-                          <int>5</int>
-                          <int>1</int>
-                          <int>1</int>
-                        </object>
-                      </void>
-                      <void property="insets">
-                        <object class="java.awt.Insets">
-                          <int>0</int>
-                          <int>20</int>
-                          <int>0</int>
-                          <int>10</int>
-                        </object>
-                      </void>
+                  <property name="backgroundColor">
+                    <object class="com.install4j.runtime.beans.LightOrDarkColor">
+                      <object class="java.awt.Color">
+                        <int>255</int>
+                        <int>255</int>
+                        <int>255</int>
+                        <int>255</int>
+                      </object>
+                      <object class="java.awt.Color">
+                        <int>49</int>
+                        <int>52</int>
+                        <int>53</int>
+                        <int>255</int>
+                      </object>
                     </object>
-                  </java>
+                  </property>
+                  <property name="borderSides">
+                    <object class="com.install4j.runtime.beans.formcomponents.BorderSides">
+                      <property name="bottom" type="boolean" value="true" />
+                    </object>
+                  </property>
+                  <property name="imageAnchor" type="enum" class="com.install4j.api.beans.Anchor" value="NORTHEAST" />
+                  <property name="imageEdgeBorderWidth" type="int" value="2" />
+                  <property name="imageFile">
+                    <object class="com.install4j.api.beans.ExternalFile">
+                      <string>icon:${installer:sys.installerApplicationMode}_header.png</string>
+                    </object>
+                  </property>
+                  <property name="imageInsets">
+                    <object class="java.awt.Insets">
+                      <int>0</int>
+                      <int>5</int>
+                      <int>1</int>
+                      <int>1</int>
+                    </object>
+                  </property>
+                  <property name="insets">
+                    <object class="java.awt.Insets">
+                      <int>0</int>
+                      <int>20</int>
+                      <int>0</int>
+                      <int>10</int>
+                    </object>
+                  </property>
                 </serializedBean>
                 <beans>
-                  <formComponent name="Title" id="50" customizedId="" beanClass="com.install4j.runtime.beans.styles.ScreenTitleComponent" enabled="true" commentSet="false" comment="" insetTop="" insetLeft="" insetBottom="" insetRight="" resetInitOnPrevious="false" useExternalParametrization="false" externalParametrizationName="" externalParametrizationMode="all">
+                  <formComponent name="Title" id="50" beanClass="com.install4j.runtime.beans.styles.ScreenTitleComponent">
                     <serializedBean>
-                      <java class="java.beans.XMLDecoder">
-                        <object class="com.install4j.runtime.beans.styles.ScreenTitleComponent">
-                          <void property="labelFontStyle">
-                            <object class="java.lang.Enum" method="valueOf">
-                              <class>com.install4j.runtime.beans.formcomponents.FontStyle</class>
-                              <string>BOLD</string>
-                            </object>
-                          </void>
-                          <void property="labelFontType">
-                            <object class="java.lang.Enum" method="valueOf">
-                              <class>com.install4j.runtime.beans.formcomponents.FontType</class>
-                              <string>DERIVED</string>
-                            </object>
-                          </void>
-                        </object>
-                      </java>
+                      <property name="labelFontStyle" type="enum" class="com.install4j.runtime.beans.formcomponents.FontStyle" value="BOLD" />
+                      <property name="labelFontType" type="enum" class="com.install4j.runtime.beans.formcomponents.FontType" value="DERIVED" />
                     </serializedBean>
-                    <initScript />
-                    <visibilityScript />
-                    <externalParametrizationPropertyNames />
                   </formComponent>
-                  <formComponent name="Subtitle" id="51" customizedId="" beanClass="com.install4j.runtime.beans.styles.ScreenTitleComponent" enabled="true" commentSet="false" comment="" insetTop="" insetLeft="8" insetBottom="" insetRight="" resetInitOnPrevious="false" useExternalParametrization="false" externalParametrizationName="" externalParametrizationMode="all">
+                  <formComponent name="Subtitle" id="51" beanClass="com.install4j.runtime.beans.styles.ScreenTitleComponent" insetLeft="8">
                     <serializedBean>
-                      <java class="java.beans.XMLDecoder">
-                        <object class="com.install4j.runtime.beans.styles.ScreenTitleComponent">
-                          <void property="titleType">
-                            <object class="java.lang.Enum" method="valueOf">
-                              <class>com.install4j.runtime.beans.styles.TitleType</class>
-                              <string>SUB_TITLE</string>
-                            </object>
-                          </void>
-                        </object>
-                      </java>
+                      <property name="titleType" type="enum" class="com.install4j.runtime.beans.styles.TitleType" value="SUB_TITLE" />
                     </serializedBean>
-                    <initScript />
-                    <visibilityScript />
-                    <externalParametrizationPropertyNames />
                   </formComponent>
                 </beans>
                 <externalParametrizationPropertyNames>
@@ -1304,117 +751,46 @@ return console.askYesNo(message, true);
               </group>
             </formComponents>
           </style>
-          <style name="Standard footer" id="52" customizedId="" beanClass="com.install4j.runtime.beans.styles.FormStyle" enabled="true" commentSet="false" comment="">
+          <style name="Standard footer" id="52" beanClass="com.install4j.runtime.beans.styles.FormStyle">
             <serializedBean>
-              <java class="java.beans.XMLDecoder">
-                <object class="com.install4j.runtime.beans.styles.FormStyle">
-                  <void property="fillVertical">
-                    <boolean>false</boolean>
-                  </void>
-                  <void property="standalone">
-                    <boolean>false</boolean>
-                  </void>
-                  <void property="verticalAnchor">
-                    <object class="java.lang.Enum" method="valueOf">
-                      <class>com.install4j.api.beans.Anchor</class>
-                      <string>SOUTH</string>
-                    </object>
-                  </void>
-                </object>
-              </java>
+              <property name="fillVertical" type="boolean" value="false" />
+              <property name="standalone" type="boolean" value="false" />
+              <property name="verticalAnchor" type="enum" class="com.install4j.api.beans.Anchor" value="SOUTH" />
             </serializedBean>
             <formComponents>
-              <group name="" id="53" customizedId="" beanClass="com.install4j.runtime.beans.groups.HorizontalFormComponentGroup" enabled="true" commentSet="false" comment="" actionElevationType="inherit" useExternalParametrization="false" externalParametrizationName="" externalParametrizationMode="all">
+              <group id="53" beanClass="com.install4j.runtime.beans.groups.HorizontalFormComponentGroup">
                 <serializedBean>
-                  <java class="java.beans.XMLDecoder">
-                    <object class="com.install4j.runtime.beans.groups.HorizontalFormComponentGroup">
-                      <void property="alignFirstLabel">
-                        <boolean>false</boolean>
-                      </void>
-                      <void property="insets">
-                        <object class="java.awt.Insets">
-                          <int>3</int>
-                          <int>5</int>
-                          <int>8</int>
-                          <int>5</int>
-                        </object>
-                      </void>
+                  <property name="alignFirstLabel" type="boolean" value="false" />
+                  <property name="insets">
+                    <object class="java.awt.Insets">
+                      <int>3</int>
+                      <int>5</int>
+                      <int>8</int>
+                      <int>5</int>
                     </object>
-                  </java>
+                  </property>
                 </serializedBean>
                 <beans>
-                  <formComponent name="" id="54" customizedId="" beanClass="com.install4j.runtime.beans.formcomponents.SpringComponent" enabled="true" commentSet="false" comment="" insetTop="" insetLeft="" insetBottom="" insetRight="" resetInitOnPrevious="false" useExternalParametrization="false" externalParametrizationName="" externalParametrizationMode="all">
+                  <formComponent id="54" beanClass="com.install4j.runtime.beans.formcomponents.SpringComponent" />
+                  <formComponent name="Back button" id="55" beanClass="com.install4j.runtime.beans.styles.StandardControlButtonComponent">
                     <serializedBean>
-                      <java class="java.beans.XMLDecoder">
-                        <object class="com.install4j.runtime.beans.formcomponents.SpringComponent" />
-                      </java>
+                      <property name="buttonText" type="string">&lt; ${i18n:ButtonBack}</property>
+                      <property name="controlButtonType" type="enum" class="com.install4j.api.context.ControlButtonType" value="PREVIOUS" />
                     </serializedBean>
-                    <initScript />
-                    <visibilityScript />
-                    <externalParametrizationPropertyNames />
                   </formComponent>
-                  <formComponent name="Back button" id="55" customizedId="" beanClass="com.install4j.runtime.beans.styles.StandardControlButtonComponent" enabled="true" commentSet="false" comment="" insetTop="" insetLeft="" insetBottom="" insetRight="" resetInitOnPrevious="false" useExternalParametrization="false" externalParametrizationName="" externalParametrizationMode="all">
+                  <formComponent name="Next button" id="56" beanClass="com.install4j.runtime.beans.styles.StandardControlButtonComponent">
                     <serializedBean>
-                      <java class="java.beans.XMLDecoder">
-                        <object class="com.install4j.runtime.beans.styles.StandardControlButtonComponent">
-                          <void property="buttonText">
-                            <string>&lt; ${i18n:ButtonBack}</string>
-                          </void>
-                          <void property="controlButtonType">
-                            <object class="java.lang.Enum" method="valueOf">
-                              <class>com.install4j.api.context.ControlButtonType</class>
-                              <string>PREVIOUS</string>
-                            </object>
-                          </void>
-                        </object>
-                      </java>
+                      <property name="buttonText" type="string">${i18n:ButtonNext} &gt;</property>
+                      <property name="controlButtonType" type="enum" class="com.install4j.api.context.ControlButtonType" value="NEXT" />
                     </serializedBean>
-                    <initScript />
-                    <visibilityScript />
-                    <externalParametrizationPropertyNames />
                   </formComponent>
-                  <formComponent name="Next button" id="56" customizedId="" beanClass="com.install4j.runtime.beans.styles.StandardControlButtonComponent" enabled="true" commentSet="false" comment="" insetTop="" insetLeft="" insetBottom="" insetRight="" resetInitOnPrevious="false" useExternalParametrization="false" externalParametrizationName="" externalParametrizationMode="all">
+                  <formComponent name="Cancel button" id="57" beanClass="com.install4j.runtime.beans.styles.StandardControlButtonComponent" insetLeft="5">
                     <serializedBean>
-                      <java class="java.beans.XMLDecoder">
-                        <object class="com.install4j.runtime.beans.styles.StandardControlButtonComponent">
-                          <void property="buttonText">
-                            <string>${i18n:ButtonNext} &gt;</string>
-                          </void>
-                          <void property="controlButtonType">
-                            <object class="java.lang.Enum" method="valueOf">
-                              <class>com.install4j.api.context.ControlButtonType</class>
-                              <string>NEXT</string>
-                            </object>
-                          </void>
-                        </object>
-                      </java>
+                      <property name="buttonText" type="string">${i18n:ButtonCancel}</property>
+                      <property name="controlButtonType" type="enum" class="com.install4j.api.context.ControlButtonType" value="CANCEL" />
                     </serializedBean>
-                    <initScript />
-                    <visibilityScript />
-                    <externalParametrizationPropertyNames />
-                  </formComponent>
-                  <formComponent name="Cancel button" id="57" customizedId="" beanClass="com.install4j.runtime.beans.styles.StandardControlButtonComponent" enabled="true" commentSet="false" comment="" insetTop="" insetLeft="5" insetBottom="" insetRight="" resetInitOnPrevious="false" useExternalParametrization="false" externalParametrizationName="" externalParametrizationMode="all">
-                    <serializedBean>
-                      <java class="java.beans.XMLDecoder">
-                        <object class="com.install4j.runtime.beans.styles.StandardControlButtonComponent">
-                          <void property="buttonText">
-                            <string>${i18n:ButtonCancel}</string>
-                          </void>
-                          <void property="controlButtonType">
-                            <object class="java.lang.Enum" method="valueOf">
-                              <class>com.install4j.api.context.ControlButtonType</class>
-                              <string>CANCEL</string>
-                            </object>
-                          </void>
-                        </object>
-                      </java>
-                    </serializedBean>
-                    <initScript />
-                    <visibilityScript />
-                    <externalParametrizationPropertyNames />
                   </formComponent>
                 </beans>
-                <externalParametrizationPropertyNames />
               </group>
             </formComponents>
           </style>
@@ -1423,64 +799,40 @@ return console.askYesNo(message, true);
     </styles>
   </installerGui>
   <mediaSets>
-    <unixInstaller name="Unix Full Installer" id="1020" customizedId="" mediaFileName="${compiler:sys.shortName}_fullinstaller_${compiler:sys.platform}_${compiler:sys.version}" installDir="${compiler:sys.shortName}" overridePrincipalLanguage="false" jreBitType="all" runPostProcessor="false" postProcessor="" failOnPostProcessorError="false" useLegacyMediaFileIds="false" legacyMediaFileIds="" downloadURL="${compiler:installer.download.base}" includeAllDownloadableComponents="true" includedJRE="" manualJREEntry="false" bundleType="1" jreURL="" jreShared="false" directDownload="false" installOnlyIfNecessary="false" customInstallBaseDir="" contentFilesType="3">
-      <excludedComponents />
+    <unixInstaller name="Unix Full Installer" id="1020" mediaFileName="${compiler:sys.shortName}_fullinstaller_${compiler:sys.platform}_${compiler:sys.version}" downloadURL="${compiler:installer.download.base}" includeAllDownloadableComponents="true" contentFilesType="downloadable">
       <includedDownloadableComponents>
         <component id="564" />
         <component id="566" />
         <component id="901" />
       </includedDownloadableComponents>
-      <excludedLaunchers />
-      <excludedBeans />
-      <overriddenPrincipalLanguage id="en" customLocalizationFile="" />
-      <exclude />
-      <variables />
-      <autoUpdate useMinUpdatableVersion="false" minUpdatableVersion="" useMaxUpdatableVersion="false" maxUpdatableVersion="">
-        <commentFiles />
-        <customAttributes />
-      </autoUpdate>
-      <installerScript mode="1" file="">
-        <content />
-      </installerScript>
+      <jreBundle usePack200="false" />
     </unixInstaller>
-    <windows name="Windows Full Installer" id="1023" customizedId="" mediaFileName="${compiler:sys.shortName}_fullinstaller_${compiler:sys.platform}_${compiler:sys.version}" installDir="${compiler:sys.shortName}" overridePrincipalLanguage="false" jreBitType="64" runPostProcessor="false" postProcessor="" failOnPostProcessorError="false" useLegacyMediaFileIds="false" legacyMediaFileIds="" downloadURL="${compiler:installer.download.base}" includeAllDownloadableComponents="true" includedJRE="" manualJREEntry="false" bundleType="2" jreURL="" jreShared="false" directDownload="false" installOnlyIfNecessary="true" customInstallBaseDir="" contentFilesType="3" verifyIntegrity="true">
-      <excludedComponents />
+    <windows name="Windows Full Installer" id="1023" mediaFileName="${compiler:sys.shortName}_fullinstaller_${compiler:sys.platform}_${compiler:sys.version}" downloadURL="${compiler:installer.download.base}" includeAllDownloadableComponents="true" contentFilesType="downloadable">
       <includedDownloadableComponents>
         <component id="564" />
         <component id="566" />
         <component id="901" />
       </includedDownloadableComponents>
-      <excludedLaunchers />
-      <excludedBeans />
-      <overriddenPrincipalLanguage id="en" customLocalizationFile="" />
-      <exclude />
-      <variables />
-      <autoUpdate useMinUpdatableVersion="false" minUpdatableVersion="" useMaxUpdatableVersion="false" maxUpdatableVersion="">
-        <commentFiles />
-        <customAttributes />
-      </autoUpdate>
+      <jreBundle usePack200="false" installOnlyIfNecessary="true" />
     </windows>
-    <macosFolder name="macOS Full Installer" id="1026" customizedId="" mediaFileName="${compiler:sys.shortName}_fullinstaller_${compiler:sys.platform}_${compiler:sys.version}" installDir="${compiler:sys.fullName}" overridePrincipalLanguage="false" jreBitType="all" runPostProcessor="false" postProcessor="" failOnPostProcessorError="false" useLegacyMediaFileIds="false" legacyMediaFileIds="" downloadURL="${compiler:installer.download.base}" includeAllDownloadableComponents="true" includedJRE="" manualJREEntry="false" bundleType="1" jreURL="" jreShared="false" directDownload="false" installOnlyIfNecessary="false" requiredVmIdPrefix="" customInstallBaseDir="" contentFilesType="3" installerName="${i18n:InstallerName(${compiler:sys.fullName})}" volumeName="${compiler:sys.shortName}" compressDmg="false" signLaunchers="false">
-      <excludedComponents />
+    <macosFolder name="macOS Full Installer (Intel)" id="1026" mediaFileName="${compiler:sys.shortName}_fullinstaller_${compiler:sys.platform}_${compiler:sys.version}" downloadURL="${compiler:installer.download.base}" includeAllDownloadableComponents="true" contentFilesType="downloadable">
       <includedDownloadableComponents>
         <component id="564" />
         <component id="566" />
         <component id="901" />
       </includedDownloadableComponents>
-      <excludedLaunchers />
-      <excludedBeans />
-      <overriddenPrincipalLanguage id="en" customLocalizationFile="" />
-      <exclude />
-      <variables />
-      <autoUpdate useMinUpdatableVersion="false" minUpdatableVersion="" useMaxUpdatableVersion="false" maxUpdatableVersion="">
-        <commentFiles />
-        <customAttributes />
-      </autoUpdate>
-      <topLevelFiles />
+      <jreBundle usePack200="false" />
+    </macosFolder>
+    <macosFolder name="macOS Full Installer (ARM)" id="1346" mediaFileName="${compiler:sys.shortName}_fullinstaller_${compiler:sys.platform}_${compiler:sys.version}" downloadURL="${compiler:installer.download.base}" includeAllDownloadableComponents="true" contentFilesType="downloadable" architecture="aarch64">
+      <includedDownloadableComponents>
+        <component id="564" />
+        <component id="566" />
+        <component id="901" />
+      </includedDownloadableComponents>
+      <jreBundle usePack200="false" manualJreEntry="true" />
     </macosFolder>
   </mediaSets>
   <buildIds buildAll="false">
     <mediaSet refId="1020" />
   </buildIds>
-  <buildOptions verbose="false" faster="false" disableSigning="false" disableJreBundling="false" debug="false" />
 </install4j>
