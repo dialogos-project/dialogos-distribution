@@ -6,6 +6,7 @@ import subprocess
 import sys
 import tempfile
 from datetime import datetime
+from pathlib import Path
 
 ### PARSING COMMAND-LINE OPTIONS
 
@@ -23,6 +24,14 @@ logfilename = f"log_{timestr}.txt"
 absolute_logfilename = os.path.abspath(logfilename)
 
 
+if args.publish:
+    print("I will build the DialogOS distribution and publish it to Github.")    
+elif args.only_publish:
+    print("I will upload a previously built DialogOS distribution to Github.")
+else:
+    print("I will build a DialosOS distribution locally, without publishing it to Github.")
+
+    
 
 
 ### UTILITY METHODS FOR FILE EDITING
@@ -276,12 +285,26 @@ dv1, dv2, dv3 = parse_version(s_new_dev_version)
 
 print(f"\nLogfile is {logfilename}.\n")
 
+build_dirname = f"build-{vs}"
+print(f"Building distribution in the directory '{build_dirname}'.")
+
+
 with open(logfilename, "w") as logfile:
     if args.only_publish:
         print("Running with option --only-publish, skipping rebuild.")
+        os.chdir(build_dirname)
 
     else:
-        ### CREATE RELEASE FOR DIALOGOS CORE
+        ### Create the build directory, deleting it if a previous version exists.        
+        p = Path(build_dirname)
+        if p.exists():
+            shutil.rmtree(build_dirname)
+
+        os.mkdir(build_dirname)
+        os.chdir(build_dirname)
+
+        
+        ### CREATE RELEASE FOR DIALOGOS CORE        
 
         print("Updating and building DialogOS Core ...")
 
@@ -506,7 +529,7 @@ with open(logfilename, "w") as logfile:
         os.chdir("../..")
 
 
-        print("Done, installers are in dialogos-distribution/install4j/generated_installers.")
+        print(f"Done, installers are in {build_dirname}/dialogos-distribution/install4j/generated_installers.")
         print(f"Please upload them to Github under the {vs} release on https://github.com/dialogos-project/dialogos/tags")
         print("")
 
