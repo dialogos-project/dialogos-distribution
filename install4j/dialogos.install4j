@@ -815,7 +815,7 @@ return console.askYesNo(message, true);
       </includedDownloadableComponents>
       <jreBundle usePack200="false" installOnlyIfNecessary="true" />
     </windows>
-    <macosFolder name="macOS Full Installer (Intel)" id="1026" mediaFileName="${compiler:sys.shortName}_fullinstaller_${compiler:sys.platform}_${compiler:sys.version}" downloadURL="${compiler:installer.download.base}" includeAllDownloadableComponents="true" contentFilesType="downloadable">
+    <macosFolder name="macOS Full Installer (Intel)" id="1026" mediaFileName="${compiler:sys.shortName}_fullinstaller_${compiler:sys.platform}_intel_${compiler:sys.version}" downloadURL="${compiler:installer.download.base}" includeAllDownloadableComponents="true" contentFilesType="downloadable">
       <includedDownloadableComponents>
         <component id="564" />
         <component id="566" />
@@ -823,7 +823,7 @@ return console.askYesNo(message, true);
       </includedDownloadableComponents>
       <jreBundle usePack200="false" />
     </macosFolder>
-    <macosFolder name="macOS Full Installer (ARM)" id="1346" mediaFileName="${compiler:sys.shortName}_fullinstaller_${compiler:sys.platform}_${compiler:sys.version}" downloadURL="${compiler:installer.download.base}" includeAllDownloadableComponents="true" contentFilesType="downloadable" architecture="aarch64">
+    <macosFolder name="macOS Full Installer (ARM)" id="1346" mediaFileName="${compiler:sys.shortName}_fullinstaller_${compiler:sys.platform}_arm_${compiler:sys.version}" downloadURL="${compiler:installer.download.base}" includeAllDownloadableComponents="true" contentFilesType="downloadable" architecture="aarch64">
       <includedDownloadableComponents>
         <component id="564" />
         <component id="566" />
