@@ -1,23 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<install4j version="9.0.2" transformSequenceNumber="9">
+<install4j version="11.0" transformSequenceNumber="11">
   <directoryPresets config="../build/install/dialogos-distribution/lib/xml-apis-1.0.b2.jar" />
-  <application name="DialogOS" distributionSourceDir="" applicationId="0985-7768-2548-4677" mediaDir="./generated_installers" mediaFilePattern="${compiler:sys.shortName}_${compiler:sys.platform}_${compiler:sys.version}" compression="9" lzmaCompression="true" pack200Compression="false" excludeSignedFromPacking="true" commonExternalFiles="true" createMd5Sums="true" shrinkRuntime="true" shortName="DialogOS" publisher="" publisherWeb="http://dialogos-project.github.io" version="2.1.0" allPathsRelative="true" backupOnSave="false" autoSave="false" convertDotsToUnderscores="true" macSignature="????" macVolumeId="623654d76cd9c023" javaMinVersion="1.7" javaMaxVersion="" allowBetaVM="false" jdkMode="runtimeJre" jdkName="">
-    <languages skipLanguageSelection="false" languageSelectionInPrincipalLanguage="false">
-      <principalLanguage id="en" customLocalizationFile="" />
-      <additionalLanguages />
+  <application name="DialogOS" applicationId="0985-7768-2548-4677" mediaDir="./generated_installers" compression="9" lzmaCompression="true" commonExternalFiles="true" shortName="DialogOS" publisher="DialogOS Project" publisherWeb="http://dialogos-project.github.io" version="2.1.4" allPathsRelative="true" macVolumeId="623654d76cd9c023" javaMinVersion="1.8" jdkMode="runtimeJre">
+    <languages>
+      <principalLanguage id="de" />
+      <additionalLanguages>
+        <language id="en" />
+      </additionalLanguages>
     </languages>
     <searchSequence>
-      <registry />
-      <envVar name="JAVA_HOME" />
+      <installations />
       <envVar name="JDK_HOME" />
+      <envVar name="JAVA_HOME" />
+      <registry />
     </searchSequence>
     <variables>
       <variable name="dialogos.version" value="SET_EXTERNALLY" />
       <variable name="installer.download.base" value="SET_EXTERNALLY" />
     </variables>
-    <jreBundles jdkProviderId="JBR" release="17/latest" />
+    <jreBundles jdkProviderId="AdoptOpenJDK" release="21/jdk-21.0.5+11" />
   </application>
-  <files keepModificationTimes="true" preserveSymlinks="false">
+  <files keepModificationTimes="true">
     <roots>
       <root id="352" location="${installer:sys.userHome}" />
     </roots>
@@ -27,9 +30,7 @@
       <mountPoint id="561" location="plugins/MaryTTS" />
       <mountPoint id="568" location="plugins/NXT" />
       <mountPoint id="573" location="plugins/Sqlite" />
-      <mountPoint id="1222" location="plugins/EV3" />
-      <mountPoint id="1223" location="plugins/Alexa" />
-      <mountPoint id="1340" location="plugins/ROS" />
+      <mountPoint id="1142" location="plugins/ROS" />
       <mountPoint id="559" location="pluginData" />
       <mountPoint id="562" location="lib" />
       <mountPoint id="788" location="examples" />
@@ -42,34 +43,38 @@
       <fileEntry mountPoint="560" file="../build/install/dialogos-distribution/lib/commons-math3-3.2.jar" />
       <fileEntry mountPoint="560" file="../build/install/dialogos-distribution/lib/sphinx-de-de-uhh-1.0.jar" />
       <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/DialogOS_MaryTTSPlugin-${compiler:dialogos.version}.jar" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/marytts-common-5.2.jar" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/marytts-lang-de-5.2.jar" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/marytts-lang-en-5.2.jar" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/marytts-lang-fr-5.2.jar" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/marytts-runtime-5.2.jar" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/marytts-signalproc-5.2.jar" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/voice-bits1-hsmm-5.2.jar" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/voice-bits3-hsmm-5.2.jar" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/voice-cmu-slt-hsmm-5.2.jar" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/voice-upmc-pierre-hsmm-5.2.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/marytts-common-5.2.1.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/marytts-lang-de-5.2.1.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/marytts-lang-en-5.2.1.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/marytts-lang-fr-5.2.1.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/marytts-runtime-5.2.1.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/marytts-signalproc-5.2.1.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/voice-bits1-hsmm-5.2.1.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/voice-bits3-hsmm-5.2.1.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/voice-cmu-slt-hsmm-5.2.1.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/voice-upmc-pierre-hsmm-5.2.1.jar" />
       <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/Jampack-1.0.jar" />
       <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/commons-collections-3.2.2.jar" />
       <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/commons-lang-2.6.jar" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/emotionml-checker-java-1.1.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/emotionml-checker-java-1.2.2.jar" />
       <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/fast-md5-2.7.1.jar" />
       <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/guava-14.0.1.jar" />
       <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/hsqldb-2.0.0.jar" />
       <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/trove4j-2.0.2.jar" />
       <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/swing-layout-1.0.3.jar" />
       <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/jama-1.0.3.jar" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/httpcore-4.4.9.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/httpcore-4.1.jar" />
       <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/httpcore-nio-4.1.jar" />
       <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/opennlp-maxent-3.0.3.jar" />
       <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/opennlp-tools-1.5.3.jar" />
       <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/icu4j-54.1.1.jar" />
       <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/jtok-core-1.9.3.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/log4j-1.2-api-2.17.2.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/log4j-api-2.17.2.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/log4j-core-2.17.2.jar" />
       <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/jwnl-1.3.3.jar" />
-      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/log4j-1.2.16.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/voice-dfki-poppy-hsmm-5.2.1.jar" />
+      <fileEntry mountPoint="561" file="../build/install/dialogos-distribution/lib/voice-upmc-jessica-hsmm-5.2.1.jar" />
       <fileEntry mountPoint="568" file="../build/install/dialogos-distribution/lib/dialogos-plugin-nxt-${compiler:dialogos.version}.jar" />
       <fileEntry mountPoint="568" file="../build/install/dialogos-distribution/lib/libusb4java-1.2.0-linux-arm.jar" />
       <fileEntry mountPoint="568" file="../build/install/dialogos-distribution/lib/libusb4java-1.2.0-linux-x86.jar" />
@@ -86,75 +91,31 @@
       <fileEntry mountPoint="568" file="../build/install/dialogos-distribution/lib/purejavacomm-1.0.1.RELEASE.jar" />
       <fileEntry mountPoint="573" file="../build/install/dialogos-distribution/lib/dialogos-plugin-sqlite-${compiler:dialogos.version}.jar" />
       <fileEntry mountPoint="573" file="../build/install/dialogos-distribution/lib/sqlite-jdbc-3.21.0.1.jar" />
-      <fileEntry mountPoint="1222" file="../build/install/dialogos-distribution/lib/bluecove-2.1.1-20190110.191129-2.jar" />
-      <fileEntry mountPoint="1222" file="../build/install/dialogos-distribution/lib/commons-lang3-3.2.1.jar" />
-      <fileEntry mountPoint="1222" file="../build/install/dialogos-distribution/lib/dialogos-plugin-ev3-${compiler:dialogos.version}.jar" />
-      <fileEntry mountPoint="1222" file="../build/install/dialogos-distribution/lib/libusb4java-1.2.0-linux-arm.jar" />
-      <fileEntry mountPoint="1222" file="../build/install/dialogos-distribution/lib/libusb4java-1.2.0-linux-x86_64.jar" />
-      <fileEntry mountPoint="1222" file="../build/install/dialogos-distribution/lib/libusb4java-1.2.0-linux-x86.jar" />
-      <fileEntry mountPoint="1222" file="../build/install/dialogos-distribution/lib/libusb4java-1.2.0-osx-x86_64.jar" />
-      <fileEntry mountPoint="1222" file="../build/install/dialogos-distribution/lib/libusb4java-1.2.0-osx-x86.jar" />
-      <fileEntry mountPoint="1222" file="../build/install/dialogos-distribution/lib/libusb4java-1.2.0-windows-x86_64.jar" />
-      <fileEntry mountPoint="1222" file="../build/install/dialogos-distribution/lib/libusb4java-1.2.0-windows-x86.jar" />
-      <fileEntry mountPoint="1222" file="../build/install/dialogos-distribution/lib/usb-api-1.0.2.jar" />
-      <fileEntry mountPoint="1222" file="../build/install/dialogos-distribution/lib/usb4java-1.2.0.jar" />
-      <fileEntry mountPoint="1222" file="../build/install/dialogos-distribution/lib/usb4java-javax-1.2.0.jar" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/ask-sdk-2.11.1.jar" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/ask-sdk-apache-client-2.11.1.jar" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/ask-sdk-core-2.11.1.jar" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/ask-sdk-dynamodb-persistence-adapter-2.11.1.jar" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/ask-sdk-lambda-support-2.11.1.jar" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/ask-sdk-model-1.11.1.jar" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/ask-sdk-runtime-2.11.1.jar" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/ask-sdk-servlet-support-2.11.1.jar" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/aws-java-sdk-core-1.11.420.jar" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/aws-java-sdk-dynamodb-1.11.420.jar" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/aws-java-sdk-kms-1.11.420.jar" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/aws-java-sdk-s3-1.11.420.jar" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/aws-lambda-java-core-1.0.0.jar" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/commons-codec-1.10.jar" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/commons-io-2.6.jar" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/commons-logging-1.2.jar" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/httpclient-4.5.5.jar" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/httpcore-4.4.9.jar" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/ion-java-1.0.2.jar" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/jackson-annotations-2.9.5.jar" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/jackson-core-2.9.5.jar" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/jackson-databind-2.9.5.jar" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/jackson-dataformat-cbor-2.6.7.jar" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/jackson-datatype-jsr310-2.9.5.jar" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/jmespath-java-1.11.420.jar" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/joda-time-2.8.1.jar" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/log4j-api-2.8.2.jar" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/log4j-slf4j-impl-2.8.2.jar" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/slf4j-api-1.7.25.jar" />
-      <fileEntry mountPoint="1223" file="../build/install/dialogos-distribution/lib/dialogos-alexa-plugin-${compiler:dialogos.version}.jar" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/actionlib_msgs-1.12.7.jar" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/apache_xmlrpc_client-0.3.6.jar" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/apache_xmlrpc_common-0.3.6.jar" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/apache_xmlrpc_server-0.3.6.jar" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/com.springsource.org.apache.commons.codec-1.3.0.jar" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/com.springsource.org.apache.commons.httpclient-3.1.0.jar" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/com.springsource.org.apache.commons.io-1.4.0.jar" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/com.springsource.org.apache.commons.lang-2.4.0.jar" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/com.springsource.org.apache.commons.logging-1.1.1.jar" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/com.springsource.org.apache.commons.net-2.0.0.jar" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/commons-pool-1.6.jar" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/dialogos-plugin-ros-${compiler:dialogos.version}.jar" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/dnsjava-2.1.1.jar" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/nav_msgs-1.12.7.jar" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/gradle_plugins-0.3.3.jar" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/guava-14.0.1.jar" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/message_generation-0.3.3.jar" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/nav_msgs-1.12.6.jar" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/netty-3.5.2.Final.jar" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/rosgraph_msgs-1.11.2.jar" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/rosjava-0.3.6.jar" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/rosjava_test_msgs-0.3.0.jar" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/std_msgs-0.5.11.jar" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/tf2_msgs-0.5.20.jar" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/ws-commons-util-1.0.1.jar" />
-      <fileEntry mountPoint="1340" file="../build/install/dialogos-distribution/lib/xml-apis-1.0.b2.jar" />
+      <fileEntry mountPoint="1142" file="../build/install/dialogos-distribution/lib/actionlib_msgs-1.12.7.jar" />
+      <fileEntry mountPoint="1142" file="../build/install/dialogos-distribution/lib/apache_xmlrpc_client-0.3.6.jar" />
+      <fileEntry mountPoint="1142" file="../build/install/dialogos-distribution/lib/apache_xmlrpc_common-0.3.6.jar" />
+      <fileEntry mountPoint="1142" file="../build/install/dialogos-distribution/lib/apache_xmlrpc_server-0.3.6.jar" />
+      <fileEntry mountPoint="1142" file="../build/install/dialogos-distribution/lib/com.springsource.org.apache.commons.codec-1.3.0.jar" />
+      <fileEntry mountPoint="1142" file="../build/install/dialogos-distribution/lib/com.springsource.org.apache.commons.httpclient-3.1.0.jar" />
+      <fileEntry mountPoint="1142" file="../build/install/dialogos-distribution/lib/com.springsource.org.apache.commons.io-1.4.0.jar" />
+      <fileEntry mountPoint="1142" file="../build/install/dialogos-distribution/lib/com.springsource.org.apache.commons.lang-2.4.0.jar" />
+      <fileEntry mountPoint="1142" file="../build/install/dialogos-distribution/lib/com.springsource.org.apache.commons.logging-1.1.1.jar" />
+      <fileEntry mountPoint="1142" file="../build/install/dialogos-distribution/lib/com.springsource.org.apache.commons.net-2.0.0.jar" />
+      <fileEntry mountPoint="1142" file="../build/install/dialogos-distribution/lib/commons-pool-1.6.jar" />
+      <fileEntry mountPoint="1142" file="../build/install/dialogos-distribution/lib/dnsjava-2.1.1.jar" />
+      <fileEntry mountPoint="1142" file="../build/install/dialogos-distribution/lib/geometry_msgs-1.12.7.jar" />
+      <fileEntry mountPoint="1142" file="../build/install/dialogos-distribution/lib/gradle_plugins-0.3.3.jar" />
+      <fileEntry mountPoint="1142" file="../build/install/dialogos-distribution/lib/guava-14.0.1.jar" />
+      <fileEntry mountPoint="1142" file="../build/install/dialogos-distribution/lib/junit-3.8.2.jar" />
+      <fileEntry mountPoint="1142" file="../build/install/dialogos-distribution/lib/message_generation-0.3.3.jar" />
+      <fileEntry mountPoint="1142" file="../build/install/dialogos-distribution/lib/netty-3.5.2.Final.jar" />
+      <fileEntry mountPoint="1142" file="../build/install/dialogos-distribution/lib/rosgraph_msgs-1.11.2.jar" />
+      <fileEntry mountPoint="1142" file="../build/install/dialogos-distribution/lib/rosjava-0.3.6.jar" />
+      <fileEntry mountPoint="1142" file="../build/install/dialogos-distribution/lib/rosjava_test_msgs-0.3.0.jar" />
+      <fileEntry mountPoint="1142" file="../build/install/dialogos-distribution/lib/std_msgs-0.5.11.jar" />
+      <fileEntry mountPoint="1142" file="../build/install/dialogos-distribution/lib/tf2_msgs-0.5.20.jar" />
+      <fileEntry mountPoint="1142" file="../build/install/dialogos-distribution/lib/ws-commons-util-1.0.1.jar" />
+      <fileEntry mountPoint="1142" file="../build/install/dialogos-distribution/lib/xml-apis-1.0.b2.jar" />
       <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/AppleJavaExtensions-1.4.jar" />
       <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/ClientInterface-${compiler:dialogos.version}.jar" />
       <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/Diamant-${compiler:dialogos.version}.jar" />
@@ -165,7 +126,7 @@
       <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/com.clt.script-${compiler:dialogos.version}.jar" />
       <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/com.clt.speech-${compiler:dialogos.version}.jar" />
       <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/com.clt.xml-${compiler:dialogos.version}.jar" />
-      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/commons-io-2.6.jar" />
+      <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/commons-io-2.5.jar" />
       <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/groovy-all-2.4.10.jar" />
       <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/java-cup-11b-2015.03.26.jar" />
       <fileEntry mountPoint="562" file="../build/install/dialogos-distribution/lib/java-cup-11b-runtime-2015.03.26.jar" />
@@ -184,6 +145,7 @@
         <description>The main DialogOS component.</description>
         <include>
           <entry location="lib" />
+          <entry location="examples/recursive.dos" />
           <entry location="examples/simple_woz.dos" />
           <entry location="dialogos" fileType="launcher" />
         </include>
@@ -220,13 +182,13 @@
         <description>DialogOS's standard component for speech synthesis (includes English, German, and French).</description>
         <include>
           <entry location="plugins/MaryTTS/DialogOS_MaryTTSPlugin-${compiler:dialogos.version}.jar" />
-          <entry location="plugins/MaryTTS/marytts-common-5.2.jar" />
-          <entry location="plugins/MaryTTS/marytts-runtime-5.2.jar" />
-          <entry location="plugins/MaryTTS/marytts-signalproc-5.2.jar" />
+          <entry location="plugins/MaryTTS/marytts-common-5.2.1.jar" />
+          <entry location="plugins/MaryTTS/marytts-runtime-5.2.1.jar" />
+          <entry location="plugins/MaryTTS/marytts-signalproc-5.2.1.jar" />
           <entry location="plugins/MaryTTS/Jampack-1.0.jar" />
           <entry location="plugins/MaryTTS/commons-collections-3.2.2.jar" />
           <entry location="plugins/MaryTTS/commons-lang-2.6.jar" />
-          <entry location="plugins/MaryTTS/emotionml-checker-java-1.1.jar" />
+          <entry location="plugins/MaryTTS/emotionml-checker-java-1.2.2.jar" />
           <entry location="plugins/MaryTTS/fast-md5-2.7.1.jar" />
           <entry location="plugins/MaryTTS/guava-14.0.1.jar" />
           <entry location="plugins/MaryTTS/hsqldb-2.0.0.jar" />
@@ -239,8 +201,10 @@
           <entry location="plugins/MaryTTS/opennlp-tools-1.5.3.jar" />
           <entry location="plugins/MaryTTS/icu4j-54.1.1.jar" />
           <entry location="plugins/MaryTTS/jtok-core-1.9.3.jar" />
+          <entry location="plugins/MaryTTS/log4j-1.2-api-2.17.2.jar" />
+          <entry location="plugins/MaryTTS/log4j-api-2.17.2.jar" />
+          <entry location="plugins/MaryTTS/log4j-core-2.17.2.jar" />
           <entry location="plugins/MaryTTS/jwnl-1.3.3.jar" />
-          <entry location="plugins/MaryTTS/log4j-1.2.16.jar" />
         </include>
         <dependencies>
           <component id="684" />
@@ -248,9 +212,9 @@
       </component>
       <component name="MaryTTS: German language support" id="900" downloadable="true">
         <include>
-          <entry location="plugins/MaryTTS/marytts-lang-de-5.2.jar" />
-          <entry location="plugins/MaryTTS/voice-bits1-hsmm-5.2.jar" />
-          <entry location="plugins/MaryTTS/voice-bits3-hsmm-5.2.jar" />
+          <entry location="plugins/MaryTTS/marytts-lang-de-5.2.1.jar" />
+          <entry location="plugins/MaryTTS/voice-bits1-hsmm-5.2.1.jar" />
+          <entry location="plugins/MaryTTS/voice-bits3-hsmm-5.2.1.jar" />
         </include>
         <dependencies>
           <component id="566" />
@@ -258,8 +222,9 @@
       </component>
       <component name="MaryTTS: English language support" id="901" downloadable="true">
         <include>
-          <entry location="plugins/MaryTTS/marytts-lang-en-5.2.jar" />
-          <entry location="plugins/MaryTTS/voice-cmu-slt-hsmm-5.2.jar" />
+          <entry location="plugins/MaryTTS/marytts-lang-en-5.2.1.jar" />
+          <entry location="plugins/MaryTTS/voice-cmu-slt-hsmm-5.2.1.jar" />
+          <entry location="plugins/MaryTTS/voice-dfki-poppy-hsmm-5.2.1.jar" />
         </include>
         <dependencies>
           <component id="566" />
@@ -267,18 +232,13 @@
       </component>
       <component name="MaryTTS: French language support" id="902" selected="false" downloadable="true">
         <include>
-          <entry location="plugins/MaryTTS/marytts-lang-fr-5.2.jar" />
-          <entry location="plugins/MaryTTS/voice-upmc-pierre-hsmm-5.2.jar" />
+          <entry location="plugins/MaryTTS/marytts-lang-fr-5.2.1.jar" />
+          <entry location="plugins/MaryTTS/voice-upmc-pierre-hsmm-5.2.1.jar" />
+          <entry location="plugins/MaryTTS/voice-upmc-jessica-hsmm-5.2.1.jar" />
         </include>
         <dependencies>
           <component id="566" />
         </dependencies>
-      </component>
-      <component name="Lego Mindstorms EV3 plugin" id="1224" selected="false" downloadable="true">
-        <description>A plugin to integrate with LEGO Mindstorms EV3 robots.</description>
-        <include>
-          <entry location="plugins/EV3" />
-        </include>
       </component>
       <component name="SQLite plugin" id="575" downloadable="true">
         <description>A plugin to integrate with SQLite databases.</description>
@@ -291,11 +251,13 @@
           <component id="684" />
         </dependencies>
       </component>
-      <component name="Alexa plugin" id="1225" selected="false" downloadable="true">
-        <description>A plugin for compiling a DialogOS dialog into a skill for Amazon Alexa.</description>
+      <component name="ROS plugin" id="1143" selected="false">
         <include>
-          <entry location="plugins/Alexa" />
+          <entry location="plugins/ROS" />
         </include>
+        <dependencies>
+          <component id="684" />
+        </dependencies>
       </component>
       <component name="Lego Mindstorms NXT plugin" id="569" selected="false" downloadable="true">
         <description>A plugin to integrate with LEGO Mindstorms NXT robots.</description>
@@ -306,25 +268,12 @@
           <component id="684" />
         </dependencies>
       </component>
-      <component name="Robot Operating System (ROS) plugin" id="1341" selected="false">
-        <include>
-          <entry location="plugins/ROS" />
-        </include>
-      </component>
     </components>
   </files>
   <launchers>
-    <launcher name="DialogOS" id="250" customizedId="" external="false" excludeFromMenu="false" unixMode="755" unixAutoStart="true" menuName="" icnsFile="" customMacBundleIdentifier="false" macBundleIdentifier="" swtApp="false" fileset="" macBundleBinary="JavaApplicationStub" addMacEntitlements="false" macEntitlementsFile="" useCustomMacosExecutableName="false" customMacosExecutableName="" useJavaMinVersionOverride="false" javaMinVersionOverride="" useJavaMaxVersionOverride="false" javaMaxVersionOverride="" checkUpdater="false" updateExecutionMode="unattendedProgress" unattendedUpdateTitle="${i18n:updater.WindowTitle(&quot;${compiler:sys.fullName}&quot;)}">
-      <executable name="dialogos" type="1" iconSet="true" iconFile="" executableDir="" redirectStderr="true" stderrFile="error.log" stderrMode="overwrite" redirectStdout="false" stdoutFile="output.log" stdoutMode="overwrite" failOnStderrOutput="true" executableMode="1" changeWorkingDirectory="true" workingDirectory="." singleInstance="false" serviceStartType="2" serviceDependencies="" serviceDescription="" jreLocation="" executionLevel="asInvoker" checkConsoleParameter="false" globalSingleInstance="false" singleInstanceActivate="true" dpiAware="java9+">
-        <versionInfo include="false" fileVersion="" fileDescription="" legalCopyright="" internalName="" productName="" />
-      </executable>
-      <splashScreen show="false" width="0" height="0" bitmapFile="" textOverlay="false">
-        <text>
-          <statusLine x="20" y="20" text="" fontSize="8" fontColor="0,0,0" bold="false" />
-          <versionLine x="20" y="40" text="version ${compiler:sys.version}" fontSize="8" fontColor="0,0,0" bold="false" />
-        </text>
-      </splashScreen>
-      <java mainClass="com.clt.dialogos.DialogOS" mainMode="1" vmParameters="-Dfile.encoding=UTF8" arguments="" allowVMPassthroughParameters="true" preferredVM="" bundleRuntime="true">
+    <launcher name="DialogOS" id="250">
+      <executable name="dialogos" iconSet="true" executableMode="gui" />
+      <java mainClass="com.clt.dialogos.DialogOS" vmParameters="-Dfile.encoding=UTF8">
         <classPath>
           <scanDirectory location="lib" failOnError="false" />
           <scanDirectory location="plugins" failOnError="false" />
@@ -337,7 +286,6 @@
           <scanDirectory location="plugins/ROS" failOnError="false" />
         </classPath>
       </java>
-      <macStaticAssociationActions mode="selected" />
       <iconImageFiles>
         <file path="../AppIconLarge.png" />
       </iconImageFiles>
@@ -354,7 +302,10 @@
               </object>
             </add>
           </property>
-          <property name="useCustomIcon" type="boolean" value="true" />
+          <void id="Boolean0" method="isAllowConsole" />
+          <property name="useCustomIcon">
+            <object idref="Boolean0" />
+          </property>
         </serializedBean>
         <startup>
           <screen id="1" beanClass="com.install4j.runtime.beans.screens.StartupScreen" rollbackBarrierExitCode="0">
@@ -425,7 +376,10 @@ return console.askOkCancel(message, true);
               </formComponent>
               <formComponent id="10" beanClass="com.install4j.runtime.beans.formcomponents.InstallationDirectoryChooserComponent" useExternalParametrization="true" externalParametrizationName="Installation Directory Chooser" externalParametrizationMode="include">
                 <serializedBean>
-                  <property name="requestFocus" type="boolean" value="true" />
+                  <void id="Boolean0" method="isCheckFreeSpace" />
+                  <property name="requestFocus">
+                    <object idref="Boolean0" />
+                  </property>
                 </serializedBean>
                 <externalParametrizationPropertyNames>
                   <propertyName>suggestAppDir</propertyName>
@@ -453,7 +407,10 @@ return console.askOkCancel(message, true);
               </formComponent>
               <formComponent id="14" beanClass="com.install4j.runtime.beans.formcomponents.ComponentSelectorComponent" useExternalParametrization="true" externalParametrizationName="Installation Components" externalParametrizationMode="include">
                 <serializedBean>
-                  <property name="fillVertical" type="boolean" value="true" />
+                  <void id="Boolean0" method="isBoldDescription" />
+                  <property name="fillVertical">
+                    <object idref="Boolean0" />
+                  </property>
                 </serializedBean>
                 <externalParametrizationPropertyNames>
                   <propertyName>selectionChangedScript</propertyName>
@@ -523,7 +480,10 @@ return console.askOkCancel(message, true);
       <application id="uninstaller" beanClass="com.install4j.runtime.beans.applications.UninstallerApplication">
         <serializedBean>
           <property name="customMacosExecutableName" type="string">${i18n:UninstallerMenuEntry(${compiler:sys.fullName})}</property>
-          <property name="useCustomMacosExecutableName" type="boolean" value="true" />
+          <void id="Boolean0" method="isAllowConsole" />
+          <property name="useCustomMacosExecutableName">
+            <object idref="Boolean0" />
+          </property>
         </serializedBean>
         <startup>
           <screen id="23" beanClass="com.install4j.runtime.beans.screens.StartupScreen" rollbackBarrierExitCode="0">
@@ -634,6 +594,7 @@ return console.askYesNo(message, true);
                   <property name="bottom" type="boolean" value="true" />
                 </object>
               </property>
+              <void id="Integer0" property="cellSpacing" />
               <property name="imageEdgeBackgroundColor">
                 <object class="com.install4j.runtime.beans.LightOrDarkColor">
                   <object class="java.awt.Color">
@@ -643,7 +604,7 @@ return console.askYesNo(message, true);
                     <int>255</int>
                   </object>
                   <object class="java.awt.Color">
-                    <int>0</int>
+                    <object idref="Integer0" />
                     <int>74</int>
                     <int>151</int>
                     <int>255</int>
@@ -728,19 +689,21 @@ return console.askYesNo(message, true);
                       <string>icon:${installer:sys.installerApplicationMode}_header.png</string>
                     </object>
                   </property>
+                  <void id="Integer0" property="cellSpacing" />
+                  <void id="Integer1" property="borderWidth" />
                   <property name="imageInsets">
                     <object class="java.awt.Insets">
-                      <int>0</int>
+                      <object idref="Integer0" />
                       <int>5</int>
-                      <int>1</int>
-                      <int>1</int>
+                      <object idref="Integer1" />
+                      <object idref="Integer1" />
                     </object>
                   </property>
                   <property name="insets">
                     <object class="java.awt.Insets">
-                      <int>0</int>
+                      <object idref="Integer0" />
                       <int>20</int>
-                      <int>0</int>
+                      <object idref="Integer0" />
                       <int>10</int>
                     </object>
                   </property>
@@ -778,12 +741,13 @@ return console.askYesNo(message, true);
               <group id="53" beanClass="com.install4j.runtime.beans.groups.HorizontalFormComponentGroup">
                 <serializedBean>
                   <property name="alignFirstLabel" type="boolean" value="false" />
+                  <void id="Integer0" property="cellSpacing" />
                   <property name="insets">
                     <object class="java.awt.Insets">
                       <int>3</int>
-                      <int>5</int>
+                      <object idref="Integer0" />
                       <int>8</int>
-                      <int>5</int>
+                      <object idref="Integer0" />
                     </object>
                   </property>
                 </serializedBean>
@@ -822,34 +786,27 @@ return console.askYesNo(message, true);
         <component id="566" />
         <component id="901" />
       </includedDownloadableComponents>
-      <jreBundle usePack200="false" />
     </unixInstaller>
-    <windows name="Windows Full Installer" id="1023" mediaFileName="${compiler:sys.shortName}_fullinstaller_${compiler:sys.platform}_${compiler:sys.version}" downloadURL="${compiler:installer.download.base}" includeAllDownloadableComponents="true" contentFilesType="downloadable">
-      <includedDownloadableComponents>
-        <component id="564" />
-        <component id="566" />
-        <component id="901" />
-      </includedDownloadableComponents>
-      <jreBundle usePack200="false" installOnlyIfNecessary="true" />
-    </windows>
-    <macosFolder name="macOS Full Installer (Intel)" id="1026" mediaFileName="${compiler:sys.shortName}_fullinstaller_${compiler:sys.platform}_intel_${compiler:sys.version}" downloadURL="${compiler:installer.download.base}" includeAllDownloadableComponents="true" contentFilesType="downloadable">
+    <windows name="Windows Full Installer" id="1023" mediaFileName="${compiler:sys.shortName}_fullinstaller_${compiler:sys.platform}_${compiler:sys.version}" downloadURL="${compiler:installer.download.base}" includeAllDownloadableComponents="true" contentFilesType="downloadable" architecture="64">
       <includedDownloadableComponents>
         <component id="564" />
         <component id="566" />
         <component id="901" />
       </includedDownloadableComponents>
       <jreBundle usePack200="false" />
-    </macosFolder>
-    <macosFolder name="macOS Full Installer (ARM)" id="1346" mediaFileName="${compiler:sys.shortName}_fullinstaller_${compiler:sys.platform}_arm_${compiler:sys.version}" downloadURL="${compiler:installer.download.base}" includeAllDownloadableComponents="true" contentFilesType="downloadable" architecture="aarch64">
+    </windows>
+    <macosFolder name="macOS Full Installer" id="1026" mediaFileName="${compiler:sys.shortName}_fullinstaller_${compiler:sys.platform}_${compiler:sys.version}" downloadURL="${compiler:installer.download.base}" includeAllDownloadableComponents="true" contentFilesType="downloadable" architecture="universal">
       <includedDownloadableComponents>
         <component id="564" />
         <component id="566" />
         <component id="901" />
       </includedDownloadableComponents>
-      <jreBundle usePack200="false" manualJreEntry="true" />
+      <jreBundle usePack200="false" />
     </macosFolder>
   </mediaSets>
-  <buildIds buildAll="false">
-    <mediaSet refId="1346" />
+  <buildIds>
+    <mediaSet refId="1020" />
+    <mediaSet refId="1023" />
+    <mediaSet refId="1026" />
   </buildIds>
 </install4j>

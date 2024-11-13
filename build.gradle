@@ -5,31 +5,42 @@ plugins {
 }
 
 repositories {
+  mavenCentral()
   mavenLocal()
-  jcenter()
-  maven { url "http://akci.coli.uni-saarland.de/artifactory/external" }
-  maven { url "http://github.com/rosjava/rosjava_mvn_repo/raw/master" }
+//  maven { url "https://akci.coli.uni-saarland.de/artifactory/external" } // not accessible anymore?
+  maven { url "https://github.com/rosjava/rosjava_mvn_repo/raw/master" }
+  maven { url "https://repo.spring.io/libs-milestone/" } // needed for rosjava
+  maven { url "https://repo.spring.io/plugins-release/" } // needed for rosjava
+  maven { url "https://maven.repository.redhat.com/ga/" } // needed for rosjava
+  maven { url "https://artifacts.camunda.com/artifactory/public/" } // needed for rosjava
   maven { url "https://jitpack.io" } // keep jitpack last
 }
 
 // In this section you declare the dependencies for your production and test code
 dependencies {
-  runtime group:'com.github.dialogos-project', name:'dialogos', version:'2.1.0'
+  runtimeOnly group:'com.github.dialogos-project', name:'dialogos', version:'2.1.4'
 
-  runtime group:'com.github.dialogos-project', name:'dialogos-plugin-sqlite', version:'2.1.0'
-  runtime group:'com.github.dialogos-project', name:'dialogos-plugin-nxt', version:'2.1.0'
-  runtime group:'com.github.dialogos-project', name:'dialogos-plugin-ros', version:'2.1.0'
+  runtimeOnly group:'com.github.dialogos-project', name:'dialogos-plugin-sqlite', version:'2.1.4'
+  runtimeOnly group:'com.github.dialogos-project', name:'dialogos-plugin-nxt', version:'2.1.4'
 
-  runtime group:'com.github.dialogos-project', name:'dialogos-plugin-ev3', version:'2.1.0'
-  runtime group:'com.github.dialogos-project', name:'dialogos-alexa-plugin', version:'2.1.0'
+  runtimeOnly group:'com.github.dialogos-project', name:'dialogos-plugin-ros', version:'2.1.4'
+//  runtimeOnly group:'com.github.dialogos-project', name:'dialogos-plugin-ev3', version:'2.1.0'
+//  runtimeOnly group:'com.github.dialogos-project', name:'dialogos-alexa-plugin', version:'2.1.0'
 
-  runtime(group: 'com.github.cmusphinx', name:'sphinx4', version:'44a5c08') {
+  runtimeOnly(group: 'com.github.cmusphinx', name:'sphinx4', version:'44a5c08') {
     exclude module: 'sphinx4-samples'
   }
-  runtime group: 'com.github.dialogos-project', name:'sphinx-de-de-uhh', version:'1.0'
+  runtimeOnly group: 'com.github.dialogos-project', name:'sphinx-de-de-uhh', version:'1.0'
+
+  runtimeOnly group: 'de.dfki.mary', name: 'voice-dfki-poppy-hsmm', version: '5.2.1' // female British English
+  
+  runtimeOnly group: 'de.dfki.mary', name: 'voice-bits1-hsmm', version: '5.2.1' // female German
+  runtimeOnly group: 'de.dfki.mary', name: 'voice-bits3-hsmm', version: '5.2.1' // male German
+  runtimeOnly group: 'de.dfki.mary', name: 'voice-upmc-pierre-hsmm', version: '5.2.1' // male French
+  runtimeOnly group: 'de.dfki.mary', name: 'voice-upmc-jessica-hsmm', version: '5.2.1' // female French
 
   implementation 'org.slf4j:slf4j-api:1.7.25'
-  testCompile 'junit:junit:4.12'
+  testImplementation 'junit:junit:4.12'
 }
 
 mainClassName = 'com.clt.dialogos.DialogOS'

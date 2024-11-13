@@ -400,59 +400,59 @@ with open(logfilename, "w") as logfile:
 
 
         
-        ## CREATE RELEASE FOR EV3 PLUGIN
+#        ## CREATE RELEASE FOR EV3 PLUGIN
 
-        print("Updating and building EV3 plugin ...")
+#        print("Updating and building EV3 plugin ...")
 
-        # Check out repositories
-        run(["git", "clone", f"{github_base}/dialogos-plugin-ev3"], logfile)
+#        # Check out repositories
+#        run(["git", "clone", f"{github_base}/dialogos-plugin-ev3"], logfile)
 
-        # Create branch for release in dialogos
-        os.chdir("dialogos-plugin-ev3")
-        run(["git", "checkout", "-b", f"v{vs}-release"], logfile)
+#        # Create branch for release in dialogos
+#        os.chdir("dialogos-plugin-ev3")
+#        run(["git", "checkout", "-b", f"v{vs}-release"], logfile)
 
-        # Edit dialogos version files
-        edit_file("src/main/java/com/clt/dialogos/lego/ev3/Plugin.java", replace_version_plugin_java(v1, v2, v3, True))
-        edit_file("build.gradle", replace_version_plugin_build_gradle(v1, v2, v3, True))
-        run(["git", "commit", "-am", f"release {vs}"], logfile)
+#        # Edit dialogos version files
+#        edit_file("src/main/java/com/clt/dialogos/lego/ev3/Plugin.java", replace_version_plugin_java(v1, v2, v3, True))
+#        edit_file("build.gradle", replace_version_plugin_build_gradle(v1, v2, v3, True))
+#        run(["git", "commit", "-am", f"release {vs}"], logfile)
 
-        # Check that it still builds
-        cpl = subprocess.run(["./gradlew", "compileJava", "test", "publishToMavenLocal"], stdout=logfile, stderr=logfile)
-        if cpl.returncode > 0:
-            print("\n\nFailed rebuilding EV3 plugin after edits. Please fix and rerun this script.")
-            sys.exit(1)
+#        # Check that it still builds
+#        cpl = subprocess.run(["./gradlew", "compileJava", "test", "publishToMavenLocal"], stdout=logfile, stderr=logfile)
+#        if cpl.returncode > 0:
+#            print("\n\nFailed rebuilding EV3 plugin after edits. Please fix and rerun this script.")
+#            sys.exit(1)
 
-        # Back to original directory
-        os.chdir("..")
+#        # Back to original directory
+#        os.chdir("..")
 
 
 
 
         
-        ## CREATE RELEASE FOR ALEXA PLUGIN
+#        ## CREATE RELEASE FOR ALEXA PLUGIN
 
-        print("Updating and building Alexa plugin ...")
+#        print("Updating and building Alexa plugin ...")
 
-        # Check out repositories
-        run(["git", "clone", f"{github_base}/dialogos-alexa-plugin"], logfile)
+#        # Check out repositories
+#        run(["git", "clone", f"{github_base}/dialogos-alexa-plugin"], logfile)
 
-        # Create branch for release in dialogos
-        os.chdir("dialogos-alexa-plugin")
-        run(["git", "checkout", "-b", f"v{vs}-release"], logfile)
+#        # Create branch for release in dialogos
+#        os.chdir("dialogos-alexa-plugin")
+#        run(["git", "checkout", "-b", f"v{vs}-release"], logfile)
 
-        # Edit dialogos version files
-        edit_file("src/main/java/dialogos_project/alexa/Plugin.java", replace_version_plugin_java(v1, v2, v3, True))
-        edit_file("build.gradle", replace_version_plugin_build_gradle(v1, v2, v3, True))
-        run(["git", "commit", "-am", f"release {vs}"], logfile)
+#        # Edit dialogos version files
+#        edit_file("src/main/java/dialogos_project/alexa/Plugin.java", replace_version_plugin_java(v1, v2, v3, True))
+#        edit_file("build.gradle", replace_version_plugin_build_gradle(v1, v2, v3, True))
+#        run(["git", "commit", "-am", f"release {vs}"], logfile)
 
-        # Check that it still builds
-        cpl = subprocess.run(["./gradlew", "compileJava", "test", "publishToMavenLocal"], stdout=logfile, stderr=logfile)
-        if cpl.returncode > 0:
-            print("\n\nFailed rebuilding Alexa plugin after edits. Please fix and rerun this script.")
-            sys.exit(1)
+#        # Check that it still builds
+#        cpl = subprocess.run(["./gradlew", "compileJava", "test", "publishToMavenLocal"], stdout=logfile, stderr=logfile)
+#        if cpl.returncode > 0:
+#            print("\n\nFailed rebuilding Alexa plugin after edits. Please fix and rerun this script.")
+#            sys.exit(1)
 
-        # Back to original directory
-        os.chdir("..")
+#        # Back to original directory
+#        os.chdir("..")
 
 
 
@@ -547,7 +547,7 @@ with open(logfilename, "w") as logfile:
         ## NB tag also determines version number on Jitpack
         print("Pushing and tagging DialogOS Core to Github ...")
 
-        for dir in ["dialogos", "dialogos-plugin-nxt", "dialogos-plugin-sqlite", "dialogos-plugin-ev3", "dialogos-alexa-plugin", "dialogos-plugin-ros", "dialogos-distribution"]:
+        for dir in ["dialogos", "dialogos-plugin-nxt", "dialogos-plugin-sqlite", "dialogos-plugin-ros", "dialogos-distribution"]:
             print(f"Tagging Git versions and pushing to Github: {dir} ...")
             os.chdir(dir)
             run(["git", "push", "--set-upstream", "origin", f"v{vs}-release"], logfile)
