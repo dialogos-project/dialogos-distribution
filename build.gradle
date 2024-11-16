@@ -32,16 +32,39 @@ dependencies {
   }
   runtimeOnly group: 'com.github.dialogos-project', name:'sphinx-de-de-uhh', version:'1.0'
 
-  runtimeOnly group: 'de.dfki.mary', name: 'voice-dfki-poppy-hsmm', version: '5.2.1' // female British English
+  runtimeOnly(group: 'de.dfki.mary', name: 'voice-dfki-poppy-hsmm', version: '5.2.1') { // female British English 
+    exclude group: '*'
+  }
   
-  runtimeOnly group: 'de.dfki.mary', name: 'voice-bits1-hsmm', version: '5.2.1' // female German
-  runtimeOnly group: 'de.dfki.mary', name: 'voice-bits3-hsmm', version: '5.2.1' // male German
-  runtimeOnly group: 'de.dfki.mary', name: 'voice-upmc-pierre-hsmm', version: '5.2.1' // male French
-  runtimeOnly group: 'de.dfki.mary', name: 'voice-upmc-jessica-hsmm', version: '5.2.1' // female French
+  runtimeOnly(group: 'de.dfki.mary', name: 'voice-bits1-hsmm', version: '5.2.1') { // female German
+    exclude group: '*'
+  }
+  runtimeOnly(group: 'de.dfki.mary', name: 'voice-bits3-hsmm', version: '5.2.1') { // male German
+    exclude group: '*'
+  }
+  runtimeOnly('com.github.marytts.marytts:marytts-lang-de:master-SNAPSHOT') {
+    exclude group: '*'
+  }
+  runtimeOnly(group: 'de.dfki.mary', name: 'marytts-lexicon-de', version: '0.1.1') {
+    exclude group: '*'
+  }
+
+  runtimeOnly(group: 'de.dfki.mary', name: 'voice-upmc-pierre-hsmm', version: '5.2.1') {// male French
+    exclude group: '*'
+  }
+  runtimeOnly(group: 'de.dfki.mary', name: 'voice-upmc-jessica-hsmm', version: '5.2.1') { // female French
+    exclude group: '*'
+  }
+  runtimeOnly('com.github.marytts.marytts:marytts-lang-fr:master-SNAPSHOT') {
+    exclude group: '*'
+  }
+  runtimeOnly(group: 'de.dfki.mary', name: 'marytts-lexicon-fr', version: '0.1.1') {
+    exclude group: '*'
+  }
 
   implementation 'org.slf4j:slf4j-api:1.7.25'
   testImplementation 'junit:junit:4.12'
 }
 
 mainClassName = 'com.clt.dialogos.DialogOS'
-def version = "2.1.0"
+def version = "2.1.4"
