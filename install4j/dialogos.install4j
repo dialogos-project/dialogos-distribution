@@ -34,7 +34,7 @@
       <mountPoint id="559" location="pluginData" />
       <mountPoint id="562" location="lib" />
       <mountPoint id="788" location="examples" />
-      <mountPoint id="1144" location="logs" />
+      <mountPoint id="1145" location="log" overrideMode="true" mode="777" />
     </mountPoints>
     <entries>
       <fileEntry mountPoint="560" file="../build/install/dialogos-distribution/lib/DialogOS_SphinxPlugin-${compiler:dialogos.version}.jar" />
@@ -225,6 +225,7 @@
           <entry location="plugins/MaryTTS/log4j-api-2.24.1.jar" />
           <entry location="plugins/MaryTTS/log4j-core-2.24.1.jar" />
           <entry location="plugins/MaryTTS/commons-io-2.17.0.jar" />
+          <entry location="log" />
         </include>
         <dependencies>
           <component id="684" />
