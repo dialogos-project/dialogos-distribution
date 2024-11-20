@@ -295,7 +295,7 @@
     </components>
   </files>
   <launchers>
-    <launcher name="DialogOS" id="250">
+    <launcher name="DialogOS" id="250" customMacBundleIdentifier="true" macBundleIdentifier="com.github.dialogos-distribution.dialogos.DialogOS" useCustomMacosExecutableName="true" customMacosExecutableName="DialogOS">
       <executable name="dialogos" iconSet="true" executableMode="gui" />
       <java mainClass="com.clt.dialogos.DialogOS" vmParameters="-Dfile.encoding=UTF8">
         <classPath>
@@ -310,6 +310,12 @@
           <scanDirectory location="plugins/ROS" failOnError="false" />
         </classPath>
       </java>
+      <infoPlist>&lt;key&gt;NSMicrophoneUsageDescription&lt;/key&gt;
+&lt;string&gt;This app requires access to the microphone for recording audio.&lt;/string&gt;
+&lt;key&gt;com.apple.security.device.audio-input&lt;/key&gt;
+&lt;true/&gt;
+&lt;key&gt;com.apple.security.device.microphone&lt;/key&gt;
+&lt;true/&gt;</infoPlist>
       <iconImageFiles>
         <file path="../AppIconLarge.png" />
       </iconImageFiles>
@@ -819,7 +825,15 @@ return console.askYesNo(message, true);
       </includedDownloadableComponents>
       <jreBundle usePack200="false" />
     </windows>
-    <macosFolder name="macOS Full Installer" id="1026" mediaFileName="${compiler:sys.shortName}_fullinstaller_${compiler:sys.platform}_${compiler:sys.version}" downloadURL="${compiler:installer.download.base}" includeAllDownloadableComponents="true" contentFilesType="downloadable" architecture="universal">
+    <macosFolder name="macOS ARM Full Installer" id="1026" mediaFileName="${compiler:sys.shortName}_fullinstaller_ARM_${compiler:sys.platform}_${compiler:sys.version}" downloadURL="${compiler:installer.download.base}" includeAllDownloadableComponents="true" contentFilesType="downloadable">
+      <includedDownloadableComponents>
+        <component id="564" />
+        <component id="566" />
+        <component id="901" />
+      </includedDownloadableComponents>
+      <jreBundle usePack200="false" />
+    </macosFolder>
+    <macosFolder name="macOS Intel Full Installer" id="1150" mediaFileName="${compiler:sys.shortName}_fullinstaller_Intel_${compiler:sys.platform}_${compiler:sys.version}" downloadURL="${compiler:installer.download.base}" includeAllDownloadableComponents="true" contentFilesType="downloadable" architecture="amd64">
       <includedDownloadableComponents>
         <component id="564" />
         <component id="566" />
