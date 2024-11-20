@@ -24,18 +24,18 @@ dependencies {
   runtimeOnly group:'com.github.dialogos-project', name:'dialogos-plugin-nxt', version:'2.1.4'
 
   runtimeOnly group:'com.github.dialogos-project', name:'dialogos-plugin-ros', version:'2.1.4'
-//  runtimeOnly group:'com.github.dialogos-project', name:'dialogos-plugin-ev3', version:'2.1.0'
-//  runtimeOnly group:'com.github.dialogos-project', name:'dialogos-alexa-plugin', version:'2.1.0'
+//  runtimeOnly group:'com.github.dialogos-project', name:'dialogos-plugin-ev3', version:'2.1.4'
+//  runtimeOnly group:'com.github.dialogos-project', name:'dialogos-alexa-plugin', version:'2.1.4'
 
   runtimeOnly(group: 'com.github.cmusphinx', name:'sphinx4', version:'44a5c08') {
     exclude module: 'sphinx4-samples'
   }
   runtimeOnly group: 'com.github.dialogos-project', name:'sphinx-de-de-uhh', version:'1.0'
 
-  runtimeOnly(group: 'de.dfki.mary', name: 'voice-dfki-poppy-hsmm', version: '5.2.1') { // female British English 
+  runtimeOnly(group: 'de.dfki.mary', name: 'voice-dfki-poppy-hsmm', version: '5.2.1') { // female British English
     exclude group: '*'
   }
-  
+
   runtimeOnly(group: 'de.dfki.mary', name: 'voice-bits1-hsmm', version: '5.2.1') { // female German
     exclude group: '*'
   }
